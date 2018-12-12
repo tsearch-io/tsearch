@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "ts-simple-ast": "^20.0.0",
     "typescript": "^3.2.2"
   },
   "devDependencies": {
