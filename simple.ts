@@ -15,21 +15,19 @@ interface FunctionRecord {
   };
 }
 
-function generateDocumentation(
+function indexFunctions(
   fileNames: string[],
   options: ProjectOptions,
-): void {
+): FunctionRecord[] {
   const project = new Project({
     ...options,
     addFilesFromTsConfig: false,
     skipFileDependencyResolution: true,
   });
 
-  project.addExistingSourceFiles('test/**/*.ts');
+  project.addExistingSourceFiles(fileNames);
 
-  const files = project.getSourceFiles();
-
-  const results: FunctionRecord[] = files
+  return project.getSourceFiles()
     .map(file =>
       file.getFunctions().map(fn => ({
         name: fn.getName(),
@@ -44,16 +42,19 @@ function generateDocumentation(
         },
       })),
     )
-    .reduce((acc, cur) => acc.concat(...cur), []);
-
-  console.log(JSON.stringify(results, null, 2));
+    .reduce((acc, cur) => {
+      acc.push(...cur)
+      return acc
+    }, []);
 }
 
-const files = process.argv.slice(2);
+const fileNames = process.argv.slice(2);
 
-generateDocumentation(files, {
+const results = indexFunctions(fileNames, {
   compilerOptions: {
     target: ts.ScriptTarget.ES5,
     module: ts.ModuleKind.CommonJS,
   },
 });
+
+console.log(JSON.stringify(results, null, 2))
