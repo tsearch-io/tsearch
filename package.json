@@ -3,6 +3,8 @@
     "watch": "tsc -w -p ."
   },
   "dependencies": {
+    "@types/mkdirp": "^0.5.2",
+    "mkdirp": "^0.5.1",
     "ts-simple-ast": "^20.0.0",
     "typescript": "^3.2.2"
   },
