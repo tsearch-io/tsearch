@@ -12,4 +12,3 @@ export const searchFunctions = (query: string) => (fn: FunctionRecord) => {
 
   return byName || byReturnType || byParams
 }
-
