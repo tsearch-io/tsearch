@@ -109,7 +109,7 @@ function parameterDeclaration(param: ParameterDeclaration, index: number) {
   try {
     name = param.getName() || `param${index + 1}`
   } catch (e) {
-    name = `param${index + 1}`
+    name = `t${index + 1}`
   }
 
   return {

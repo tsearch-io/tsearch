@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "format": "prettier --write '**/*.{ts,tsx,js,jsx,json,md}'",
+    "watch": "tsc -w -p ."
+  },
+  "dependencies": {
+    "@types/mkdirp": "^0.5.2",
+    "mkdirp": "^0.5.1",
+    "ts-simple-ast": "^20.0.0",
+    "typescript": "^3.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.12",
+    "husky": "^1.2.1"
+  }
+}

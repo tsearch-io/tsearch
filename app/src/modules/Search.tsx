@@ -5,19 +5,20 @@ import Input from '../components/Input'
 import Button from '../components/Button'
 import SearchResult from '../components/SearchResult'
 import { FunctionRecord } from '../models/tSearch'
-import { search } from '../services/tSearch'
-
-const Container = styled.div`
-  font-family: sans-serif;
-`
-
+import { search, reload } from '../services/tSearch'
 import {
   RemoteData,
   match,
   isLoading,
   notAsked,
   loading,
+  success,
+  failure,
 } from '../lib/remoteData'
+
+const Container = styled.div`
+  font-family: sans-serif;
+`
 
 interface State {
   data: RemoteData<FunctionRecord[]>
@@ -45,17 +46,18 @@ export default class Search extends React.Component<{}, State> {
     this.setState({ query: e.target.value })
   }
 
-  search = () => {
+  search = (e: React.SyntheticEvent) => {
+    e.preventDefault()
+
     this.setState({ data: loading<FunctionRecord[]>() })
 
-    search('query').fork(
-      error => {
-        this.setState({ data: error })
-      },
-      results => {
-        this.setState({ data: results })
-      },
-    )
+    // TODO: don't do this here, server should be on charge
+    reload()
+      .chain(() => search(this.state.query))
+      .fork(
+        error => this.setState({ data: failure(error.message) }),
+        results => this.setState({ data: success(results) }),
+      )
   }
 
   isSearchDisabled() {

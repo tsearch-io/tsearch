@@ -1,0 +1,6938 @@
+[
+  {
+    "name": "Badge",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Badge.tsx",
+      "lines": {
+        "from": 12,
+        "to": 31
+      }
+    }
+  },
+  {
+    "name": "Button",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Button.tsx",
+      "lines": {
+        "from": 60,
+        "to": 112
+      }
+    }
+  },
+  {
+    "name": "getUrl",
+    "parameters": [
+      {
+        "name": "str",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/LoadBgImage.tsx",
+      "lines": {
+        "from": 16,
+        "to": 18
+      }
+    }
+  },
+  {
+    "name": "NoSSR",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "{ children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/NoSSR.tsx",
+      "lines": {
+        "from": 5,
+        "to": 7
+      }
+    }
+  },
+  {
+    "name": "PlotlyCard",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/PlotlyCard.tsx",
+      "lines": {
+        "from": 8,
+        "to": 18
+      }
+    }
+  },
+  {
+    "name": "UserAvatar",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/UserAvatar.tsx",
+      "lines": {
+        "from": 21,
+        "to": 65
+      }
+    }
+  },
+  {
+    "name": "UserCardDetailed",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/UserCardDetailed.tsx",
+      "lines": {
+        "from": 21,
+        "to": 37
+      }
+    }
+  },
+  {
+    "name": "UserCardLite",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/UserCardLite.tsx",
+      "lines": {
+        "from": 24,
+        "to": 42
+      }
+    }
+  },
+  {
+    "name": "YoutubeCard",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/YoutubeCard.tsx",
+      "lines": {
+        "from": 8,
+        "to": 17
+      }
+    }
+  },
+  {
+    "name": "withCurrentPageName",
+    "parameters": [
+      {
+        "name": "ComponentToWrap",
+        "type": "React.ComponentType<P>"
+      }
+    ],
+    "returnType": "React.StatelessComponent<any>",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/helpers/withCurrentPageName.tsx",
+      "lines": {
+        "from": 12,
+        "to": 36
+      }
+    }
+  },
+  {
+    "name": "createIntl",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/i18n/types\").IntlConfig"
+      }
+    ],
+    "returnType": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/i18n/types\").IntlObject",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/i18n/createIntl.ts",
+      "lines": {
+        "from": 6,
+        "to": 28
+      }
+    }
+  },
+  {
+    "name": "createTranslateFunction",
+    "parameters": [
+      {
+        "name": "messages",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/i18n/types\").Translations"
+      },
+      {
+        "name": "hasICE",
+        "type": "boolean"
+      }
+    ],
+    "returnType": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/i18n/types\").TranslateFunc",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/i18n/createTranslateFunction.ts",
+      "lines": {
+        "from": 4,
+        "to": 20
+      }
+    }
+  },
+  {
+    "name": "importLocale",
+    "parameters": [
+      {
+        "name": "locale",
+        "type": "any"
+      }
+    ],
+    "returnType": "Promise<any>",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/i18n/importMomentLocale.ts",
+      "lines": {
+        "from": 3,
+        "to": 5
+      }
+    }
+  },
+  {
+    "name": "defineKey",
+    "parameters": [
+      {
+        "name": "arg",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/i18n/index.ts",
+      "lines": {
+        "from": 1,
+        "to": 3
+      }
+    }
+  },
+  {
+    "name": "createIntl",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/i18n/types\").IntlConfig"
+      }
+    ],
+    "returnType": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/i18n/types\").IntlObject",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/i18n/index.ts",
+      "lines": {
+        "from": 6,
+        "to": 28
+      }
+    }
+  },
+  {
+    "name": "sprintf",
+    "parameters": [
+      {
+        "name": "str",
+        "type": "string"
+      },
+      {
+        "name": "args",
+        "type": "any[]"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/i18n/sprintf.ts",
+      "lines": {
+        "from": 4,
+        "to": 17
+      }
+    }
+  },
+  {
+    "name": "withIntl",
+    "parameters": [
+      {
+        "name": "ComponentToWrap",
+        "type": "React.ComponentType<P>"
+      }
+    ],
+    "returnType": "typeof WithIntl",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/i18n/withIntl.tsx",
+      "lines": {
+        "from": 8,
+        "to": 22
+      }
+    }
+  },
+  {
+    "name": "Html",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/server/Html.tsx",
+      "lines": {
+        "from": 26,
+        "to": 170
+      }
+    }
+  },
+  {
+    "name": "createAlgoliaService",
+    "parameters": [
+      {
+        "name": "initializer",
+        "type": "AlgoliaInitializer"
+      }
+    ],
+    "returnType": "{ searchListings(params: import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/algolia\").AlgoliaQuery[]): Promise<import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/@types/algoliasearch/index\").MultiResponse>; }",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/algolia.ts",
+      "lines": {
+        "from": 11,
+        "to": 19
+      }
+    }
+  },
+  {
+    "name": "rem",
+    "parameters": [
+      {
+        "name": "n",
+        "type": "React.ReactText"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/theme/units.ts",
+      "lines": {
+        "from": 24,
+        "to": 24
+      }
+    }
+  },
+  {
+    "name": "vh",
+    "parameters": [
+      {
+        "name": "n",
+        "type": "React.ReactText"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/theme/units.ts",
+      "lines": {
+        "from": 25,
+        "to": 25
+      }
+    }
+  },
+  {
+    "name": "vw",
+    "parameters": [
+      {
+        "name": "n",
+        "type": "React.ReactText"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/theme/units.ts",
+      "lines": {
+        "from": 26,
+        "to": 26
+      }
+    }
+  },
+  {
+    "name": "toREM",
+    "parameters": [
+      {
+        "name": "v",
+        "type": "React.ReactText"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/theme/units.ts",
+      "lines": {
+        "from": 28,
+        "to": 29
+      }
+    }
+  },
+  {
+    "name": "trbl",
+    "parameters": [
+      {
+        "name": "t",
+        "type": "React.ReactText"
+      },
+      {
+        "name": "r",
+        "type": "React.ReactText"
+      },
+      {
+        "name": "b",
+        "type": "React.ReactText"
+      },
+      {
+        "name": "l",
+        "type": "React.ReactText"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/theme/units.ts",
+      "lines": {
+        "from": 32,
+        "to": 33
+      }
+    }
+  },
+  {
+    "name": "txb",
+    "parameters": [
+      {
+        "name": "t",
+        "type": "React.ReactText"
+      },
+      {
+        "name": "x",
+        "type": "React.ReactText"
+      },
+      {
+        "name": "b",
+        "type": "React.ReactText"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/theme/units.ts",
+      "lines": {
+        "from": 36,
+        "to": 36
+      }
+    }
+  },
+  {
+    "name": "yx",
+    "parameters": [
+      {
+        "name": "y",
+        "type": "React.ReactText"
+      },
+      {
+        "name": "x",
+        "type": "React.ReactText"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/theme/units.ts",
+      "lines": {
+        "from": 38,
+        "to": 38
+      }
+    }
+  },
+  {
+    "name": "border",
+    "parameters": [
+      {
+        "name": "w",
+        "type": "number"
+      },
+      {
+        "name": "s",
+        "type": "BorderStyle"
+      },
+      {
+        "name": "c",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/theme/units.ts",
+      "lines": {
+        "from": 40,
+        "to": 40
+      }
+    }
+  },
+  {
+    "name": "AutoresizeTextarea",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/AutoresizeTextarea.tsx",
+      "lines": {
+        "from": 21,
+        "to": 47
+      }
+    }
+  },
+  {
+    "name": "DatePicker",
+    "parameters": [
+      {
+        "name": "props",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/DatePicker.tsx",
+      "lines": {
+        "from": 70,
+        "to": 81
+      }
+    }
+  },
+  {
+    "name": "FieldInput",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/FieldInput.tsx",
+      "lines": {
+        "from": 54,
+        "to": 107
+      }
+    }
+  },
+  {
+    "name": "FileInput",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/FileInput.tsx",
+      "lines": {
+        "from": 19,
+        "to": 35
+      }
+    }
+  },
+  {
+    "name": "Icon",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/Icon.tsx",
+      "lines": {
+        "from": 15,
+        "to": 41
+      }
+    }
+  },
+  {
+    "name": "MessageCheckMark",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/MessageCheckMark.tsx",
+      "lines": {
+        "from": 9,
+        "to": 18
+      }
+    }
+  },
+  {
+    "name": "RadioInput",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/RadioInput.tsx",
+      "lines": {
+        "from": 10,
+        "to": 15
+      }
+    }
+  },
+  {
+    "name": "Select",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/Select.tsx",
+      "lines": {
+        "from": 22,
+        "to": 53
+      }
+    }
+  },
+  {
+    "name": "formatDateRange",
+    "parameters": [
+      {
+        "name": "T",
+        "type": "any"
+      },
+      {
+        "name": "startDate",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/moment/moment\").Moment"
+      },
+      {
+        "name": "endDate",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/moment/moment\").Moment"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/formatDateRange.ts",
+      "lines": {
+        "from": 4,
+        "to": 24
+      }
+    }
+  },
+  {
+    "name": "formatHrefURL",
+    "parameters": [
+      {
+        "name": "url",
+        "type": "string"
+      },
+      {
+        "name": "lang",
+        "type": "any"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/formatHrefURL.ts",
+      "lines": {
+        "from": 4,
+        "to": 11
+      }
+    }
+  },
+  {
+    "name": "formatPrice",
+    "parameters": [
+      {
+        "name": "rawPrice",
+        "type": "number"
+      },
+      {
+        "name": "currency",
+        "type": "string"
+      },
+      {
+        "name": "t3",
+        "type": "Options"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/formatPrice.ts",
+      "lines": {
+        "from": 7,
+        "to": 18
+      }
+    }
+  },
+  {
+    "name": "formatPriceRange",
+    "parameters": [
+      {
+        "name": "T",
+        "type": "any"
+      },
+      {
+        "name": "minPrice",
+        "type": "number"
+      },
+      {
+        "name": "maxPrice",
+        "type": "number"
+      },
+      {
+        "name": "currency",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/formatPriceRange.ts",
+      "lines": {
+        "from": 4,
+        "to": 26
+      }
+    }
+  },
+  {
+    "name": "priceRange",
+    "parameters": [
+      {
+        "name": "currency",
+        "type": "string"
+      },
+      {
+        "name": "minPrice",
+        "type": "number"
+      },
+      {
+        "name": "maxPrice",
+        "type": "number"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/formatRanges.ts",
+      "lines": {
+        "from": 3,
+        "to": 11
+      }
+    }
+  },
+  {
+    "name": "getLanguageFromUrl",
+    "parameters": [
+      {
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/getLanguageFromUrl.ts",
+      "lines": {
+        "from": 5,
+        "to": 14
+      }
+    }
+  },
+  {
+    "name": "getLastActivityHumanized",
+    "parameters": [
+      {
+        "name": "T",
+        "type": "any"
+      },
+      {
+        "name": "lastActivity",
+        "type": "string"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/getLastActivityHumanized.ts",
+      "lines": {
+        "from": 4,
+        "to": 45
+      }
+    }
+  },
+  {
+    "name": "getMessageFromError",
+    "parameters": [
+      {
+        "name": "error",
+        "type": "string | Error | CustomErrorObject"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/getMessageFromError.ts",
+      "lines": {
+        "from": 14,
+        "to": 49
+      }
+    }
+  },
+  {
+    "name": "getResponseTimeString",
+    "parameters": [
+      {
+        "name": "responseTime",
+        "type": "number"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/getResponseTimeString.ts",
+      "lines": {
+        "from": 3,
+        "to": 29
+      }
+    }
+  },
+  {
+    "name": "isAbsoluteUrl",
+    "parameters": [
+      {
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/isAbsoluteUrl.ts",
+      "lines": {
+        "from": 2,
+        "to": 8
+      }
+    }
+  },
+  {
+    "name": "isEmailCorrect",
+    "parameters": [
+      {
+        "name": "email",
+        "type": "string"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/isEmailCorrect.ts",
+      "lines": {
+        "from": 1,
+        "to": 3
+      }
+    }
+  },
+  {
+    "name": "getFromStorage",
+    "parameters": [
+      {
+        "name": "key",
+        "type": "string"
+      }
+    ],
+    "returnType": "U",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/storage.ts",
+      "lines": {
+        "from": 1,
+        "to": 10
+      }
+    }
+  },
+  {
+    "name": "setInStorage",
+    "parameters": [
+      {
+        "name": "key",
+        "type": "string"
+      },
+      {
+        "name": "value",
+        "type": "any"
+      }
+    ],
+    "returnType": "void",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/storage.ts",
+      "lines": {
+        "from": 13,
+        "to": 21
+      }
+    }
+  },
+  {
+    "name": "removeFromStorage",
+    "parameters": [
+      {
+        "name": "key",
+        "type": "string"
+      }
+    ],
+    "returnType": "void",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/storage.ts",
+      "lines": {
+        "from": 23,
+        "to": 25
+      }
+    }
+  },
+  {
+    "name": "truncate",
+    "parameters": [
+      {
+        "name": "max",
+        "type": "number"
+      }
+    ],
+    "returnType": "(s: string, append?: string) => string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/truncate.ts",
+      "lines": {
+        "from": 1,
+        "to": 2
+      }
+    }
+  },
+  {
+    "name": "UserCardDefault",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Cards/UserCardDefault.tsx",
+      "lines": {
+        "from": 35,
+        "to": 72
+      }
+    }
+  },
+  {
+    "name": "ExcellentBadgeIcon",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/ExcellentBadge/ExcellentBadgeIcon.tsx",
+      "lines": {
+        "from": 9,
+        "to": 24
+      }
+    }
+  },
+  {
+    "name": "BillsFilter",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/BillsFilter.tsx",
+      "lines": {
+        "from": 15,
+        "to": 45
+      }
+    }
+  },
+  {
+    "name": "FilterCheckbox",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/FilterCheckbox.tsx",
+      "lines": {
+        "from": 13,
+        "to": 32
+      }
+    }
+  },
+  {
+    "name": "FilterNumberInput",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/@material-ui/core/styles/withTheme\").WithTheme & { classes: Record<\"label\", string>; } & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/FilterNumberInput.tsx",
+      "lines": {
+        "from": 27,
+        "to": 57
+      }
+    }
+  },
+  {
+    "name": "FurnitureFilter",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/FurnitureFilter.tsx",
+      "lines": {
+        "from": 15,
+        "to": 45
+      }
+    }
+  },
+  {
+    "name": "GenderFilter",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/GenderFilter.tsx",
+      "lines": {
+        "from": 13,
+        "to": 35
+      }
+    }
+  },
+  {
+    "name": "MobileFiltersButton",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/@material-ui/core/styles/withTheme\").WithTheme & { classes: Record<\"button\", string>; } & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/MobileFiltersButton.tsx",
+      "lines": {
+        "from": 19,
+        "to": 31
+      }
+    }
+  },
+  {
+    "name": "MobileFiltersSummary",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/MobileFiltersSummary.tsx",
+      "lines": {
+        "from": 29,
+        "to": 45
+      }
+    }
+  },
+  {
+    "name": "MobileFiltersTags",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/MobileFiltersTags.tsx",
+      "lines": {
+        "from": 43,
+        "to": 330
+      }
+    }
+  },
+  {
+    "name": "MobileFiltersTitle",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/MobileFiltersTitle.tsx",
+      "lines": {
+        "from": 22,
+        "to": 28
+      }
+    }
+  },
+  {
+    "name": "OtherFilterButton",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/OtherFilterButton.tsx",
+      "lines": {
+        "from": 21,
+        "to": 41
+      }
+    }
+  },
+  {
+    "name": "PriceFilterButton",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/PriceFilterButton.tsx",
+      "lines": {
+        "from": 14,
+        "to": 34
+      }
+    }
+  },
+  {
+    "name": "RecentlyAddedFilter",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/RecentlyAddedFilter.tsx",
+      "lines": {
+        "from": 19,
+        "to": 40
+      }
+    }
+  },
+  {
+    "name": "RegistrationFilter",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/RegistrationFilter.tsx",
+      "lines": {
+        "from": 15,
+        "to": 50
+      }
+    }
+  },
+  {
+    "name": "RoomsFilter",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/RoomsFilter.tsx",
+      "lines": {
+        "from": 16,
+        "to": 33
+      }
+    }
+  },
+  {
+    "name": "RulesFilter",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/RulesFilter.tsx",
+      "lines": {
+        "from": 14,
+        "to": 46
+      }
+    }
+  },
+  {
+    "name": "SuitableForFilter",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/SuitableForFilter.tsx",
+      "lines": {
+        "from": 16,
+        "to": 52
+      }
+    }
+  },
+  {
+    "name": "SvgArrow",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/SvgArrow.tsx",
+      "lines": {
+        "from": 7,
+        "to": 17
+      }
+    }
+  },
+  {
+    "name": "TypeFilter",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/TypeFilter.tsx",
+      "lines": {
+        "from": 14,
+        "to": 55
+      }
+    }
+  },
+  {
+    "name": "Container",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Layouts/Container.tsx",
+      "lines": {
+        "from": 21,
+        "to": 36
+      }
+    }
+  },
+  {
+    "name": "ListingSwitcher",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Listing/ListingSwitcher.tsx",
+      "lines": {
+        "from": 17,
+        "to": 35
+      }
+    }
+  },
+  {
+    "name": "validateForm",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Values"
+      },
+      {
+        "name": "t2",
+        "type": "any"
+      }
+    ],
+    "returnType": "Values",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/LoginForm/validateForm.ts",
+      "lines": {
+        "from": 9,
+        "to": 26
+      }
+    }
+  },
+  {
+    "name": "validateForm",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Values"
+      },
+      {
+        "name": "t2",
+        "type": "any"
+      }
+    ],
+    "returnType": "Values",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/RegisterForm/validateForm.ts",
+      "lines": {
+        "from": 11,
+        "to": 36
+      }
+    }
+  },
+  {
+    "name": "UserCard",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/UserCard/UserCard.tsx",
+      "lines": {
+        "from": 14,
+        "to": 24
+      }
+    }
+  },
+  {
+    "name": "UserCardDivider",
+    "parameters": [],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/UserCard/UserCardDivider.tsx",
+      "lines": {
+        "from": 4,
+        "to": 4
+      }
+    }
+  },
+  {
+    "name": "UserCardReportBtn",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/UserCard/UserCardReportBtn.tsx",
+      "lines": {
+        "from": 9,
+        "to": 15
+      }
+    }
+  },
+  {
+    "name": "reportError",
+    "parameters": [
+      {
+        "name": "e",
+        "type": "string | Error | ErrorObj"
+      },
+      {
+        "name": "options",
+        "type": "OptsObj"
+      }
+    ],
+    "returnType": "void",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/helpers/bugsnag/reportError.ts",
+      "lines": {
+        "from": 11,
+        "to": 22
+      }
+    }
+  },
+  {
+    "name": "formatDateRange",
+    "parameters": [
+      {
+        "name": "locale",
+        "type": "string"
+      },
+      {
+        "name": "startDate",
+        "type": "string"
+      },
+      {
+        "name": "endDate",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/helpers/hadate/formatDateRange.ts",
+      "lines": {
+        "from": 5,
+        "to": 14
+      }
+    }
+  },
+  {
+    "name": "getAvailablityLabel",
+    "parameters": [
+      {
+        "name": "bookablePeriods",
+        "type": "any[]"
+      },
+      {
+        "name": "T",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/i18n/types\").TranslateFunc"
+      },
+      {
+        "name": "formatDate",
+        "type": "(format: string, date: string) => string"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/helpers/hadate/getAvailabilityLabel.ts",
+      "lines": {
+        "from": 8,
+        "to": 32
+      }
+    }
+  },
+  {
+    "name": "getDay",
+    "parameters": [
+      {
+        "name": "date",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/helpers/hadate/types\").ISODate"
+      }
+    ],
+    "returnType": "number",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/helpers/hadate/getDay.ts",
+      "lines": {
+        "from": 5,
+        "to": 5
+      }
+    }
+  },
+  {
+    "name": "getMonth",
+    "parameters": [
+      {
+        "name": "date",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/helpers/hadate/types\").ISODate"
+      }
+    ],
+    "returnType": "number",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/helpers/hadate/getMonth.ts",
+      "lines": {
+        "from": 5,
+        "to": 5
+      }
+    }
+  },
+  {
+    "name": "getMonthsBetween",
+    "parameters": [
+      {
+        "name": "startDate",
+        "type": "string"
+      },
+      {
+        "name": "endDate",
+        "type": "string"
+      }
+    ],
+    "returnType": "number",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/helpers/hadate/getMonthsBetween.ts",
+      "lines": {
+        "from": 3,
+        "to": 10
+      }
+    }
+  },
+  {
+    "name": "toLocalizedString",
+    "parameters": [
+      {
+        "name": "locale",
+        "type": "any"
+      }
+    ],
+    "returnType": "(isoDate?: import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/helpers/hadate/types\").ISODate) => string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/helpers/hadate/index.ts",
+      "lines": {
+        "from": 12,
+        "to": 13
+      }
+    }
+  },
+  {
+    "name": "getDay",
+    "parameters": [
+      {
+        "name": "date",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/helpers/hadate/types\").ISODate"
+      }
+    ],
+    "returnType": "number",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/helpers/hadate/index.ts",
+      "lines": {
+        "from": 5,
+        "to": 5
+      }
+    }
+  },
+  {
+    "name": "getMonth",
+    "parameters": [
+      {
+        "name": "date",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/helpers/hadate/types\").ISODate"
+      }
+    ],
+    "returnType": "number",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/helpers/hadate/index.ts",
+      "lines": {
+        "from": 5,
+        "to": 5
+      }
+    }
+  },
+  {
+    "name": "getMonthsBetween",
+    "parameters": [
+      {
+        "name": "startDate",
+        "type": "string"
+      },
+      {
+        "name": "endDate",
+        "type": "string"
+      }
+    ],
+    "returnType": "number",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/helpers/hadate/index.ts",
+      "lines": {
+        "from": 3,
+        "to": 10
+      }
+    }
+  },
+  {
+    "name": "haDateFactory",
+    "parameters": [
+      {
+        "name": "locale",
+        "type": "any"
+      }
+    ],
+    "returnType": "{ locale: any; formatDate: any; fromNow: any; toLocalizedString: (isoDate?: import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/helpers/hadate/types\").ISODate) => string; }",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/helpers/hadate/index.ts",
+      "lines": {
+        "from": 32,
+        "to": 37
+      }
+    }
+  },
+  {
+    "name": "toLocalizedString",
+    "parameters": [
+      {
+        "name": "locale",
+        "type": "any"
+      }
+    ],
+    "returnType": "(isoDate?: import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/helpers/hadate/types\").ISODate) => string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/helpers/hadate/toLocalizedString.ts",
+      "lines": {
+        "from": 12,
+        "to": 13
+      }
+    }
+  },
+  {
+    "name": "getType",
+    "parameters": [
+      {
+        "name": "query",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AdyenResult/types\").Query"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AdyenResult/helpers.ts",
+      "lines": {
+        "from": 29,
+        "to": 33
+      }
+    }
+  },
+  {
+    "name": "getConversationId",
+    "parameters": [
+      {
+        "name": "query",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AdyenResult/types\").Query"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AdyenResult/helpers.ts",
+      "lines": {
+        "from": 40,
+        "to": 42
+      }
+    }
+  },
+  {
+    "name": "getResponse",
+    "parameters": [
+      {
+        "name": "query",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AdyenResult/types\").Query"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AdyenResult/helpers.ts",
+      "lines": {
+        "from": 44,
+        "to": 44
+      }
+    }
+  },
+  {
+    "name": "loadPageData",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AdyenResult/index.ts",
+      "lines": {
+        "from": 32,
+        "to": 71
+      }
+    }
+  },
+  {
+    "name": "loadPageData",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AdyenResult/loadPageData.ts",
+      "lines": {
+        "from": 32,
+        "to": 71
+      }
+    }
+  },
+  {
+    "name": "normalizeListing",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "NormalizeOptions"
+      }
+    ],
+    "returnType": "(item: any) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/index.ts",
+      "lines": {
+        "from": 13,
+        "to": 34
+      }
+    }
+  },
+  {
+    "name": "withApolloData",
+    "parameters": [
+      {
+        "name": "ComponentToWrap",
+        "type": "React.ComponentType<P & ApolloProps & import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/@types/react-router/lib/withRouter\").WithRouterProps>"
+      }
+    ],
+    "returnType": "React.ComponentClass<Pick<P & ApolloProps & import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/@types/react-router/lib/withRouter\").WithRouterProps, Exclude<\"location\", \"data\" | \"route\" | Extract<\"dispatch\", \"data\" | \"location\" | \"route\" | keyof P | \"params\" | \"router\" | \"routes\">> | Exclude<keyof P, \"data\" | \"route\" | Extract<\"dispatch\", \"data\" | \"location\" | \"route\" | keyof P | \"params\" | \"router\" | \"routes\">> | Exclude<\"params\", \"data\" | \"route\" | Extract<\"dispatch\", \"data\" | \"location\" | \"route\" | keyof P | \"params\" | \"router\" | \"routes\">> | Exclude<\"router\", \"data\" | \"route\" | Extract<\"dispatch\", \"data\" | \"location\" | \"route\" | keyof P | \"params\" | \"router\" | \"routes\">> | Exclude<\"routes\", \"data\" | \"route\" | Extract<\"dispatch\", \"data\" | \"location\" | \"route\" | keyof P | \"params\" | \"router\" | \"routes\">>> & import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/@types/react-router/lib/withRouter\").WithRouterProps> & { WrappedComponent: React.ComponentType<P & ApolloProps & import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/@types/react-router/lib/withRouter\").WithRouterProps>; }",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Apollo/withApolloData.ts",
+      "lines": {
+        "from": 13,
+        "to": 30
+      }
+    }
+  },
+  {
+    "name": "getUserFullName",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 17,
+        "to": 25
+      }
+    }
+  },
+  {
+    "name": "getIsLoading",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 75,
+        "to": 75
+      }
+    }
+  },
+  {
+    "name": "getAuthError",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 77,
+        "to": 77
+      }
+    }
+  },
+  {
+    "name": "getCurrentLanguage",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 79,
+        "to": 79
+      }
+    }
+  },
+  {
+    "name": "getIsAuthenticated",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 81,
+        "to": 82
+      }
+    }
+  },
+  {
+    "name": "getUserPhone",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 84,
+        "to": 85
+      }
+    }
+  },
+  {
+    "name": "getUserFirstName",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 87,
+        "to": 88
+      }
+    }
+  },
+  {
+    "name": "getUserLastName",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 90,
+        "to": 91
+      }
+    }
+  },
+  {
+    "name": "getUserType",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 92,
+        "to": 93
+      }
+    }
+  },
+  {
+    "name": "getUserEmail",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 94,
+        "to": 95
+      }
+    }
+  },
+  {
+    "name": "getCountryCode",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 96,
+        "to": 97
+      }
+    }
+  },
+  {
+    "name": "getUserId",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 98,
+        "to": 99
+      }
+    }
+  },
+  {
+    "name": "getIsAdmin",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 100,
+        "to": 101
+      }
+    }
+  },
+  {
+    "name": "getIsPartner",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 102,
+        "to": 103
+      }
+    }
+  },
+  {
+    "name": "getUserUniversity",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 104,
+        "to": 105
+      }
+    }
+  },
+  {
+    "name": "getUserBirthDate",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 106,
+        "to": 107
+      }
+    }
+  },
+  {
+    "name": "getUserBirthDay",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 108,
+        "to": 114
+      }
+    }
+  },
+  {
+    "name": "getUserBirthMonth",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 115,
+        "to": 121
+      }
+    }
+  },
+  {
+    "name": "getUserBirthYear",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 122,
+        "to": 128
+      }
+    }
+  },
+  {
+    "name": "getUserSpokenLanguages",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 129,
+        "to": 130
+      }
+    }
+  },
+  {
+    "name": "getIsAliased",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 131,
+        "to": 132
+      }
+    }
+  },
+  {
+    "name": "getUserNationality",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 134,
+        "to": 140
+      }
+    }
+  },
+  {
+    "name": "getUserAvatar",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 147,
+        "to": 148
+      }
+    }
+  },
+  {
+    "name": "getDashboardUrl",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "\"/partner\" | \"/my\"",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 172,
+        "to": 173
+      }
+    }
+  },
+  {
+    "name": "getIsUserInformationLoading",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 194,
+        "to": 195
+      }
+    }
+  },
+  {
+    "name": "hasCompletedBookings",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 197,
+        "to": 199
+      }
+    }
+  },
+  {
+    "name": "isMissingBillingDetails",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 201,
+        "to": 204
+      }
+    }
+  },
+  {
+    "name": "isMissingPayoutMethod",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 206,
+        "to": 208
+      }
+    }
+  },
+  {
+    "name": "getHasOtherListings",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 210,
+        "to": 211
+      }
+    }
+  },
+  {
+    "name": "isAuthenticatedWithBookings",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 213,
+        "to": 214
+      }
+    }
+  },
+  {
+    "name": "getImpersonatingAdmin",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/selectors.ts",
+      "lines": {
+        "from": 216,
+        "to": 217
+      }
+    }
+  },
+  {
+    "name": "getFavoriteListings",
+    "parameters": [
+      {
+        "name": "options",
+        "type": "any"
+      }
+    ],
+    "returnType": "(dispatch: any, getState: any, { apiV2 }: { apiV2: any; }) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/FavoriteListing/index.ts",
+      "lines": {
+        "from": 26,
+        "to": 48
+      }
+    }
+  },
+  {
+    "name": "getListings",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "any"
+      }
+    ],
+    "returnType": "any[]",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/FavoriteListing/index.ts",
+      "lines": {
+        "from": 14,
+        "to": 17
+      }
+    }
+  },
+  {
+    "name": "getListingsCount",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "any"
+      }
+    ],
+    "returnType": "number",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/FavoriteListing/index.ts",
+      "lines": {
+        "from": 19,
+        "to": 20
+      }
+    }
+  },
+  {
+    "name": "isError",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "any"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/FavoriteListing/index.ts",
+      "lines": {
+        "from": 6,
+        "to": 6
+      }
+    }
+  },
+  {
+    "name": "getIsOpen",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "any"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/MobileDrawer/index.ts",
+      "lines": {
+        "from": 5,
+        "to": 5
+      }
+    }
+  },
+  {
+    "name": "getIsOpen",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "boolean"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/MobileDrawer/reducer.ts",
+      "lines": {
+        "from": 16,
+        "to": 16
+      }
+    }
+  },
+  {
+    "name": "getIsOpen",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "any"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/MobileDrawer/selectors.ts",
+      "lines": {
+        "from": 5,
+        "to": 5
+      }
+    }
+  },
+  {
+    "name": "SavedSearchesReducer",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "Readonly<{ list: any[]; loading: boolean; loaded: boolean; errors: {}[]; count: number; }>"
+      },
+      {
+        "name": "action",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/constants\").SavedSearchActions"
+      }
+    ],
+    "returnType": "Readonly<{ list: any[]; loading: boolean; loaded: boolean; errors: {}[]; count: number; }>",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/index.ts",
+      "lines": {
+        "from": 24,
+        "to": 51
+      }
+    }
+  },
+  {
+    "name": "urlLocationMiddleware",
+    "parameters": [],
+    "returnType": "() => (next: import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/redux/index\").Dispatch<import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/redux/index\").AnyAction>) => (action: Readonly<{ type: string; payload: { nextLocation: string; }; error: boolean; }>) => void",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/URLLocationHandler/index.ts",
+      "lines": {
+        "from": 13,
+        "to": 25
+      }
+    }
+  },
+  {
+    "name": "createMiddleware",
+    "parameters": [
+      {
+        "name": "write",
+        "type": "any"
+      },
+      {
+        "name": "remove",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/myredux/middlewares/persist.ts",
+      "lines": {
+        "from": 29,
+        "to": 46
+      }
+    }
+  },
+  {
+    "name": "formatPrice",
+    "parameters": [
+      {
+        "name": "locale",
+        "type": "string"
+      }
+    ],
+    "returnType": "(amount: number, currency: any, config?: any) => string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PayoutsHistory/utils.ts",
+      "lines": {
+        "from": 12,
+        "to": 25
+      }
+    }
+  },
+  {
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Params"
+      }
+    ],
+    "returnType": "void",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/server/utils/createTerminus.ts",
+      "lines": {
+        "from": 13,
+        "to": 35
+      }
+    }
+  },
+  {
+    "name": "createMakeCall",
+    "parameters": [
+      {
+        "name": "fetchClient",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/fetchClient\").default"
+      }
+    ],
+    "returnType": "<T>(method: \"GET\" | \"POST\" | \"PUT\" | \"DELETE\" | \"PATCH\", pathname: string, options?: Options) => Promise<any>",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/apiV2/createMakeCall.ts",
+      "lines": {
+        "from": 23,
+        "to": 63
+      }
+    }
+  },
+  {
+    "name": "generateListingClick",
+    "parameters": [
+      {
+        "name": "makeCall",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/apiV2/createMakeCall\").MakeCall"
+      }
+    ],
+    "returnType": "(listingId: number, data: import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/apiV2/generateListingClick\").PartnerClickData) => Promise<{ status: number; data: import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/apiV2/types/Listing\").PartnerListingClick; }>",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/apiV2/generateListingClick.ts",
+      "lines": {
+        "from": 10,
+        "to": 18
+      }
+    }
+  },
+  {
+    "name": "getUser",
+    "parameters": [
+      {
+        "name": "makeCall",
+        "type": "any"
+      }
+    ],
+    "returnType": "(userId?: number | \"me\") => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/apiV2/getUser.ts",
+      "lines": {
+        "from": 5,
+        "to": 6
+      }
+    }
+  },
+  {
+    "name": "getUserInformation",
+    "parameters": [
+      {
+        "name": "makeCall",
+        "type": "any"
+      }
+    ],
+    "returnType": "{ (id: \"me\", query?: Query): any; (id: number, query?: Query): any; }",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/apiV2/getUserInformation.ts",
+      "lines": {
+        "from": 9,
+        "to": 22
+      }
+    }
+  },
+  {
+    "name": "handleApiV2Response",
+    "parameters": [
+      {
+        "name": "response",
+        "type": "Response"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/apiV2/handleApiV2Response.ts",
+      "lines": {
+        "from": 5,
+        "to": 27
+      }
+    }
+  },
+  {
+    "name": "login",
+    "parameters": [
+      {
+        "name": "makeCall",
+        "type": "any"
+      }
+    ],
+    "returnType": "(data: import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/apiV2/login\").Payload) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/apiV2/login.ts",
+      "lines": {
+        "from": 10,
+        "to": 11
+      }
+    }
+  },
+  {
+    "name": "logout",
+    "parameters": [
+      {
+        "name": "makeCall",
+        "type": "any"
+      }
+    ],
+    "returnType": "() => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/apiV2/logout.ts",
+      "lines": {
+        "from": 4,
+        "to": 5
+      }
+    }
+  },
+  {
+    "name": "register",
+    "parameters": [
+      {
+        "name": "makeCall",
+        "type": "any"
+      }
+    ],
+    "returnType": "(data: import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/apiV2/register\").Payload) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/apiV2/register.ts",
+      "lines": {
+        "from": 30,
+        "to": 31
+      }
+    }
+  },
+  {
+    "name": "registerListingCall",
+    "parameters": [
+      {
+        "name": "makeCall",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/apiV2/createMakeCall\").MakeCall"
+      }
+    ],
+    "returnType": "(listingId: number, data: RegisterClickData) => Promise<{ status: number; data: null; }>",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/apiV2/registerListingClick.ts",
+      "lines": {
+        "from": 8,
+        "to": 14
+      }
+    }
+  },
+  {
+    "name": "resetPassword",
+    "parameters": [
+      {
+        "name": "makeCall",
+        "type": "any"
+      }
+    ],
+    "returnType": "(data: import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/apiV2/resetPassword\").Payload) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/apiV2/resetPassword.ts",
+      "lines": {
+        "from": 10,
+        "to": 11
+      }
+    }
+  },
+  {
+    "name": "getTransactionHistory",
+    "parameters": [
+      {
+        "name": "makeCall",
+        "type": "any"
+      }
+    ],
+    "returnType": "() => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/services/apiV2/transactionHistory.ts",
+      "lines": {
+        "from": 36,
+        "to": 40
+      }
+    }
+  },
+  {
+    "name": "Banner",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/Banner/Banner.tsx",
+      "lines": {
+        "from": 42,
+        "to": 51
+      }
+    }
+  },
+  {
+    "name": "ProcessIndicator",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/ProcessIndicator/ProcessIndicator.tsx",
+      "lines": {
+        "from": 44,
+        "to": 93
+      }
+    }
+  },
+  {
+    "name": "ProcessIndicatorItem",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/ProcessIndicator/ProcessIndicatorItem\").Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/ProcessIndicator/ProcessIndicatorItem.tsx",
+      "lines": {
+        "from": 16,
+        "to": 58
+      }
+    }
+  },
+  {
+    "name": "Section",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/Section/Section.tsx",
+      "lines": {
+        "from": 42,
+        "to": 83
+      }
+    }
+  },
+  {
+    "name": "SectionDivider",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/Section/SectionDivider.tsx",
+      "lines": {
+        "from": 13,
+        "to": 23
+      }
+    }
+  },
+  {
+    "name": "SectionMedia",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/Section/SectionMedia.tsx",
+      "lines": {
+        "from": 10,
+        "to": 33
+      }
+    }
+  },
+  {
+    "name": "SectionRow",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/Section/SectionRow.tsx",
+      "lines": {
+        "from": 8,
+        "to": 12
+      }
+    }
+  },
+  {
+    "name": "SectionText",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/Section/SectionText.tsx",
+      "lines": {
+        "from": 12,
+        "to": 30
+      }
+    }
+  },
+  {
+    "name": "SectionTitle",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/Section/SectionTitle.tsx",
+      "lines": {
+        "from": 31,
+        "to": 58
+      }
+    }
+  },
+  {
+    "name": "fromMUIComponent",
+    "parameters": [
+      {
+        "name": "MaterialUIComponent",
+        "type": "React.ClassType<P, React.Component<P, {}, any>, React.ComponentClass<P>>"
+      },
+      {
+        "name": "mapProps",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/reduxForm/muiHelpers\").MapProps<Readonly<P>>"
+      }
+    ],
+    "returnType": "React.ComponentClass<import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/reduxForm/muiHelpers\").Mix<import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/@material-ui/core/FormControl/FormControl\").FormControlProps & P>> & typeof InputComponent",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/reduxForm/muiHelpers.ts",
+      "lines": {
+        "from": 20,
+        "to": 50
+      }
+    }
+  },
+  {
+    "name": "createClasses",
+    "parameters": [
+      {
+        "name": "styles",
+        "type": "T"
+      }
+    ],
+    "returnType": "{ [key in keyof T]: string; }",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/testing/createClasses.ts",
+      "lines": {
+        "from": 3,
+        "to": 7
+      }
+    }
+  },
+  {
+    "name": "extractHubspotFormParameters",
+    "parameters": [
+      {
+        "name": "code",
+        "type": "string"
+      }
+    ],
+    "returnType": "{ portalId: string; formId: string; }",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/thirdParty/extractHubspotFormParameters.ts",
+      "lines": {
+        "from": 3,
+        "to": 13
+      }
+    }
+  },
+  {
+    "name": "isInstagramPost",
+    "parameters": [
+      {
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/thirdParty/isInstagramPost.ts",
+      "lines": {
+        "from": 3,
+        "to": 5
+      }
+    }
+  },
+  {
+    "name": "isPlotlyUrl",
+    "parameters": [
+      {
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/thirdParty/plotlyUrl.ts",
+      "lines": {
+        "from": 6,
+        "to": 8
+      }
+    }
+  },
+  {
+    "name": "removeEditButton",
+    "parameters": [
+      {
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/thirdParty/plotlyUrl.ts",
+      "lines": {
+        "from": 10,
+        "to": 20
+      }
+    }
+  },
+  {
+    "name": "isYoutubeVideo",
+    "parameters": [
+      {
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/thirdParty/youtubeUrl.ts",
+      "lines": {
+        "from": 3,
+        "to": 5
+      }
+    }
+  },
+  {
+    "name": "createEmbedUrl",
+    "parameters": [
+      {
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/thirdParty/youtubeUrl.ts",
+      "lines": {
+        "from": 7,
+        "to": 14
+      }
+    }
+  },
+  {
+    "parameters": [
+      {
+        "name": "lang",
+        "type": "any"
+      },
+      {
+        "name": "collection",
+        "type": "string"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/urls/getTranslatedCollection.ts",
+      "lines": {
+        "from": 7,
+        "to": 19
+      }
+    }
+  },
+  {
+    "name": "removeTrailingSlash",
+    "parameters": [
+      {
+        "name": "str",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/utils/urls/removeTrailingSlash.ts",
+      "lines": {
+        "from": 1,
+        "to": 3
+      }
+    }
+  },
+  {
+    "name": "CalendarInfo",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/DateFilter/CalendarInfo.tsx",
+      "lines": {
+        "from": 30,
+        "to": 60
+      }
+    }
+  },
+  {
+    "name": "DateFilterButton",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/DateFilter/DateFilterButton.tsx",
+      "lines": {
+        "from": 13,
+        "to": 33
+      }
+    }
+  },
+  {
+    "name": "DateFilterDesktop",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Filters/DateFilter/DateFilterDesktop.tsx",
+      "lines": {
+        "from": 29,
+        "to": 88
+      }
+    }
+  },
+  {
+    "name": "getListingPreviewTitle",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Listing/helpers/getListingPreviewTitle.ts",
+      "lines": {
+        "from": 11,
+        "to": 31
+      }
+    }
+  },
+  {
+    "name": "shouldFixImage",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "{ naturalWidth: number; naturalHeight: number; }"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Listing/helpers/index.ts",
+      "lines": {
+        "from": 3,
+        "to": 18
+      }
+    }
+  },
+  {
+    "name": "getListingPreviewTitle",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Listing/helpers/index.ts",
+      "lines": {
+        "from": 11,
+        "to": 31
+      }
+    }
+  },
+  {
+    "name": "shouldFixImage",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "{ naturalWidth: number; naturalHeight: number; }"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Listing/helpers/shouldFixImage.ts",
+      "lines": {
+        "from": 3,
+        "to": 18
+      }
+    }
+  },
+  {
+    "name": "ListingUnlistConfirmationModalOption0",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Listing/ListingUnlistConfirmationModalSecondStepOptions/Option0.tsx",
+      "lines": {
+        "from": 17,
+        "to": 148
+      }
+    }
+  },
+  {
+    "name": "ListingUnlistConfirmationModalOption1",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Listing/ListingUnlistConfirmationModalSecondStepOptions/Option1.tsx",
+      "lines": {
+        "from": 10,
+        "to": 44
+      }
+    }
+  },
+  {
+    "name": "ListingUnlistConfirmationModalOption2",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/Listing/ListingUnlistConfirmationModalSecondStepOptions/Option2.tsx",
+      "lines": {
+        "from": 11,
+        "to": 57
+      }
+    }
+  },
+  {
+    "name": "LoginForm",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/LoginForm/component/LoginForm.tsx",
+      "lines": {
+        "from": 14,
+        "to": 20
+      }
+    }
+  },
+  {
+    "name": "RegisterForm",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/components/RegisterForm/component/RegisterForm.tsx",
+      "lines": {
+        "from": 14,
+        "to": 24
+      }
+    }
+  },
+  {
+    "name": "persistentMiddleware",
+    "parameters": [
+      {
+        "name": "store",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/redux/index\").MiddlewareAPI<import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/redux-thunk/index\").ThunkDispatch<{}, undefined, import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/redux/index\").AnyAction>, {}>"
+      }
+    ],
+    "returnType": "(next: import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/redux/index\").Dispatch<import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/redux/index\").AnyAction>) => (action: any) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Alertbar/middleware/index.ts",
+      "lines": {
+        "from": 8,
+        "to": 37
+      }
+    }
+  },
+  {
+    "name": "persistentMiddleware",
+    "parameters": [
+      {
+        "name": "store",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/redux/index\").MiddlewareAPI<import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/redux-thunk/index\").ThunkDispatch<{}, undefined, import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/redux/index\").AnyAction>, {}>"
+      }
+    ],
+    "returnType": "(next: import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/redux/index\").Dispatch<import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/redux/index\").AnyAction>) => (action: any) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Alertbar/middleware/middleware.ts",
+      "lines": {
+        "from": 8,
+        "to": 37
+      }
+    }
+  },
+  {
+    "name": "normalizeListing",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "NormalizeOptions"
+      }
+    ],
+    "returnType": "(item: any) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/normalizeListing.ts",
+      "lines": {
+        "from": 13,
+        "to": 34
+      }
+    }
+  },
+  {
+    "name": "pathnameToFileName",
+    "parameters": [
+      {
+        "name": "pathname",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Apollo/utilities/pathnameToFileName.ts",
+      "lines": {
+        "from": 1,
+        "to": 5
+      }
+    }
+  },
+  {
+    "name": "login",
+    "parameters": [
+      {
+        "name": "user",
+        "type": "any"
+      },
+      {
+        "name": "dialogType",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/types\").AuthType"
+      }
+    ],
+    "returnType": "(dispatch: any, getState: any, services: any) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/actions/actions.ts",
+      "lines": {
+        "from": 52,
+        "to": 72
+      }
+    }
+  },
+  {
+    "name": "logout",
+    "parameters": [],
+    "returnType": "(dispatch: any, _: any, { apiV2 }: { apiV2: any; }) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/actions/actions.ts",
+      "lines": {
+        "from": 74,
+        "to": 85
+      }
+    }
+  },
+  {
+    "name": "loginRequest",
+    "parameters": [
+      {
+        "name": "fields",
+        "type": "any"
+      }
+    ],
+    "returnType": "(dispatch: any, getState: any, services: any) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/actions/actions.ts",
+      "lines": {
+        "from": 89,
+        "to": 108
+      }
+    }
+  },
+  {
+    "name": "registerRequest",
+    "parameters": [
+      {
+        "name": "fields",
+        "type": "any"
+      }
+    ],
+    "returnType": "(dispatch: any, getState: any, services: any) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/actions/actions.ts",
+      "lines": {
+        "from": 112,
+        "to": 131
+      }
+    }
+  },
+  {
+    "name": "fetchUser",
+    "parameters": [],
+    "returnType": "(dispatch: any, getState: any, services: any) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/actions/actions.ts",
+      "lines": {
+        "from": 133,
+        "to": 158
+      }
+    }
+  },
+  {
+    "name": "fetchImpersonationInfo",
+    "parameters": [],
+    "returnType": "(dispatch: any, _: any, { apiV2 }: { apiV2: any; }) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/actions/actions.ts",
+      "lines": {
+        "from": 160,
+        "to": 181
+      }
+    }
+  },
+  {
+    "name": "fetchUserBillingInfo",
+    "parameters": [],
+    "returnType": "(dispatch: any, getState: any, { apiV2 }: { apiV2: any; }) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/actions/fetchUserBillingInfo.ts",
+      "lines": {
+        "from": 71,
+        "to": 107
+      }
+    }
+  },
+  {
+    "name": "fetchUserBillingInfo",
+    "parameters": [],
+    "returnType": "(dispatch: any, getState: any, { apiV2 }: { apiV2: any; }) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/actions/index.ts",
+      "lines": {
+        "from": 71,
+        "to": 107
+      }
+    }
+  },
+  {
+    "name": "login",
+    "parameters": [
+      {
+        "name": "user",
+        "type": "any"
+      },
+      {
+        "name": "dialogType",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/types\").AuthType"
+      }
+    ],
+    "returnType": "(dispatch: any, getState: any, services: any) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/actions/index.ts",
+      "lines": {
+        "from": 52,
+        "to": 72
+      }
+    }
+  },
+  {
+    "name": "logout",
+    "parameters": [],
+    "returnType": "(dispatch: any, _: any, { apiV2 }: { apiV2: any; }) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/actions/index.ts",
+      "lines": {
+        "from": 74,
+        "to": 85
+      }
+    }
+  },
+  {
+    "name": "loginRequest",
+    "parameters": [
+      {
+        "name": "fields",
+        "type": "any"
+      }
+    ],
+    "returnType": "(dispatch: any, getState: any, services: any) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/actions/index.ts",
+      "lines": {
+        "from": 89,
+        "to": 108
+      }
+    }
+  },
+  {
+    "name": "registerRequest",
+    "parameters": [
+      {
+        "name": "fields",
+        "type": "any"
+      }
+    ],
+    "returnType": "(dispatch: any, getState: any, services: any) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/actions/index.ts",
+      "lines": {
+        "from": 112,
+        "to": 131
+      }
+    }
+  },
+  {
+    "name": "fetchUser",
+    "parameters": [],
+    "returnType": "(dispatch: any, getState: any, services: any) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/actions/index.ts",
+      "lines": {
+        "from": 133,
+        "to": 158
+      }
+    }
+  },
+  {
+    "name": "fetchImpersonationInfo",
+    "parameters": [],
+    "returnType": "(dispatch: any, _: any, { apiV2 }: { apiV2: any; }) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/actions/index.ts",
+      "lines": {
+        "from": 160,
+        "to": 181
+      }
+    }
+  },
+  {
+    "name": "sendRecoverPasswordRequest",
+    "parameters": [
+      {
+        "name": "payload",
+        "type": "any"
+      }
+    ],
+    "returnType": "(_: any, __: any, { apiV2 }: { apiV2: any; }) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/AuthLogic/actions/sendRecoverPasswordRequest.ts",
+      "lines": {
+        "from": 20,
+        "to": 24
+      }
+    }
+  },
+  {
+    "name": "ContentfulImg",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/ContentfulImg/components/ContentfulImg.tsx",
+      "lines": {
+        "from": 15,
+        "to": 44
+      }
+    }
+  },
+  {
+    "name": "Variant",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Experiments/components/Variant\").Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "React.ReactElement<{}>",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Experiments/components/Variant.tsx",
+      "lines": {
+        "from": 8,
+        "to": 9
+      }
+    }
+  },
+  {
+    "name": "getSelectedVariant",
+    "parameters": [
+      {
+        "name": "experiment",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Experiments/utils/getSelectedVariant\").Experiment"
+      },
+      {
+        "name": "userIdentifier",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Experiments/utils/getSelectedVariant.ts",
+      "lines": {
+        "from": 52,
+        "to": 79
+      }
+    }
+  },
+  {
+    "name": "getSortedVariants",
+    "parameters": [
+      {
+        "name": "experiment",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Experiments/utils/getSelectedVariant\").Experiment"
+      }
+    ],
+    "returnType": "string[]",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Experiments/utils/getSelectedVariant.ts",
+      "lines": {
+        "from": 13,
+        "to": 14
+      }
+    }
+  },
+  {
+    "name": "getSortedVariantWeights",
+    "parameters": [
+      {
+        "name": "experiment",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Experiments/utils/getSelectedVariant\").Experiment"
+      }
+    ],
+    "returnType": "number[]",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Experiments/utils/getSelectedVariant.ts",
+      "lines": {
+        "from": 19,
+        "to": 27
+      }
+    }
+  },
+  {
+    "name": "initialWeightedIndex",
+    "parameters": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "weightSum",
+        "type": "number"
+      },
+      {
+        "name": "userIdentifier",
+        "type": "string"
+      }
+    ],
+    "returnType": "number",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Experiments/utils/getSelectedVariant.ts",
+      "lines": {
+        "from": 30,
+        "to": 37
+      }
+    }
+  },
+  {
+    "name": "addFavoriteListing",
+    "parameters": [
+      {
+        "name": "listingId",
+        "type": "number"
+      }
+    ],
+    "returnType": "(dispatch: any, getState: any, { apiV2 }: { apiV2: any; }) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/FavoriteListing/actions/addFavoriteListing.ts",
+      "lines": {
+        "from": 29,
+        "to": 56
+      }
+    }
+  },
+  {
+    "name": "getFavoriteListings",
+    "parameters": [
+      {
+        "name": "options",
+        "type": "any"
+      }
+    ],
+    "returnType": "(dispatch: any, getState: any, { apiV2 }: { apiV2: any; }) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/FavoriteListing/actions/getFavoriteListings.ts",
+      "lines": {
+        "from": 26,
+        "to": 48
+      }
+    }
+  },
+  {
+    "name": "addFavoriteListing",
+    "parameters": [
+      {
+        "name": "listingId",
+        "type": "number"
+      }
+    ],
+    "returnType": "(dispatch: any, getState: any, { apiV2 }: { apiV2: any; }) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/FavoriteListing/actions/index.ts",
+      "lines": {
+        "from": 29,
+        "to": 56
+      }
+    }
+  },
+  {
+    "name": "removeFavoriteListing",
+    "parameters": [
+      {
+        "name": "listingId",
+        "type": "number"
+      }
+    ],
+    "returnType": "(dispatch: any, _: any, { apiV2 }: { apiV2: any; }) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/FavoriteListing/actions/index.ts",
+      "lines": {
+        "from": 27,
+        "to": 50
+      }
+    }
+  },
+  {
+    "name": "getFavoriteListings",
+    "parameters": [
+      {
+        "name": "options",
+        "type": "any"
+      }
+    ],
+    "returnType": "(dispatch: any, getState: any, { apiV2 }: { apiV2: any; }) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/FavoriteListing/actions/index.ts",
+      "lines": {
+        "from": 26,
+        "to": 48
+      }
+    }
+  },
+  {
+    "name": "removeFavoriteListing",
+    "parameters": [
+      {
+        "name": "listingId",
+        "type": "number"
+      }
+    ],
+    "returnType": "(dispatch: any, _: any, { apiV2 }: { apiV2: any; }) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/FavoriteListing/actions/removeFavoriteListing.ts",
+      "lines": {
+        "from": 27,
+        "to": 50
+      }
+    }
+  },
+  {
+    "name": "isError",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "any"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/FavoriteListing/selectors/index.ts",
+      "lines": {
+        "from": 6,
+        "to": 6
+      }
+    }
+  },
+  {
+    "name": "isFavorite",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "any"
+      },
+      {
+        "name": "listingId",
+        "type": "number"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/FavoriteListing/selectors/index.ts",
+      "lines": {
+        "from": 8,
+        "to": 9
+      }
+    }
+  },
+  {
+    "name": "isLoading",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "any"
+      },
+      {
+        "name": "listingId",
+        "type": "number"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/FavoriteListing/selectors/index.ts",
+      "lines": {
+        "from": 11,
+        "to": 12
+      }
+    }
+  },
+  {
+    "name": "getListings",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "any"
+      }
+    ],
+    "returnType": "any[]",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/FavoriteListing/selectors/index.ts",
+      "lines": {
+        "from": 14,
+        "to": 17
+      }
+    }
+  },
+  {
+    "name": "getListingsCount",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "any"
+      }
+    ],
+    "returnType": "number",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/FavoriteListing/selectors/index.ts",
+      "lines": {
+        "from": 19,
+        "to": 20
+      }
+    }
+  },
+  {
+    "name": "InboxPreviewItem",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/InboxPreview/components/InboxPreviewItem.tsx",
+      "lines": {
+        "from": 56,
+        "to": 93
+      }
+    }
+  },
+  {
+    "name": "changeLanguage",
+    "parameters": [
+      {
+        "name": "nextLanguageCode",
+        "type": "string"
+      },
+      {
+        "name": "currentLocation",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/@types/history/index\").Location"
+      },
+      {
+        "name": "isAuthenticated",
+        "type": "boolean"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/actions/changeLanguage.ts",
+      "lines": {
+        "from": 28,
+        "to": 54
+      }
+    }
+  },
+  {
+    "name": "availableLanguages",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/types\").Language[]"
+      }
+    ],
+    "returnType": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/types\").Language[]",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/reducer/availableLanguages.ts",
+      "lines": {
+        "from": 16,
+        "to": 18
+      }
+    }
+  },
+  {
+    "name": "getAvailableLanguages",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/types\").Language[]"
+      }
+    ],
+    "returnType": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/types\").Language[]",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/reducer/availableLanguages.ts",
+      "lines": {
+        "from": 20,
+        "to": 20
+      }
+    }
+  },
+  {
+    "name": "isLanguageAvailable",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/types\").Language[]"
+      },
+      {
+        "name": "lang",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/reducer/availableLanguages.ts",
+      "lines": {
+        "from": 22,
+        "to": 23
+      }
+    }
+  },
+  {
+    "name": "getCurrentLanguageCode",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/types\").LanguageSwitcherState"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/reducer/index.ts",
+      "lines": {
+        "from": 16,
+        "to": 17
+      }
+    }
+  },
+  {
+    "name": "getAvailableLanguages",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/types\").LanguageSwitcherState"
+      }
+    ],
+    "returnType": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/types\").Language[]",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/reducer/index.ts",
+      "lines": {
+        "from": 19,
+        "to": 20
+      }
+    }
+  },
+  {
+    "name": "getLocalisedLocation",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/types\").LanguageSwitcherState"
+      },
+      {
+        "name": "lang",
+        "type": "any"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/reducer/index.ts",
+      "lines": {
+        "from": 22,
+        "to": 29
+      }
+    }
+  },
+  {
+    "name": "isLanguageAvailable",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/types\").LanguageSwitcherState"
+      },
+      {
+        "name": "lang",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/reducer/index.ts",
+      "lines": {
+        "from": 31,
+        "to": 38
+      }
+    }
+  },
+  {
+    "name": "getCode",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/types\").CurrentLanguage"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/reducer/language.ts",
+      "lines": {
+        "from": 13,
+        "to": 13
+      }
+    }
+  },
+  {
+    "name": "getLocalisedName",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/types\").CurrentLanguage"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/reducer/language.ts",
+      "lines": {
+        "from": 14,
+        "to": 14
+      }
+    }
+  },
+  {
+    "name": "getLocalisedLocation",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/types\").CurrentLanguage"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/reducer/language.ts",
+      "lines": {
+        "from": 15,
+        "to": 15
+      }
+    }
+  },
+  {
+    "name": "getLocalisedLocation",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/types\").Language[]"
+      },
+      {
+        "name": "langCode",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/LanguageSwitcher/reducer/localisedLocations.ts",
+      "lines": {
+        "from": 32,
+        "to": 38
+      }
+    }
+  },
+  {
+    "name": "ListYourPlaceCTA",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/ListYourPlaceCTA/components/ListYourPlaceCTA.tsx",
+      "lines": {
+        "from": 15,
+        "to": 43
+      }
+    }
+  },
+  {
+    "name": "AdminLink",
+    "parameters": [],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/NavBar/components/AdminLink.tsx",
+      "lines": {
+        "from": 9,
+        "to": 17
+      }
+    }
+  },
+  {
+    "name": "ImpersonationInfo",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/NavBar/components/ImpersonationInfo.tsx",
+      "lines": {
+        "from": 14,
+        "to": 27
+      }
+    }
+  },
+  {
+    "name": "NavBar",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/NavBar/components/NavBar.tsx",
+      "lines": {
+        "from": 12,
+        "to": 22
+      }
+    }
+  },
+  {
+    "name": "NavBarDesktop",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/NavBar/components/NavBarDesktop.tsx",
+      "lines": {
+        "from": 58,
+        "to": 149
+      }
+    }
+  },
+  {
+    "name": "NavBarLogo",
+    "parameters": [],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/NavBar/components/NavBarLogo.tsx",
+      "lines": {
+        "from": 8,
+        "to": 14
+      }
+    }
+  },
+  {
+    "name": "NavBarMobile",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/NavBar/components/NavBarMobile.tsx",
+      "lines": {
+        "from": 58,
+        "to": 119
+      }
+    }
+  },
+  {
+    "name": "UnauthenticatedMenuItems",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/NavBar/components/UnauthenticatedMenuItems.tsx",
+      "lines": {
+        "from": 37,
+        "to": 80
+      }
+    }
+  },
+  {
+    "name": "createStart",
+    "parameters": [],
+    "returnType": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/constants\").CreateStartAction",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/actions/createSavedSearch.ts",
+      "lines": {
+        "from": 12,
+        "to": 16
+      }
+    }
+  },
+  {
+    "name": "createSuccess",
+    "parameters": [
+      {
+        "name": "payload",
+        "type": "any"
+      }
+    ],
+    "returnType": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/constants\").CreateSuccessAction",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/actions/createSavedSearch.ts",
+      "lines": {
+        "from": 18,
+        "to": 23
+      }
+    }
+  },
+  {
+    "name": "createFail",
+    "parameters": [
+      {
+        "name": "payload",
+        "type": "Error"
+      }
+    ],
+    "returnType": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/constants\").CreateFailAction",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/actions/createSavedSearch.ts",
+      "lines": {
+        "from": 25,
+        "to": 30
+      }
+    }
+  },
+  {
+    "name": "createSavedSearch",
+    "parameters": [
+      {
+        "name": "searchParams",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/types\").SearchParams"
+      },
+      {
+        "name": "userId",
+        "type": "number"
+      }
+    ],
+    "returnType": "(dispatch: import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/redux/index\").Dispatch<import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/redux/index\").AnyAction>, _: () => void, services: any) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/actions/createSavedSearch.ts",
+      "lines": {
+        "from": 32,
+        "to": 47
+      }
+    }
+  },
+  {
+    "name": "loadStart",
+    "parameters": [],
+    "returnType": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/constants\").LoadStartAction",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/actions/loadSavedSearches.ts",
+      "lines": {
+        "from": 11,
+        "to": 15
+      }
+    }
+  },
+  {
+    "name": "loadSuccess",
+    "parameters": [
+      {
+        "name": "payload",
+        "type": "any"
+      }
+    ],
+    "returnType": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/constants\").LoadSuccessAction",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/actions/loadSavedSearches.ts",
+      "lines": {
+        "from": 17,
+        "to": 22
+      }
+    }
+  },
+  {
+    "name": "loadFail",
+    "parameters": [
+      {
+        "name": "payload",
+        "type": "Error"
+      }
+    ],
+    "returnType": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/constants\").LoadFailAction",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/actions/loadSavedSearches.ts",
+      "lines": {
+        "from": 24,
+        "to": 29
+      }
+    }
+  },
+  {
+    "name": "loadSavedSearches",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "number"
+      },
+      {
+        "name": "query",
+        "type": "{ language: string; limit?: number; }"
+      }
+    ],
+    "returnType": "(dispatch: import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/redux/index\").Dispatch<import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/redux/index\").AnyAction>, _: () => void, services: any) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/actions/loadSavedSearches.ts",
+      "lines": {
+        "from": 33,
+        "to": 48
+      }
+    }
+  },
+  {
+    "name": "removeStart",
+    "parameters": [
+      {
+        "name": "payload",
+        "type": "any"
+      }
+    ],
+    "returnType": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/constants\").RemoveStartAction",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/actions/removeSavedSearch.ts",
+      "lines": {
+        "from": 11,
+        "to": 16
+      }
+    }
+  },
+  {
+    "name": "removeSuccess",
+    "parameters": [
+      {
+        "name": "payload",
+        "type": "any"
+      }
+    ],
+    "returnType": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/constants\").RemoveSuccessAction",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/actions/removeSavedSearch.ts",
+      "lines": {
+        "from": 18,
+        "to": 23
+      }
+    }
+  },
+  {
+    "name": "removeFail",
+    "parameters": [
+      {
+        "name": "payload",
+        "type": "Error"
+      }
+    ],
+    "returnType": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/constants\").RemoveFailAction",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/actions/removeSavedSearch.ts",
+      "lines": {
+        "from": 25,
+        "to": 30
+      }
+    }
+  },
+  {
+    "name": "removeSavedSearch",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "number"
+      },
+      {
+        "name": "searchId",
+        "type": "number"
+      }
+    ],
+    "returnType": "(dispatch: import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/redux/index\").Dispatch<import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/redux/index\").AnyAction>, _: () => void, services: any) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/actions/removeSavedSearch.ts",
+      "lines": {
+        "from": 32,
+        "to": 47
+      }
+    }
+  },
+  {
+    "name": "SavedSearchesReducer",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "Readonly<{ list: any[]; loading: boolean; loaded: boolean; errors: {}[]; count: number; }>"
+      },
+      {
+        "name": "action",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/constants\").SavedSearchActions"
+      }
+    ],
+    "returnType": "Readonly<{ list: any[]; loading: boolean; loaded: boolean; errors: {}[]; count: number; }>",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/reducer/index.ts",
+      "lines": {
+        "from": 24,
+        "to": 51
+      }
+    }
+  },
+  {
+    "name": "getSavedSearches",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/reducer/index\").RootState"
+      }
+    ],
+    "returnType": "any[]",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/reducer/index.ts",
+      "lines": {
+        "from": 55,
+        "to": 55
+      }
+    }
+  },
+  {
+    "name": "getIsLoading",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/reducer/index\").RootState"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/reducer/index.ts",
+      "lines": {
+        "from": 56,
+        "to": 56
+      }
+    }
+  },
+  {
+    "name": "getIsLoaded",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/reducer/index\").RootState"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SavedSearches/reducer/index.ts",
+      "lines": {
+        "from": 57,
+        "to": 57
+      }
+    }
+  },
+  {
+    "name": "SearchListings",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SearchListings/components/SearchListings.tsx",
+      "lines": {
+        "from": 30,
+        "to": 77
+      }
+    }
+  },
+  {
+    "name": "validateForm",
+    "parameters": [
+      {
+        "name": "values",
+        "type": "Inputs"
+      },
+      {
+        "name": "t2",
+        "type": "any"
+      }
+    ],
+    "returnType": "Inputs",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SearchListings/helpers/index.ts",
+      "lines": {
+        "from": 8,
+        "to": 27
+      }
+    }
+  },
+  {
+    "name": "shouldConsiderField",
+    "parameters": [
+      {
+        "name": "field",
+        "type": "any"
+      },
+      {
+        "name": "fields",
+        "type": "any[]"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SearchListings/helpers/index.ts",
+      "lines": {
+        "from": 3,
+        "to": 6
+      }
+    }
+  },
+  {
+    "name": "shouldConsiderField",
+    "parameters": [
+      {
+        "name": "field",
+        "type": "any"
+      },
+      {
+        "name": "fields",
+        "type": "any[]"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SearchListings/helpers/shouldConsiderField.ts",
+      "lines": {
+        "from": 3,
+        "to": 6
+      }
+    }
+  },
+  {
+    "name": "validateForm",
+    "parameters": [
+      {
+        "name": "values",
+        "type": "Inputs"
+      },
+      {
+        "name": "t2",
+        "type": "any"
+      }
+    ],
+    "returnType": "Inputs",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SearchListings/helpers/validateForm.ts",
+      "lines": {
+        "from": 8,
+        "to": 27
+      }
+    }
+  },
+  {
+    "name": "getInitialValues",
+    "parameters": [
+      {
+        "name": "savedSearches",
+        "type": "any[]"
+      }
+    ],
+    "returnType": "InitialValues",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/SearchListings/selectors/getInitialValues.ts",
+      "lines": {
+        "from": 44,
+        "to": 47
+      }
+    }
+  },
+  {
+    "name": "urlLocationMiddleware",
+    "parameters": [],
+    "returnType": "() => (next: import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/redux/index\").Dispatch<import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/redux/index\").AnyAction>) => (action: Readonly<{ type: string; payload: { nextLocation: string; }; error: boolean; }>) => void",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/URLLocationHandler/middlewares/urlLocationMiddleware.ts",
+      "lines": {
+        "from": 13,
+        "to": 25
+      }
+    }
+  },
+  {
+    "name": "LayoutPage",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/AdyenPaymentResult/components/LayoutPage.tsx",
+      "lines": {
+        "from": 12,
+        "to": 25
+      }
+    }
+  },
+  {
+    "name": "BlogLandingBlockquote",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "{ children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Blog/components/BlogLandingBlockquote.tsx",
+      "lines": {
+        "from": 3,
+        "to": 9
+      }
+    }
+  },
+  {
+    "name": "BlogContent",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Blog/components/BlogLandingContent.tsx",
+      "lines": {
+        "from": 17,
+        "to": 46
+      }
+    }
+  },
+  {
+    "name": "CitiesCardContent",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Cities/components/CitiesCardContent.tsx",
+      "lines": {
+        "from": 11,
+        "to": 21
+      }
+    }
+  },
+  {
+    "name": "CityCategories",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Cities/components/CityCategories.tsx",
+      "lines": {
+        "from": 22,
+        "to": 108
+      }
+    }
+  },
+  {
+    "name": "CommunityCard",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Community/components/CommunityCard.tsx",
+      "lines": {
+        "from": 33,
+        "to": 112
+      }
+    }
+  },
+  {
+    "name": "ContactAdres",
+    "parameters": [],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Contact/components/ContactAdres.tsx",
+      "lines": {
+        "from": 3,
+        "to": 10
+      }
+    }
+  },
+  {
+    "name": "Favorites",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/FavoriteListings/components/CityFavorites.tsx",
+      "lines": {
+        "from": 11,
+        "to": 30
+      }
+    }
+  },
+  {
+    "name": "FavoritesEmptyState",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/FavoriteListings/components/EmptyState.tsx",
+      "lines": {
+        "from": 9,
+        "to": 19
+      }
+    }
+  },
+  {
+    "name": "Favorites",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/FavoriteListings/components/Favorites.tsx",
+      "lines": {
+        "from": 17,
+        "to": 47
+      }
+    }
+  },
+  {
+    "name": "Root",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/FavoriteListings/components/Root.tsx",
+      "lines": {
+        "from": 13,
+        "to": 20
+      }
+    }
+  },
+  {
+    "name": "normalizeListing",
+    "parameters": [
+      {
+        "name": "listing",
+        "type": "any"
+      }
+    ],
+    "returnType": "NormalizedListing",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/FavoriteListings/helpers/index.ts",
+      "lines": {
+        "from": 9,
+        "to": 22
+      }
+    }
+  },
+  {
+    "name": "normalizeListing",
+    "parameters": [
+      {
+        "name": "listing",
+        "type": "any"
+      }
+    ],
+    "returnType": "NormalizedListing",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/FavoriteListings/helpers/normalizeListing.ts",
+      "lines": {
+        "from": 9,
+        "to": 22
+      }
+    }
+  },
+  {
+    "name": "ApolloCards",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Home/components/ApolloCards.tsx",
+      "lines": {
+        "from": 13,
+        "to": 47
+      }
+    }
+  },
+  {
+    "name": "CitiesList",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Home/components/CitiesList.tsx",
+      "lines": {
+        "from": 14,
+        "to": 34
+      }
+    }
+  },
+  {
+    "name": "HomeHelmet",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Home/components/HomeHelmet.tsx",
+      "lines": {
+        "from": 16,
+        "to": 30
+      }
+    }
+  },
+  {
+    "name": "getBookings",
+    "parameters": [
+      {
+        "name": "bookings",
+        "type": "any[]"
+      },
+      {
+        "name": "currentUserId",
+        "type": "number"
+      }
+    ],
+    "returnType": "any[]",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Inbox/selectors/getBookings.ts",
+      "lines": {
+        "from": 9,
+        "to": 20
+      }
+    }
+  },
+  {
+    "name": "ListingBackToSearchLink",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listing/components/ListingBackToSearchLink.tsx",
+      "lines": {
+        "from": 11,
+        "to": 27
+      }
+    }
+  },
+  {
+    "name": "ListingStickyMobileButtons",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listing/components/ListingStickyMobileButtons.tsx",
+      "lines": {
+        "from": 16,
+        "to": 43
+      }
+    }
+  },
+  {
+    "name": "getMetaDescription",
+    "parameters": [
+      {
+        "name": "T",
+        "type": "any"
+      },
+      {
+        "name": "typeLabel",
+        "type": "string"
+      },
+      {
+        "name": "price",
+        "type": "string"
+      },
+      {
+        "name": "cityStreet",
+        "type": "string"
+      },
+      {
+        "name": "details",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listing/helpers/getMetaDescription.ts",
+      "lines": {
+        "from": 3,
+        "to": 17
+      }
+    }
+  },
+  {
+    "name": "getOgTitle",
+    "parameters": [
+      {
+        "name": "index",
+        "type": "number"
+      },
+      {
+        "name": "T",
+        "type": "any"
+      },
+      {
+        "name": "city",
+        "type": "string"
+      },
+      {
+        "name": "price",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listing/helpers/getOgTitle.ts",
+      "lines": {
+        "from": 5,
+        "to": 43
+      }
+    }
+  },
+  {
+    "name": "getPageTitle",
+    "parameters": [
+      {
+        "name": "T",
+        "type": "any"
+      },
+      {
+        "name": "typeLabel",
+        "type": "string"
+      },
+      {
+        "name": "cityStreet",
+        "type": "string"
+      },
+      {
+        "name": "id",
+        "type": "number"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listing/helpers/getPageTitle.ts",
+      "lines": {
+        "from": 3,
+        "to": 15
+      }
+    }
+  },
+  {
+    "parameters": [
+      {
+        "name": "T",
+        "type": "any"
+      },
+      {
+        "name": "status",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listing/helpers/getTenantStatusTitle.ts",
+      "lines": {
+        "from": 3,
+        "to": 14
+      }
+    }
+  },
+  {
+    "name": "ListingAvailabilityCalendars",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/ListingCalendar/components/ListingAvailabilityCalendars.tsx",
+      "lines": {
+        "from": 15,
+        "to": 39
+      }
+    }
+  },
+  {
+    "name": "updateListings",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "number"
+      },
+      {
+        "name": "filters",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/types\").Filters"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/actions/loadListings.ts",
+      "lines": {
+        "from": 65,
+        "to": 71
+      }
+    }
+  },
+  {
+    "name": "changeListingStatus",
+    "parameters": [
+      {
+        "name": "id",
+        "type": "number"
+      },
+      {
+        "name": "action",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/types\").ListingAction"
+      },
+      {
+        "name": "t3",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/actions/loadListings.ts",
+      "lines": {
+        "from": 73,
+        "to": 104
+      }
+    }
+  },
+  {
+    "name": "loadListings",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "number"
+      },
+      {
+        "name": "filters",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/types\").Filters"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/actions/loadListings.ts",
+      "lines": {
+        "from": 39,
+        "to": 63
+      }
+    }
+  },
+  {
+    "name": "loadListingsSummary",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "number"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/actions/loadListingsSummary.ts",
+      "lines": {
+        "from": 25,
+        "to": 38
+      }
+    }
+  },
+  {
+    "name": "updateFilters",
+    "parameters": [
+      {
+        "name": "filters",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/types\").Filters"
+      }
+    ],
+    "returnType": "Readonly<{ type: ActionTypes; meta: Meta; error: boolean; }>",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/actions/updateFilters.ts",
+      "lines": {
+        "from": 14,
+        "to": 23
+      }
+    }
+  },
+  {
+    "name": "ListingsPage",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/containers/Page.tsx",
+      "lines": {
+        "from": 17,
+        "to": 27
+      }
+    }
+  },
+  {
+    "name": "getCitiesOptions",
+    "parameters": [
+      {
+        "name": "cities",
+        "type": "any[]"
+      },
+      {
+        "name": "T",
+        "type": "any"
+      }
+    ],
+    "returnType": "{ title: any; value: any; text: any; }[]",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/helpers/getCitiesOptions.ts",
+      "lines": {
+        "from": 4,
+        "to": 9
+      }
+    }
+  },
+  {
+    "name": "getDefaultCityOption",
+    "parameters": [
+      {
+        "name": "total",
+        "type": "number"
+      },
+      {
+        "name": "T",
+        "type": "any"
+      }
+    ],
+    "returnType": "{ title: any; text: any; value: any; }",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/helpers/getDefaultCityOption.ts",
+      "lines": {
+        "from": 3,
+        "to": 7
+      }
+    }
+  },
+  {
+    "name": "getCitiesOptions",
+    "parameters": [
+      {
+        "name": "cities",
+        "type": "any[]"
+      },
+      {
+        "name": "T",
+        "type": "any"
+      }
+    ],
+    "returnType": "{ title: any; value: any; text: any; }[]",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/helpers/index.ts",
+      "lines": {
+        "from": 4,
+        "to": 9
+      }
+    }
+  },
+  {
+    "name": "getDefaultCityOption",
+    "parameters": [
+      {
+        "name": "total",
+        "type": "number"
+      },
+      {
+        "name": "T",
+        "type": "any"
+      }
+    ],
+    "returnType": "{ title: any; text: any; value: any; }",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/helpers/index.ts",
+      "lines": {
+        "from": 3,
+        "to": 7
+      }
+    }
+  },
+  {
+    "name": "getError",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/types\").RootState"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/selectors/index.ts",
+      "lines": {
+        "from": 6,
+        "to": 7
+      }
+    }
+  },
+  {
+    "name": "getListings",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/types\").RootState"
+      }
+    ],
+    "returnType": "any[]",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/selectors/index.ts",
+      "lines": {
+        "from": 9,
+        "to": 10
+      }
+    }
+  },
+  {
+    "name": "getListingsCount",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/types\").RootState"
+      }
+    ],
+    "returnType": "number",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/selectors/index.ts",
+      "lines": {
+        "from": 12,
+        "to": 13
+      }
+    }
+  },
+  {
+    "name": "getTotalListingsCount",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/types\").RootState"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/selectors/index.ts",
+      "lines": {
+        "from": 15,
+        "to": 19
+      }
+    }
+  },
+  {
+    "name": "isLoading",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/types\").RootState"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/selectors/index.ts",
+      "lines": {
+        "from": 21,
+        "to": 22
+      }
+    }
+  },
+  {
+    "name": "getSummary",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/types\").RootState"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/selectors/index.ts",
+      "lines": {
+        "from": 24,
+        "to": 25
+      }
+    }
+  },
+  {
+    "name": "getPagerProps",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/types\").RootState"
+      },
+      {
+        "name": "page",
+        "type": "number"
+      }
+    ],
+    "returnType": "{ pager: { total: number; offset: number; quantity: number; }; pagerData: any; }",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/selectors/index.ts",
+      "lines": {
+        "from": 27,
+        "to": 36
+      }
+    }
+  },
+  {
+    "name": "isListingPending",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/types\").RootState"
+      },
+      {
+        "name": "id",
+        "type": "number"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Listings/selectors/index.ts",
+      "lines": {
+        "from": 38,
+        "to": 41
+      }
+    }
+  },
+  {
+    "name": "ListingsSlider",
+    "parameters": [
+      {
+        "name": "props",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/ListYourPlace/components/NumberOfRoomsSlider.tsx",
+      "lines": {
+        "from": 17,
+        "to": 24
+      }
+    }
+  },
+  {
+    "name": "WhyUseHousingAnywhere",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/ListYourPlace/components/WhyUseHousingAnywhere.tsx",
+      "lines": {
+        "from": 10,
+        "to": 49
+      }
+    }
+  },
+  {
+    "name": "PartnerBalance",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PartnerDashboard/components/PartnerBalance.tsx",
+      "lines": {
+        "from": 7,
+        "to": 17
+      }
+    }
+  },
+  {
+    "name": "PartnerClicksTable",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PartnerDashboard/components/PartnerClicksTable.tsx",
+      "lines": {
+        "from": 13,
+        "to": 55
+      }
+    }
+  },
+  {
+    "name": "PartnerLayout",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PartnerDashboard/components/PartnerLayout.tsx",
+      "lines": {
+        "from": 34,
+        "to": 82
+      }
+    }
+  },
+  {
+    "name": "generateAndRegisterClick",
+    "parameters": [
+      {
+        "name": "listingId",
+        "type": "number"
+      },
+      {
+        "name": "partnerClickData",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PartnerRedirect/actions/generateAndRegisterClick.ts",
+      "lines": {
+        "from": 27,
+        "to": 50
+      }
+    }
+  },
+  {
+    "name": "getRedirectUrl",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PartnerRedirect/types\").RootState"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PartnerRedirect/selectors/index.ts",
+      "lines": {
+        "from": 4,
+        "to": 4
+      }
+    }
+  },
+  {
+    "name": "CardWithAvatar",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PaymentRequests/components/CardWithAvatar.tsx",
+      "lines": {
+        "from": 9,
+        "to": 18
+      }
+    }
+  },
+  {
+    "name": "loadPayouts",
+    "parameters": [],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PayoutsHistory/actions/index.ts",
+      "lines": {
+        "from": 43,
+        "to": 54
+      }
+    }
+  },
+  {
+    "name": "loadPayouts",
+    "parameters": [],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PayoutsHistory/actions/loadTransactions.ts",
+      "lines": {
+        "from": 43,
+        "to": 54
+      }
+    }
+  },
+  {
+    "name": "getCompletedTransactions",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PayoutsHistory/types\").RootState"
+      }
+    ],
+    "returnType": "any[]",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PayoutsHistory/selectors/index.ts",
+      "lines": {
+        "from": 3,
+        "to": 4
+      }
+    }
+  },
+  {
+    "name": "getUpcomingTransactions",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PayoutsHistory/types\").RootState"
+      }
+    ],
+    "returnType": "any[]",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PayoutsHistory/selectors/index.ts",
+      "lines": {
+        "from": 6,
+        "to": 7
+      }
+    }
+  },
+  {
+    "name": "isLoadingTransactions",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PayoutsHistory/types\").RootState"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PayoutsHistory/selectors/index.ts",
+      "lines": {
+        "from": 9,
+        "to": 11
+      }
+    }
+  },
+  {
+    "name": "hasTransactions",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PayoutsHistory/types\").RootState"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PayoutsHistory/selectors/index.ts",
+      "lines": {
+        "from": 13,
+        "to": 15
+      }
+    }
+  },
+  {
+    "name": "showMessage",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PayoutsHistory/types\").RootState"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PayoutsHistory/selectors/index.ts",
+      "lines": {
+        "from": 17,
+        "to": 18
+      }
+    }
+  },
+  {
+    "name": "ProcessingInfoList",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/PayoutsPreferences/components/ProcessingInfoList.tsx",
+      "lines": {
+        "from": 8,
+        "to": 19
+      }
+    }
+  },
+  {
+    "name": "ReservationFilterItem",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Reservations/components/ReservationFilterItem.tsx",
+      "lines": {
+        "from": 15,
+        "to": 37
+      }
+    }
+  },
+  {
+    "name": "MobileMap",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/MobileMap.tsx",
+      "lines": {
+        "from": 12,
+        "to": 31
+      }
+    }
+  },
+  {
+    "name": "SearchAdvertiserTitle",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchAdvertiserTitle.tsx",
+      "lines": {
+        "from": 18,
+        "to": 45
+      }
+    }
+  },
+  {
+    "name": "SearchCategories",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchCategories.tsx",
+      "lines": {
+        "from": 28,
+        "to": 146
+      }
+    }
+  },
+  {
+    "name": "SearchCitiesNearby",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchCitiesNearby.tsx",
+      "lines": {
+        "from": 16,
+        "to": 42
+      }
+    }
+  },
+  {
+    "name": "SearchCollectionSubtitle",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchCollectionSubtitle.tsx",
+      "lines": {
+        "from": 10,
+        "to": 75
+      }
+    }
+  },
+  {
+    "name": "SearchLayoutOverrides",
+    "parameters": [],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchLayoutOverrides.tsx",
+      "lines": {
+        "from": 6,
+        "to": 24
+      }
+    }
+  },
+  {
+    "name": "SearchLocationTitle",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchLocationTitle.tsx",
+      "lines": {
+        "from": 13,
+        "to": 64
+      }
+    }
+  },
+  {
+    "name": "SearchMeta",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchMeta.tsx",
+      "lines": {
+        "from": 17,
+        "to": 180
+      }
+    }
+  },
+  {
+    "name": "SearchOverview",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchOverview.tsx",
+      "lines": {
+        "from": 35,
+        "to": 151
+      }
+    }
+  },
+  {
+    "name": "SearchPageBreadcrumbs",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchPageBreadcrumbs.tsx",
+      "lines": {
+        "from": 20,
+        "to": 93
+      }
+    }
+  },
+  {
+    "name": "SearchPageCrawl",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchPageCrawl.tsx",
+      "lines": {
+        "from": 22,
+        "to": 95
+      }
+    }
+  },
+  {
+    "name": "SearchResultsLoader",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchResultsLoader.tsx",
+      "lines": {
+        "from": 9,
+        "to": 10
+      }
+    }
+  },
+  {
+    "name": "pickRelevantKeys",
+    "parameters": [
+      {
+        "name": "alert",
+        "type": "any"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/utils/areSearchAlertsEqual.ts",
+      "lines": {
+        "from": 9,
+        "to": 13
+      }
+    }
+  },
+  {
+    "name": "areDatesEqual",
+    "parameters": [
+      {
+        "name": "d1",
+        "type": "string"
+      },
+      {
+        "name": "d2",
+        "type": "string"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/utils/areSearchAlertsEqual.ts",
+      "lines": {
+        "from": 15,
+        "to": 27
+      }
+    }
+  },
+  {
+    "name": "areKindsEqual",
+    "parameters": [
+      {
+        "name": "kinds1",
+        "type": "string[]"
+      },
+      {
+        "name": "kinds2",
+        "type": "string[]"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/utils/areSearchAlertsEqual.ts",
+      "lines": {
+        "from": 29,
+        "to": 42
+      }
+    }
+  },
+  {
+    "name": "collectionToFilters",
+    "parameters": [
+      {
+        "name": "translatedCollection",
+        "type": "string"
+      },
+      {
+        "name": "stats",
+        "type": "CollectionStats"
+      }
+    ],
+    "returnType": "object",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/utils/collectionToFilters.ts",
+      "lines": {
+        "from": 53,
+        "to": 64
+      }
+    }
+  },
+  {
+    "name": "collectionToFilters",
+    "parameters": [
+      {
+        "name": "translatedCollection",
+        "type": "string"
+      },
+      {
+        "name": "stats",
+        "type": "CollectionStats"
+      }
+    ],
+    "returnType": "object",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/utils/index.ts",
+      "lines": {
+        "from": 53,
+        "to": 64
+      }
+    }
+  },
+  {
+    "name": "normalizeCoordinate",
+    "parameters": [
+      {
+        "name": "coordinate",
+        "type": "number"
+      }
+    ],
+    "returnType": "number",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/utils/normalizeCoordinate.ts",
+      "lines": {
+        "from": 5,
+        "to": 14
+      }
+    }
+  },
+  {
+    "parameters": [
+      {
+        "name": "pathname",
+        "type": "string"
+      }
+    ],
+    "returnType": "{ city: string; country: string; collection: string; }",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/utils/parseSearchPathname.ts",
+      "lines": {
+        "from": 1,
+        "to": 11
+      }
+    }
+  },
+  {
+    "name": "removeSearchAlert",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "number"
+      },
+      {
+        "name": "searchAlertId",
+        "type": "number"
+      }
+    ],
+    "returnType": "(dispatch: any, _: any, { apiV2 }: { apiV2: any; }) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/SearchAlertsUnsubscribe/actions/index.ts",
+      "lines": {
+        "from": 22,
+        "to": 40
+      }
+    }
+  },
+  {
+    "name": "removeSearchAlert",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "number"
+      },
+      {
+        "name": "searchAlertId",
+        "type": "number"
+      }
+    ],
+    "returnType": "(dispatch: any, _: any, { apiV2 }: { apiV2: any; }) => any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/SearchAlertsUnsubscribe/actions/removeSearchAlert.ts",
+      "lines": {
+        "from": 22,
+        "to": 40
+      }
+    }
+  },
+  {
+    "name": "getIsLoading",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/SearchAlertsUnsubscribe/Types\").RootState"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/SearchAlertsUnsubscribe/selectors/index.ts",
+      "lines": {
+        "from": 5,
+        "to": 6
+      }
+    }
+  },
+  {
+    "name": "getIsError",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/SearchAlertsUnsubscribe/Types\").RootState"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/SearchAlertsUnsubscribe/selectors/index.ts",
+      "lines": {
+        "from": 8,
+        "to": 9
+      }
+    }
+  },
+  {
+    "name": "getSearchAlert",
+    "parameters": [
+      {
+        "name": "state",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/SearchAlertsUnsubscribe/Types\").RootState"
+      }
+    ],
+    "returnType": "any",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/SearchAlertsUnsubscribe/selectors/index.ts",
+      "lines": {
+        "from": 11,
+        "to": 12
+      }
+    }
+  },
+  {
+    "name": "Benefit",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/SupplyLanding/components/Benefit.tsx",
+      "lines": {
+        "from": 10,
+        "to": 16
+      }
+    }
+  },
+  {
+    "name": "SupplyLandingPage",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/SupplyLanding/components/SupplyLandingPage.tsx",
+      "lines": {
+        "from": 28,
+        "to": 72
+      }
+    }
+  },
+  {
+    "name": "SupplyPageIcon",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/SupplyLanding/components/SupplyPageIcon.tsx",
+      "lines": {
+        "from": 9,
+        "to": 14
+      }
+    }
+  },
+  {
+    "name": "Testimonial",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/SupplyLanding/components/Testimonial\").Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/SupplyLanding/components/Testimonial.tsx",
+      "lines": {
+        "from": 14,
+        "to": 37
+      }
+    }
+  },
+  {
+    "name": "ProcessIndicator",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Talk/components/ProcessIndicator.tsx",
+      "lines": {
+        "from": 13,
+        "to": 41
+      }
+    }
+  },
+  {
+    "name": "formatStayPeriod",
+    "parameters": [
+      {
+        "name": "startDate",
+        "type": "string"
+      },
+      {
+        "name": "endDate",
+        "type": "string"
+      },
+      {
+        "name": "formatters",
+        "type": "Formatters"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Talk/helpers/formatStayPeriod.ts",
+      "lines": {
+        "from": 14,
+        "to": 31
+      }
+    }
+  },
+  {
+    "name": "getHasUnreadMessage",
+    "parameters": [
+      {
+        "name": "messages",
+        "type": "any[]"
+      },
+      {
+        "name": "userId",
+        "type": "number"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Talk/selectors/getHasUnreadMessage.ts",
+      "lines": {
+        "from": 6,
+        "to": 7
+      }
+    }
+  },
+  {
+    "name": "UserPageHelmet",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/UserPage/components/UserPageHelmet.tsx",
+      "lines": {
+        "from": 9,
+        "to": 13
+      }
+    }
+  },
+  {
+    "name": "UserPageLayout",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/UserPage/components/UserPageLayout.tsx",
+      "lines": {
+        "from": 17,
+        "to": 62
+      }
+    }
+  },
+  {
+    "name": "getHasListings",
+    "parameters": [
+      {
+        "name": "pageInfo",
+        "type": "{ total: number; }"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/UserPage/selectors/getHasListings.ts",
+      "lines": {
+        "from": 4,
+        "to": 5
+      }
+    }
+  },
+  {
+    "name": "getIsCurrentUser",
+    "parameters": [
+      {
+        "name": "isAuthenticated",
+        "type": "boolean"
+      },
+      {
+        "name": "currentUserID",
+        "type": "number"
+      },
+      {
+        "name": "user",
+        "type": "any"
+      }
+    ],
+    "returnType": "boolean",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/UserPage/selectors/getIsCurrentUser.ts",
+      "lines": {
+        "from": 9,
+        "to": 13
+      }
+    }
+  },
+  {
+    "name": "getBirthDays",
+    "parameters": [
+      {
+        "name": "T",
+        "type": "any"
+      }
+    ],
+    "returnType": "any[]",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/DateOfBirth/helpers/getBirthDays.ts",
+      "lines": {
+        "from": 6,
+        "to": 16
+      }
+    }
+  },
+  {
+    "name": "getBirthMonths",
+    "parameters": [
+      {
+        "name": "T",
+        "type": "any"
+      },
+      {
+        "name": "formatDate",
+        "type": "any"
+      }
+    ],
+    "returnType": "any[]",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/DateOfBirth/helpers/getBirthMonths.ts",
+      "lines": {
+        "from": 7,
+        "to": 20
+      }
+    }
+  },
+  {
+    "name": "getBirthYears",
+    "parameters": [
+      {
+        "name": "T",
+        "type": "any"
+      }
+    ],
+    "returnType": "any[]",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/DateOfBirth/helpers/getBirthYears.ts",
+      "lines": {
+        "from": 9,
+        "to": 25
+      }
+    }
+  },
+  {
+    "name": "styles",
+    "parameters": [
+      {
+        "name": "theme",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/@material-ui/core/styles/createMuiTheme\").Theme"
+      }
+    ],
+    "returnType": "Record<import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/next/Alert/index\").AlertType | \"alert\" | \"iconVariant\" | \"message\", import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/@material-ui/core/styles/withStyles\").CSSProperties>",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/next/Alert/index.tsx",
+      "lines": {
+        "from": 31,
+        "to": 57
+      }
+    }
+  },
+  {
+    "name": "Alert",
+    "parameters": [
+      {
+        "name": "props",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/next/Alert/index.tsx",
+      "lines": {
+        "from": 66,
+        "to": 95
+      }
+    }
+  },
+  {
+    "name": "Col",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/next/Col/index.tsx",
+      "lines": {
+        "from": 10,
+        "to": 14
+      }
+    }
+  },
+  {
+    "name": "styles",
+    "parameters": [
+      {
+        "name": "theme",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/@material-ui/core/styles/createMuiTheme\").Theme"
+      }
+    ],
+    "returnType": "Record<\"default\" | \"mobileMap\" | \"whiteBg\", import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/@material-ui/core/styles/withStyles\").CSSProperties>",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/next/Modal/CloseBtn.tsx",
+      "lines": {
+        "from": 8,
+        "to": 23
+      }
+    }
+  },
+  {
+    "name": "ModalNext",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/@material-ui/core/Modal/Modal\").ModalProps & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/next/Modal/Modal.tsx",
+      "lines": {
+        "from": 4,
+        "to": 8
+      }
+    }
+  },
+  {
+    "name": "styles",
+    "parameters": [
+      {
+        "name": "theme",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/@material-ui/core/styles/createMuiTheme\").Theme"
+      }
+    ],
+    "returnType": "Record<\"wrapper\" | \"narrow\", import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/@material-ui/core/styles/withStyles\").CSSProperties>",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/next/Modal/SimpleModal.tsx",
+      "lines": {
+        "from": 8,
+        "to": 40
+      }
+    }
+  },
+  {
+    "name": "Row",
+    "parameters": [
+      {
+        "name": "props",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/next/Row/index.tsx",
+      "lines": {
+        "from": 10,
+        "to": 12
+      }
+    }
+  },
+  {
+    "name": "Select",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/next/Select/Select.tsx",
+      "lines": {
+        "from": 26,
+        "to": 54
+      }
+    }
+  },
+  {
+    "name": "styles",
+    "parameters": [],
+    "returnType": "Record<\"textfield\" | \"container\" | \"group\" | \"circleSpinner\" | \"linearSpinner\" | \"linearSpinner2\" | \"containerCentered\" | \"paper\" | \"cardMedia\" | \"paddingX\", import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/@material-ui/core/styles/withStyles\").CSSProperties>",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/next/showcase/styles.ts",
+      "lines": {
+        "from": 3,
+        "to": 49
+      }
+    }
+  },
+  {
+    "name": "UserAvatar",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/node_modules/@material-ui/core/Avatar/Avatar\").AvatarProps & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/ui/next/UserAvatar/index.tsx",
+      "lines": {
+        "from": 29,
+        "to": 31
+      }
+    }
+  },
+  {
+    "name": "SearchAlertConfirmation",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchAlerts/SearchAlertConfirmation.tsx",
+      "lines": {
+        "from": 10,
+        "to": 29
+      }
+    }
+  },
+  {
+    "name": "SearchAlertDesktop",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchAlerts/SearchAlertDesktop.tsx",
+      "lines": {
+        "from": 14,
+        "to": 37
+      }
+    }
+  },
+  {
+    "name": "SearchAlertMobile",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchAlerts/SearchAlertMobile.tsx",
+      "lines": {
+        "from": 11,
+        "to": 26
+      }
+    }
+  },
+  {
+    "name": "SearchAlertMobileTitle",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchAlerts/SearchAlertMobileTitle.tsx",
+      "lines": {
+        "from": 10,
+        "to": 17
+      }
+    }
+  },
+  {
+    "name": "SearchMapPreviewControls",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchMapPreview/SearchMapPreviewControls.tsx",
+      "lines": {
+        "from": 18,
+        "to": 51
+      }
+    }
+  },
+  {
+    "name": "PartnerMarker",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & Partial<import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchMarkers/Types\").MapProps> & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchMarkers/PartnerMarker.tsx",
+      "lines": {
+        "from": 42,
+        "to": 60
+      }
+    }
+  },
+  {
+    "name": "PartnerPreview",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchMarkers/PartnerPreview.tsx",
+      "lines": {
+        "from": 10,
+        "to": 20
+      }
+    }
+  },
+  {
+    "name": "Pin",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchMarkers/Pin.tsx",
+      "lines": {
+        "from": 26,
+        "to": 70
+      }
+    }
+  },
+  {
+    "name": "RoomMarker",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "Props & Partial<import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchMarkers/Types\").MapProps> & { children?: React.ReactNode; }"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Search/components/SearchMarkers/RoomMarker.tsx",
+      "lines": {
+        "from": 35,
+        "to": 73
+      }
+    }
+  },
+  {
+    "name": "ContactStateBlock",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "any"
+      }
+    ],
+    "returnType": "JSX.Element",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/pages/Talk/components/TenantStateBlocks/ContactStateBlock.tsx",
+      "lines": {
+        "from": 24,
+        "to": 79
+      }
+    }
+  },
+  {
+    "name": "advertiserBuilder",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/Types\").Params"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/builders/advertiserBuilder.ts",
+      "lines": {
+        "from": 3,
+        "to": 9
+      }
+    }
+  },
+  {
+    "name": "billsBuilder",
+    "parameters": [
+      {
+        "name": "params",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/Types\").Params"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/builders/billsBuilder.ts",
+      "lines": {
+        "from": 12,
+        "to": 27
+      }
+    }
+  },
+  {
+    "name": "creationDateTSBuilder",
+    "parameters": [
+      {
+        "name": "params",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/Types\").Params"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/builders/creationDateTSBuilder.ts",
+      "lines": {
+        "from": 4,
+        "to": 22
+      }
+    }
+  },
+  {
+    "name": "dateFromTSBuilder",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/Types\").Params"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/builders/dateFromTSBuilder.ts",
+      "lines": {
+        "from": 59,
+        "to": 72
+      }
+    }
+  },
+  {
+    "name": "dateToTSBuilder",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/Types\").Params"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/builders/dateToTSBuilder.ts",
+      "lines": {
+        "from": 5,
+        "to": 30
+      }
+    }
+  },
+  {
+    "name": "furnitureBuilder",
+    "parameters": [
+      {
+        "name": "params",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/Types\").Params"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/builders/furnitureBuilder.ts",
+      "lines": {
+        "from": 5,
+        "to": 19
+      }
+    }
+  },
+  {
+    "name": "genderBuilder",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/Types\").Params"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/builders/genderBuilder.ts",
+      "lines": {
+        "from": 5,
+        "to": 17
+      }
+    }
+  },
+  {
+    "name": "isSearchableBuilder",
+    "parameters": [],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/builders/isSearchableBuilder.ts",
+      "lines": {
+        "from": 3,
+        "to": 3
+      }
+    }
+  },
+  {
+    "name": "kindAndTypeBuilder",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/Types\").Params"
+      }
+    ],
+    "returnType": "\"\" | \"kind:PRIVATE_ROOM\" | \"kind:SHARED_ROOM\" | \"kind:ENTIRE_PLACE AND type:APARTMENT AND NOT facility_bedroom_count:0\" | \"facility_bedroom_count:0\" | \"(NOT facility_bedroom_count:0 AND NOT kind:SHARED_ROOM)\" | \"NOT facility_bedroom_count:0 AND NOT kind:PRIVATE_ROOM\" | \"NOT kind:PRIVATE_ROOM AND NOT kind:SHARED_ROOM\" | \"(kind:PRIVATE_ROOM OR facility_bedroom_count:0)\" | \"(kind:SHARED_ROOM OR facility_bedroom_count:0)\" | \"(kind:SHARED_ROOM OR kind:PRIVATE_ROOM)\" | \"(kind:PRIVATE_ROOM OR kind:SHARED_ROOM OR facility_bedroom_count:0)\" | \"NOT kind:PRIVATE_ROOM\" | \"NOT kind:SHARED_ROOM\" | \"NOT facility_bedroom_count:0\"",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/builders/kindAndTypeBuilder.ts",
+      "lines": {
+        "from": 5,
+        "to": 84
+      }
+    }
+  },
+  {
+    "name": "minimumStayMonthsBuilder",
+    "parameters": [
+      {
+        "name": "params",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/Types\").Params"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/builders/minimumStayMonthsBuilder.ts",
+      "lines": {
+        "from": 4,
+        "to": 8
+      }
+    }
+  },
+  {
+    "name": "priceEURBuilder",
+    "parameters": [
+      {
+        "name": "params",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/Types\").Params"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/builders/priceEURBuilder.ts",
+      "lines": {
+        "from": 3,
+        "to": 12
+      }
+    }
+  },
+  {
+    "name": "registrationBuilder",
+    "parameters": [
+      {
+        "name": "params",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/Types\").Params"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/builders/registrationBuilder.ts",
+      "lines": {
+        "from": 5,
+        "to": 19
+      }
+    }
+  },
+  {
+    "name": "roomsBuilder",
+    "parameters": [
+      {
+        "name": "params",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/Types\").Params"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/builders/roomsBuilder.ts",
+      "lines": {
+        "from": 5,
+        "to": 21
+      }
+    }
+  },
+  {
+    "name": "rulesBuilder",
+    "parameters": [
+      {
+        "name": "t1",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/Types\").Params"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/builders/rulesBuilder.ts",
+      "lines": {
+        "from": 5,
+        "to": 37
+      }
+    }
+  },
+  {
+    "name": "suitableForBuilder",
+    "parameters": [
+      {
+        "name": "params",
+        "type": "import(\"/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/Types\").Params"
+      }
+    ],
+    "returnType": "string",
+    "location": {
+      "path": "/home/gillchristian/dev/go/src/github.com/housinganywhere/ha/static/js/modules/Algolia/utils/filterBuilder/builders/suitableForBuilder.ts",
+      "lines": {
+        "from": 5,
+        "to": 31
+      }
+    }
+  }
+]

@@ -1,9 +1,9 @@
-interface Success<Data> {
+export interface Success<Data> {
   readonly _type: 'success'
   readonly data: Data
 }
 
-interface Failure {
+export interface Failure {
   readonly _type: 'failure'
   readonly msg: string
 }
