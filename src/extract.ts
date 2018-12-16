@@ -6,24 +6,24 @@ import {
   FunctionDeclaration,
   VariableDeclaration,
   ParameterDeclaration,
-} from 'ts-simple-ast';
+} from 'ts-simple-ast'
 
 interface Param {
-  name?: string;
-  type: string;
+  name?: string
+  type: string
 }
 
 interface FunctionRecord {
-  name?: string;
-  parameters: Param[];
-  returnType: string;
+  name?: string
+  parameters: Param[]
+  returnType: string
   location: {
-    path: string;
+    path: string
     lines: {
-      from: number;
-      to: number;
-    };
-  };
+      from: number
+      to: number
+    }
+  }
 }
 
 export default function findFunctions(
@@ -34,32 +34,32 @@ export default function findFunctions(
     ...options,
     addFilesFromTsConfig: false,
     skipFileDependencyResolution: true,
-  });
+  })
 
-  project.addExistingSourceFiles(fileNames);
+  project.addExistingSourceFiles(fileNames)
 
   return project
     .getSourceFiles()
     .map(file => {
-      const path = file.getFilePath();
+      const path = file.getFilePath()
 
       return file.getExportedDeclarations().map(exp => {
         if (TypeGuards.isFunctionDeclaration(exp)) {
-          return functionDeclaration(exp, path);
+          return functionDeclaration(exp, path)
         }
 
         if (TypeGuards.isVariableDeclaration(exp)) {
-          return arrowFunction(exp, path);
+          return arrowFunction(exp, path)
         }
 
-        return undefined;
-      });
+        return undefined
+      })
     })
     .reduce((acc, cur) => {
-      acc.push(...cur);
-      return acc;
+      acc.push(...cur)
+      return acc
     }, [])
-    .filter((v): v is FunctionRecord => Boolean(v));
+    .filter((v): v is FunctionRecord => Boolean(v))
 }
 
 function functionDeclaration(
@@ -77,17 +77,17 @@ function functionDeclaration(
         to: node.getEndLineNumber(),
       },
     },
-  };
+  }
 }
 
 function arrowFunction(
   node: VariableDeclaration,
   path: string,
 ): FunctionRecord | undefined {
-  const [arrow] = node.getChildrenOfKind(ts.SyntaxKind.ArrowFunction);
+  const [arrow] = node.getChildrenOfKind(ts.SyntaxKind.ArrowFunction)
 
   if (!arrow) {
-    return undefined;
+    return undefined
   }
 
   return {
@@ -101,19 +101,19 @@ function arrowFunction(
         to: node.getEndLineNumber(),
       },
     },
-  };
+  }
 }
 
 function parameterDeclaration(param: ParameterDeclaration, index: number) {
-  let name;
+  let name
   try {
-    name = param.getName() || `param${index + 1}`;
+    name = param.getName() || `param${index + 1}`
   } catch (e) {
-    name = `param${index + 1}`;
+    name = `param${index + 1}`
   }
 
   return {
     name,
     type: param.getType().getText(),
-  };
+  }
 }

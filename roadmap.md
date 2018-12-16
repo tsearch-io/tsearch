@@ -15,7 +15,7 @@
 ## v1
 
 - Extractor/Indexer
-  - Project compiler options 
+  - Project compiler options
   - Follow node_modules
   - Better types (i.e. resolve imports)
     - Resolve imports

@@ -21,8 +21,5 @@
     "moduleResolution": "node",
     "esModuleInterop": true
   },
-  "exclude": [
-    "test",
-    "build"
-  ]
+  "exclude": ["test", "build", "app"]
 }
