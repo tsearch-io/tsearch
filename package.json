@@ -1,9 +1,17 @@
 {
   "scripts": {
-    "format": "prettier --write '**/*.{ts,tsx,js,jsx,json,md}'"
+    "format": "prettier --write '**/*.{ts,tsx,js,jsx,json,md}'",
+    "app:b": "cd app && yarn && yarn build",
+    "server:b": "cd server && yarn && yarn build",
+    "cli:b": "cd cli && yarn && yarn build",
+    "build": "yarn app:b && yarn server:b & yarn cli:b"
   },
   "devDependencies": {
     "prettier": "^1.15.3",
     "pretty-quick": "^1.8.0"
-  }
+  },
+  "dependencies": {
+    "lerna": "^3.6.0"
+  },
+  "name": "ts-earch"
 }

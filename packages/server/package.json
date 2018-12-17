@@ -1,10 +1,11 @@
 {
-  "name": "server",
+  "name": "ts-earch-server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "build/index.js",
   "license": "MIT",
   "scripts": {
     "watch": "tsc -w -p .",
+    "build": "tsc -p .",
     "dev": "nodemon build"
   },
   "dependencies": {

@@ -1,7 +1,8 @@
 {
+  "name": "ts-earch-cli",
   "scripts": {
-    "format": "prettier --write '**/*.{ts,tsx,js,jsx,json,md}'",
-    "watch": "tsc -w -p ."
+    "watch": "tsc -w -p .",
+    "build": "tsc -p ."
   },
   "dependencies": {
     "@types/mkdirp": "^0.5.2",
