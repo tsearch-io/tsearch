@@ -1,52 +1,31 @@
-import fs from 'fs'
 import path from 'path'
-import { promisify } from 'util'
 
 import express, { Router } from 'express'
 
-import { FunctionRecord } from './models/tSearch'
-import { searchFunctions } from './search/index'
+import { getTypes, getTypesSync } from './utils'
+import { matchesQuery } from './search/index'
 
-interface Query {
-  query: string
-}
-
-const readFile = promisify(fs.readFile)
-
-// TODO: this should be configurable
+// TODO: get from config
 const p = path.join(__dirname, '../../cli/.ts-search/functions.json')
-
-let data: FunctionRecord[] = []
-
-const loadDataSync = () => {
-  const fileContent = fs.readFileSync(p, 'utf-8')
-
-  data = JSON.parse(fileContent)
-}
-
-const loadData: () => Promise<void> = () =>
-  readFile(p, 'utf-8').then(fileContent => {
-    data = JSON.parse(fileContent)
-  })
-
-loadDataSync()
+let types = getTypesSync(p)
 
 const app = express()
 const router = Router()
 
 router.get('/', (req, res) => {
-  const { query } = req.query as Query
-  const matcher = searchFunctions(query)
-
-  const result = data.filter(matcher)
+  const result = types.filter(matchesQuery(req.query.query))
 
   res.json(result)
 })
 
 router.get('/reload', (req, res) => {
-  loadData()
-    .then(() => res.send(200))
-    .catch(() => res.send(500))
+  getTypes(p).fork(
+    () => res.send(500),
+    result => {
+      types = result
+      res.send(200)
+    },
+  )
 })
 
 app.use('/search', router)

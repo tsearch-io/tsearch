@@ -2,6 +2,18 @@
 # yarn lockfile v1
 
 
+"@ts-task/fs@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@ts-task/fs/-/fs-1.0.1.tgz#d6dd998dd34a48d4727ca9d746c6929a89237e11"
+  integrity sha512-T0sX2dSTSAgYVzgJuXucyr5oeSj75iO/Xc9H1h0QoIWDmOjYZ09hGeR2bcSt8tfohUuBgGv5qkeuLtbL4Rp8cQ==
+  dependencies:
+    "@ts-task/task" "^1.0.1"
+
+"@ts-task/task@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@ts-task/task/-/task-1.0.1.tgz#e5a2c09c031ac674a16f14bb89a21fff8f39392c"
+  integrity sha512-fzg6pl3nJURSU3Whge8F76BGEvVi0vvkLWAjJuQZfprxn30IKAlXL/cKeyC+gCi2vsmzbjgiMSYWVxI72xLjTw==
+
 "@types/body-parser@*", "@types/body-parser@^1.17.0":
   version "1.17.0"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.17.0.tgz#9f5c9d9bd04bb54be32d5eb9fc0d8c974e6cf58c"
