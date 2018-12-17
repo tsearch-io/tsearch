@@ -18,13 +18,15 @@ const results = extractFunctions(fileNames, {
   },
 })
 
-const dir = path.join(__dirname, '../.ts-search')
+const dir = path.join(__dirname, '../.ts-earch')
 
 mkdirp(dir)
   .then(() => {
-    const filePath = path.join(__dirname, '../.ts-search/functions.json')
+    const filePath = path.join(__dirname, '../.ts-earch/functions.json')
 
     writeFileSync(filePath, JSON.stringify(results, null, 2), 'utf-8')
+
+    console.log(`Types writen ${filePath}`)
   })
   .catch(err => {
     console.error(err)

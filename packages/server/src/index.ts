@@ -18,7 +18,7 @@ app.use(morgan('tiny'))
 app.use(search)
 
 app.use('/', (req, res) => {
-  res.json({ message: 'Welcome to ts-search!' })
+  res.json({ message: 'Welcome to ts-earch!' })
 })
 
 app.listen(port, (err?: Error) => {

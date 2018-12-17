@@ -1,4 +1,6 @@
 node_modules
 
+.ts-earch
+
 build/
 **/*.js

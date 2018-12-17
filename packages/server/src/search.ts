@@ -6,7 +6,7 @@ import { getTypes, getTypesSync } from './utils'
 import { matchesQuery } from './search/index'
 
 // TODO: get from config
-const p = path.join(__dirname, '../../cli/.ts-search/functions.json')
+const p = path.join(__dirname, '../../cli/.ts-earch/functions.json')
 let types = getTypesSync(p)
 
 const app = express()

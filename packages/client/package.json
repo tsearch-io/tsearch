@@ -1,7 +1,11 @@
 {
-  "name": "ts-earch-app",
-  "version": "0.1.0",
-  "main": "src/index.tsx",
+  "name": "ts-earch-client",
+  "scripts": {
+    "start": "serve --port 3000 build",
+    "watch": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom"
+  },
   "dependencies": {
     "@ts-task/fetch": "^1.0.5",
     "@ts-task/task": "^1.0.1",
@@ -11,12 +15,6 @@
     "react-dom": "^16.6.3",
     "react-scripts-ts": "^3.1.0",
     "styled-components": "^4.1.2"
-  },
-  "scripts": {
-    "watch": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
     "@types/jest": "^23.3.10",

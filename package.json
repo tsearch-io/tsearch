@@ -1,17 +1,17 @@
 {
+  "name": "ts-earch",
   "scripts": {
     "format": "prettier --write '**/*.{ts,tsx,js,jsx,json,md}'",
-    "app:b": "cd app && yarn && yarn build",
-    "server:b": "cd server && yarn && yarn build",
-    "cli:b": "cd cli && yarn && yarn build",
-    "build": "yarn app:b && yarn server:b & yarn cli:b"
+    "build": "lerna run build --stream",
+    "dev": "lerna run dev --stream",
+    "extract": "node packages/cli/build/cli",
+    "install": "lerna exec yarn --stream",
+    "start": "lerna run start --stream",
+    "watch": "lerna run watch --stream"
   },
   "devDependencies": {
+    "lerna": "^3.6.0",
     "prettier": "^1.15.3",
     "pretty-quick": "^1.8.0"
-  },
-  "dependencies": {
-    "lerna": "^3.6.0"
-  },
-  "name": "ts-earch"
+  }
 }
