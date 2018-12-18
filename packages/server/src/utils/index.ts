@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs'
 import * as fs from '@ts-task/fs'
 
-import { FunctionRecord } from '../models/tSearch'
+import { FunctionRecord } from 'ts-earch-types'
 
 export const compose = <A, B, C>(f: (b: B) => C, g: (a: A) => B) => (a: A) =>
   f(g(a))

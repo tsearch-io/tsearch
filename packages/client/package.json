@@ -1,5 +1,6 @@
 {
   "name": "ts-earch-client",
+  "version": "0.0.1",
   "scripts": {
     "start": "serve --port 3000 build",
     "watch": "react-scripts-ts start",
@@ -14,7 +15,8 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts-ts": "^3.1.0",
-    "styled-components": "^4.1.2"
+    "styled-components": "^4.1.2",
+    "ts-earch-types": "^0.0.1"
   },
   "devDependencies": {
     "@types/jest": "^23.3.10",

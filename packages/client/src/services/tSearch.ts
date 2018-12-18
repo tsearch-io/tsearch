@@ -2,7 +2,7 @@ import { Task, UnknownError } from '@ts-task/task'
 import { fetch } from '@ts-task/fetch'
 import * as queryString from 'query-string'
 
-import { FunctionRecord } from '../models/tSearch'
+import { FunctionRecord } from 'ts-earch-types'
 
 type SearchTask = Task<FunctionRecord[], TypeError | UnknownError>
 

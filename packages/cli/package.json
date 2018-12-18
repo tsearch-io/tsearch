@@ -1,5 +1,7 @@
 {
   "name": "ts-earch-cli",
+  "version": "0.0.1",
+  "main": "build/cli.js",
   "scripts": {
     "watch": "tsc -w -p .",
     "build": "tsc -p ."
@@ -7,7 +9,8 @@
   "dependencies": {
     "mkdirp": "^0.5.1",
     "ts-simple-ast": "^20.0.0",
-    "typescript": "^3.2.2"
+    "typescript": "^3.2.2",
+    "ts-earch-types": "^0.0.1"
   },
   "devDependencies": {
     "@types/mkdirp": "^0.5.2",

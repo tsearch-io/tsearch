@@ -8,23 +8,7 @@ import {
   ParameterDeclaration,
 } from 'ts-simple-ast'
 
-interface Param {
-  name?: string
-  type: string
-}
-
-interface FunctionRecord {
-  name?: string
-  parameters: Param[]
-  returnType: string
-  location: {
-    path: string
-    lines: {
-      from: number
-      to: number
-    }
-  }
-}
+import { FunctionRecord } from 'ts-earch-types'
 
 export default function findFunctions(
   fileNames: string[],

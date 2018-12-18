@@ -1,13 +1,13 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-import { Parameter, FunctionRecord } from '../models/tSearch'
+import { Param, FunctionRecord } from 'ts-earch-types'
 
 interface Props {
   result: FunctionRecord
 }
 
-const signature = (parameters: Parameter[], returnType: string) =>
+const signature = (parameters: Param[], returnType: string) =>
   `(${parameters
     .map(({ name, type }) => `${name}: ${type}`)
     .join(', ')}) => ${returnType}`

@@ -1,0 +1,12 @@
+{
+  "name": "ts-earch-types",
+  "version": "0.0.1",
+  "main": "src/index.ts",
+  "scripts": {
+    "watch": "tsc -w -p .",
+    "build": "tsc -p ."
+  },
+  "dependencies": {
+    "typescript": "^3.2.2"
+  }
+}

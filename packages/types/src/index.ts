@@ -1,18 +1,19 @@
-// TODO: shared code
 export interface Param {
-  name?: string
+  name: string
   type: string
+}
+
+export interface Location {
+  path: string
+  lines: {
+    from: number
+    to: number
+  }
 }
 
 export interface FunctionRecord {
   name?: string
   parameters: Param[]
   returnType: string
-  location: {
-    path: string
-    lines: {
-      from: number
-      to: number
-    }
-  }
+  location: Location
 }

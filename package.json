@@ -1,17 +1,20 @@
 {
   "name": "ts-earch",
+  "private": true,
   "scripts": {
-    "format": "prettier --write '**/*.{ts,tsx,js,jsx,json,md}'",
-    "build": "lerna run build --stream",
-    "dev": "lerna run dev --stream",
+    "build": "lerna run --stream build",
+    "dev": "lerna run --stream --parallel dev",
     "extract": "node packages/cli/build/cli",
-    "install": "lerna exec yarn --stream",
-    "start": "lerna run start --stream",
-    "watch": "lerna run watch --stream"
+    "format": "prettier --write '**/*.{ts,tsx,js,jsx,json,md}'",
+    "start": "lerna run --stream --parallel start",
+    "watch": "lerna run --stream --parallel watch"
   },
   "devDependencies": {
     "lerna": "^3.6.0",
     "prettier": "^1.15.3",
     "pretty-quick": "^1.8.0"
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

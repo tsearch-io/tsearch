@@ -1,4 +1,5 @@
-import { Param, FunctionRecord } from '../models/tSearch'
+import { Param, FunctionRecord } from 'ts-earch-types'
+
 import { compose } from '../utils'
 
 interface SingleType {

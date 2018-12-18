@@ -1,10 +1,11 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
+import { FunctionRecord } from 'ts-earch-types'
+
 import Input from '../components/Input'
 import Button from '../components/Button'
 import SearchResult from '../components/SearchResult'
-import { FunctionRecord } from '../models/tSearch'
 import { search, reload } from '../services/tSearch'
 import {
   RemoteData,
