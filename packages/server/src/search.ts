@@ -18,6 +18,8 @@ router.get('/', (req, res) => {
   res.json(result)
 })
 
+router.get('/all', (req, res) => res.json(types))
+
 router.get('/reload', (req, res) => {
   getTypes(p).fork(
     () => res.send(500),

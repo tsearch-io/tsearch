@@ -3,84 +3,75 @@ import styled from 'styled-components'
 
 import { FunctionRecord } from 'ts-earch-types'
 
-import Input from '../components/Input'
-import Button from '../components/Button'
-import SearchResult from '../components/SearchResult'
-import { search, reload } from '../services/tSearch'
+import { search, reload, all } from '../services/tSearch'
 import {
   RemoteData,
-  match,
   isLoading,
   notAsked,
   loading,
-  success,
   failure,
 } from '../lib/remoteData'
 
+import Form from './Form'
+import ListRecords from './ListRecords'
+
 const Container = styled.div`
-  font-family: sans-serif;
+  padding: 10px;
 `
 
 interface State {
   data: RemoteData<FunctionRecord[]>
-  query: string
 }
-
-const key = ({ location }: FunctionRecord) =>
-  `${location.path}-${location.lines.from}-${location.lines.to}`
-
-const renderData = match<FunctionRecord[], React.ReactNode>({
-  notAsked: () => <span>search for function types</span>,
-  loading: () => <span>loading ...</span>,
-  failure: e => <span>{e}</span>,
-  success: results =>
-    results.map(result => <SearchResult key={key(result)} result={result} />),
-})
 
 export default class Search extends React.Component<{}, State> {
   state = {
     data: notAsked<FunctionRecord[]>(),
-    query: '',
   }
 
-  onChange = (e: { target: HTMLInputElement }) => {
-    this.setState({ query: e.target.value })
-  }
-
-  search = (e: React.SyntheticEvent) => {
-    e.preventDefault()
-
+  search = (query: string) => {
     this.setState({ data: loading<FunctionRecord[]>() })
 
     // TODO: don't do this here, server should be on charge
     reload()
-      .chain(() => search(this.state.query))
+      .map(() => query)
+      .chain(search)
       .fork(
-        error => this.setState({ data: failure(error.message) }),
-        results => this.setState({ data: success(results) }),
+        error => {
+          // tslint:disable-next-line no-console
+          console.error(error)
+          this.setState({ data: failure('Unknown Error') })
+        },
+        data => this.setState({ data }),
       )
   }
 
-  isSearchDisabled() {
-    return isLoading(this.state.data) || this.state.query === ''
+  loadAll = () => {
+    this.setState({ data: loading<FunctionRecord[]>() })
+
+    // TODO: don't do this here, server should be on charge
+    reload()
+      .chain(all)
+      .fork(
+        error => {
+          // tslint:disable-next-line no-console
+          console.error(error)
+          this.setState({ data: failure('Unknown Error') })
+        },
+        data => this.setState({ data }),
+      )
   }
 
   render() {
-    const { data, query } = this.state
+    const { data } = this.state
 
     return (
       <Container>
-        <form>
-          <Input
-            value={query}
-            onChange={this.onChange}
-            disabled={isLoading(data)}
-          />
-          <Button onClick={this.search} disabled={this.isSearchDisabled()}>
-            Search
-          </Button>
-        </form>
-        <div>{renderData(data)}</div>
+        <Form
+          isLoading={isLoading(data)}
+          onSubmit={this.search}
+          onClickAll={this.loadAll}
+        />
+        <ListRecords records={data} />
       </Container>
     )
   }

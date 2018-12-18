@@ -1,5 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import { gruvboxLight as style } from 'react-syntax-highlighter/dist/styles/hljs'
 
 import { Param, FunctionRecord } from 'ts-earch-types'
 
@@ -7,42 +9,39 @@ interface Props {
   result: FunctionRecord
 }
 
-const signature = (parameters: Param[], returnType: string) =>
-  `(${parameters
+// https://github.com/conorhastings/react-syntax-highlighter
+const signature = (parameters: Param[], returnType: string, fnName?: string) =>
+  `${fnName || 'func'} :: (${parameters
     .map(({ name, type }) => `${name}: ${type}`)
     .join(', ')}) => ${returnType}`
 
 const Container = styled.div`
-  margin-bottom: 20px;
-`
-
-const SignatureContainer = styled.div`
-  font-family: monospace;
-  font-size: 18px;
-
-  margin-bottom: 5px;
-  padding: 5px 3px;
-
-  background-color: #ccc;
-  border-top: 1px solid grey;
+  margin-bottom: 30px;
 `
 
 const Location = styled.div`
-  font-size: 14px;
+  font-size: 16px;
 `
 
-const Red = styled.span`
-  color: #721c24;
-`
+const signatureStyle = {
+  padding: 10,
+  fontSize: 18,
+  backgroundColor: '#eee',
+  marginBottom: 10,
+}
 
 const Signature: React.SFC<FunctionRecord> = ({
   name,
   parameters,
   returnType,
 }) => (
-  <SignatureContainer>
-    <Red>{name}</Red> :: {signature(parameters, returnType)}
-  </SignatureContainer>
+  <SyntaxHighlighter
+    language="typescript"
+    style={style}
+    customStyle={signatureStyle}
+  >
+    {signature(parameters, returnType, name)}
+  </SyntaxHighlighter>
 )
 
 const SearchResult: React.SFC<Props> = ({ result }) => (
