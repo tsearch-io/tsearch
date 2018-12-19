@@ -3,7 +3,7 @@ import path from 'path'
 import express, { Router } from 'express'
 
 import { getTypes, getTypesSync } from './utils'
-import { matchesQuery } from './search/index'
+import { search } from './search/index'
 
 // TODO: get from config
 const p = path.join(__dirname, '../../cli/.ts-earch/functions.json')
@@ -13,7 +13,7 @@ const app = express()
 const router = Router()
 
 router.get('/', (req, res) => {
-  const result = types.filter(matchesQuery(req.query.query))
+  const result = search(types)(req.query.query)
 
   res.json(result)
 })
