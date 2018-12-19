@@ -10,16 +10,16 @@ interface NameType {
   value: string
 }
 
-interface FuncntionType {
+interface FunctionType {
   _type: Type.FUNCTION
   parameters: string[]
   returnType: string
 }
 
-type Query = NameType | FuncntionType
+type Query = NameType | FunctionType
 
 export const isName = (q: Query): q is NameType => q._type === Type.NAME
-export const isFunc = (q: Query): q is FuncntionType =>
+export const isFunc = (q: Query): q is FunctionType =>
   q._type === Type.FUNCTION
 
 const matchParams = (query: string) => (param: Param) =>
@@ -50,7 +50,7 @@ export const parseQuery = (query: string): Query => {
       }
 }
 
-const weighFunctionRecord = ({ returnType, parameters }: FuncntionType) => (
+const weighFunctionRecord = ({ returnType, parameters }: FunctionType) => (
   fn: FunctionRecord,
 ): [FunctionRecord, number] => {
   const fnParameters = fn.parameters.map(({ type }) => type)
