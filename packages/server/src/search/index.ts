@@ -19,8 +19,7 @@ interface FunctionType {
 type Query = NameType | FunctionType
 
 export const isName = (q: Query): q is NameType => q._type === Type.NAME
-export const isFunc = (q: Query): q is FunctionType =>
-  q._type === Type.FUNCTION
+export const isFunc = (q: Query): q is FunctionType => q._type === Type.FUNCTION
 
 const matchParams = (query: string) => (param: Param) =>
   param.type.includes(query) || (param.name && param.name.includes(query))

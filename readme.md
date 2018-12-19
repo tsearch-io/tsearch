@@ -1,6 +1,10 @@
 <h1 align="center">:mag: ts-earch :mag:</h1>
 
-> **FULL DISCLOSURE**: this project is a **WORK IN PROGRESS**.
+<p align="center">
+:warning: <strong>WARNING!!! WORK IN PROGRESS</strong> :construction:
+</p>
+
+`ts-earch` is a search engine for TypeScript functions, methods and types.
 
 ## Architecture
 
@@ -24,7 +28,7 @@ Extract function types to search with the client (this is required for the
 server to work):
 
 ```bash
-$ yarn extract '/absolute/path/to/typescript/project/**.{ts,tsx}'
+$ yarn extract '/absolute/path/to/typescript/project/**/*.{ts,tsx}'
 ```
 
 Watch the code for changes and run the dev mode, server (`localhost:8080`) and
@@ -44,3 +48,8 @@ Run in static mode (uses same ports):
 $ yarn build
 $ yarn start
 ```
+
+## Inspiration
+
+`ts-earch` is inspired on Haskell API search engine
+[Hoogle](https://www.haskell.org/hoogle/).
