@@ -13,7 +13,7 @@ directory:
 
 ## Development
 
-Install all dependencies ([lerna](https://lernajs.io/)) takes care of installing
+Install all dependencies ([lerna](https://lernajs.io/) takes care of installing
 the dependencies of the packages):
 
 ```bash
