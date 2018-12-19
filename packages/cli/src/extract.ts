@@ -52,6 +52,11 @@ function functionDeclaration(
 ): FunctionRecord {
   return {
     name: node.getName(),
+    text: node.getFullText(),
+    // docs: node
+    //   .getJsDocs()
+    //   .map(doc => doc.getFullText())
+    //   .join(''),
     parameters: node.getParameters().map(parameterDeclaration),
     returnType: node.getReturnType().getText(),
     location: {
@@ -76,6 +81,11 @@ function arrowFunction(
 
   return {
     name: node.getName(),
+    text: `const${node.getFullText()}`,
+    // docs: arrow
+    //   .getJsDocs()
+    //   .map(doc => doc.getFullText())
+    //   .join(''),
     parameters: arrow.getParameters().map(parameterDeclaration),
     returnType: arrow.getReturnType().getText(),
     location: {

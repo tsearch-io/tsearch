@@ -13,6 +13,8 @@ export interface Location {
 
 export interface FunctionRecord {
   name?: string
+  docs?: string
+  text?: string
   parameters: Param[]
   returnType: string
   location: Location

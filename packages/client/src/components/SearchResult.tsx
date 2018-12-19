@@ -1,9 +1,14 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import SyntaxHighlighter from 'react-syntax-highlighter'
-import { gruvboxLight as style } from 'react-syntax-highlighter/dist/styles/hljs'
+import {
+  gruvboxLight,
+  gruvboxDark,
+} from 'react-syntax-highlighter/dist/styles/hljs'
 
 import { Param, FunctionRecord } from 'ts-earch-types'
+
+import Collapse from './Collapse'
 
 interface Props {
   result: FunctionRecord
@@ -21,11 +26,20 @@ const Container = styled.div`
 
 const Location = styled.div`
   font-size: 16px;
+  display: flex;
 `
 
-const signatureStyle = {
+const Toggle = styled.div`
+  cursor: pointer;
+  margin-left: 20px;
+`
+
+const codeStyle = {
   padding: 10,
   fontSize: 18,
+}
+const signatureStyle = {
+  ...codeStyle,
   backgroundColor: '#eee',
   marginBottom: 10,
 }
@@ -37,7 +51,7 @@ const Signature: React.SFC<FunctionRecord> = ({
 }) => (
   <SyntaxHighlighter
     language="typescript"
-    style={style}
+    style={gruvboxLight}
     customStyle={signatureStyle}
   >
     {signature(parameters, returnType, name)}
@@ -47,13 +61,29 @@ const Signature: React.SFC<FunctionRecord> = ({
 const SearchResult: React.SFC<Props> = ({ result }) => (
   <Container>
     <Signature {...result} />
-    <Location>
-      {/* TODO: open $EDITOR or file */}
-      <a href="#">
-        {result.location.path} ({result.location.lines.from}-
-        {result.location.lines.to})
-      </a>
-    </Location>
+    {result.text && (
+      <Collapse
+        trigger={({ toggle, isOpen }) => (
+          <Location>
+            {/* TODO: open $EDITOR or file */}
+            <a href="#">
+              {result.location.path} ({result.location.lines.from}-
+              {result.location.lines.to})
+            </a>
+            <Toggle onClick={toggle}>{isOpen ? 'Source ⮟' : 'Source ⮞'}</Toggle>
+          </Location>
+        )}
+      >
+        <SyntaxHighlighter
+          language="typescript"
+          style={gruvboxDark}
+          customStyle={codeStyle}
+          showLineNumbers={true}
+        >
+          {result.text.trim()}
+        </SyntaxHighlighter>
+      </Collapse>
+    )}
   </Container>
 )
 
