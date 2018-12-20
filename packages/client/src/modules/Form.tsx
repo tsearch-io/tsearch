@@ -28,6 +28,11 @@ export default class Search extends React.Component<Props, State> {
     this.props.onSubmit(this.state.query)
   }
 
+  onSearchAll = () => {
+    this.props.onClickAll()
+    this.setState({ query: '' })
+  }
+
   render() {
     const { query } = this.state
     const { isLoading } = this.props
@@ -40,7 +45,7 @@ export default class Search extends React.Component<Props, State> {
         <Button onClick={this.onSubmit} disabled={noSubmit}>
           Search
         </Button>
-        <Button onClick={this.props.onClickAll} disabled={isLoading}>
+        <Button onClick={this.onSearchAll} disabled={isLoading}>
           List all
         </Button>
       </form>

@@ -5,7 +5,11 @@ const Button = styled.button`
 
   padding: 5px;
   border: 1px solid black;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  font-size: 18px;
+
+  min-width: 100px;
 
   cursor: pointer;
 

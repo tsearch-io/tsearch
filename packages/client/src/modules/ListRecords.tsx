@@ -9,7 +9,7 @@ const key = ({ location }: FunctionRecord) =>
   `${location.path}-${location.lines.from}-${location.lines.to}`
 
 const renderData = match<FunctionRecord[], React.ReactNode>({
-  notAsked: () => <span>search for function types</span>,
+  notAsked: () => <span>Search for functions by name, types or signature</span>,
   loading: () => <span>loading ...</span>,
   failure: e => <span>{e}</span>,
   success: results =>

@@ -33,8 +33,7 @@ export default class Search extends React.Component<{}, State> {
 
     // TODO: don't do this here, server should be on charge
     reload()
-      .map(() => query)
-      .chain(search)
+      .chain(() => search(query))
       .fork(
         error => {
           // tslint:disable-next-line no-console

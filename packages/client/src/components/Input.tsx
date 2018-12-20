@@ -6,6 +6,9 @@ const Input = styled.input`
   padding: 5px;
   border: 1px solid black;
   margin-bottom: 5px;
+  font-size: 18px;
+
+  width: 400px;
 
   &:hover,
   &:active,
