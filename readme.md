@@ -17,6 +17,14 @@ directory:
 
 ## Development
 
+`ts-earch` is still under development, for now to run it you need to clone the
+repo:
+
+```bash
+git clone https://github.com/gillchristian/ts-earch.git # https
+git clone git@github.com:gillchristian/ts-earch.git     # ssh
+```
+
 Install all dependencies ([lerna](https://lernajs.io/) takes care of installing
 the dependencies of the packages):
 
@@ -24,15 +32,27 @@ the dependencies of the packages):
 $ yarn
 ```
 
-Extract function types to search with the client (this is required for the
-server to work):
+Extract function types to search with the client. This step is **required**
+otherwise there will be no types to search:
 
 ```bash
 $ yarn extract '/absolute/path/to/typescript/project/**/*.{ts,tsx}'
 ```
 
-Watch the code for changes and run the dev mode, server (`localhost:8080`) and
-client (`localhost:3000`), each command in a different terminal process/tab:
+### Running
+
+To use `ts-earch` we have to build first and the run the app. After that you can
+open it in [localhost:3000](http://localhost:3000):
+
+```bash
+$ yarn build
+$ yarn start
+```
+
+### Development
+
+For development we run the watcher and the dev server in a different terminal
+process/tab:
 
 ```bash
 $ yarn watch
@@ -42,12 +62,8 @@ $ yarn watch
 $ yarn dev
 ```
 
-Run in static mode (uses same ports):
-
-```bash
-$ yarn build
-$ yarn start
-```
+The server runs in [localhost:8080](http://localhost:8080) and the client in
+[localhost:3000](http://localhost:3000).
 
 ## Inspiration
 
