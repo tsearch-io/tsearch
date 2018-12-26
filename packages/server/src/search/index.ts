@@ -49,32 +49,48 @@ export const parseQuery = (query: string): Query => {
       }
 }
 
-const weighFunctionRecord = ({ returnType, parameters }: FunctionType) => (
-  fn: FunctionRecord,
-): [FunctionRecord, number] => {
-  const fnParameters = fn.parameters.map(({ type }) => type)
+// should become a range when considering type checking
+// e.g. weighReturnType('string', 'string')            => 2
+//      weighReturnType('string', StringAlias)         => 1.9 ?
+//      weighReturnType('string', 'string' | 'number') => 1
+const weighReturnType = (query: string, returnType: string) =>
+  query === returnType ? 2 : 0
 
-  let paramsWeight =
-    fnParameters.reduce(
-      (acc, type, key) => (type === parameters[key] ? acc + 1 : acc),
-      0,
-    ) / fnParameters.length
+const weighParams = (query: string[], params: string[]) => {
+  let paramsWeight = 0
 
   // m -> matches
   // n -> # of params
-  if (fnParameters.length === parameters.length) {
-    // + 1 + m/n
-    paramsWeight += paramsWeight + 1
+  if (query.length === params.length) {
+    paramsWeight =
+      query.reduce(
+        (acc, type, key) => (type === params[key] ? acc + 1 : acc),
+        0,
+      ) / query.length
+
+    // + 1 + m/n # only if some params match
+    if (paramsWeight > 0) {
+      paramsWeight += paramsWeight + 1
+    }
   } else {
     // + m/n
     paramsWeight +=
-      fnParameters.reduce(
-        (acc, type) => (parameters.includes(type) ? acc + 1 : acc),
-        0,
-      ) / fnParameters.length
+      query.reduce((acc, type) => (params.includes(type) ? acc + 1 : acc), 0) /
+      query.length
   }
 
-  let weight = paramsWeight + (returnType === fn.returnType ? 2 : 0)
+  return paramsWeight
+}
+
+export const weighFunctionRecord = ({
+  returnType,
+  parameters,
+}: FunctionType) => (fn: FunctionRecord): [FunctionRecord, number] => {
+  const fnParameters = fn.parameters.map(({ type }) => type)
+
+  const weight =
+    weighParams(fnParameters, parameters) +
+    weighReturnType(returnType, fn.returnType)
 
   return [fn, weight]
 }
