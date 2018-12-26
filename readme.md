@@ -6,6 +6,14 @@
 
 `ts-earch` is a search engine for TypeScript functions, methods and types.
 
+[Demo](https://www.youtube.com/watch?v=Gf5irOLIFX8)
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Gf5irOLIFX8">
+  <img
+    src="https://media.giphy.com/media/8c76egNn04cNSilvd8/giphy.gif"
+    alt="ts-earch demo" />
+</a>
+
 ## Architecture
 
 `ts-earch` consists of 3 differt applications, found in the `packages/`
