@@ -79,6 +79,7 @@ const SearchResult: React.SFC<Props> = ({ result }) => (
           style={gruvboxDark}
           customStyle={codeStyle}
           showLineNumbers={true}
+          startingLineNumber={result.location.lines.from}
         >
           {result.text.trim()}
         </SyntaxHighlighter>
