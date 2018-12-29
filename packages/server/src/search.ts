@@ -2,9 +2,9 @@ import path from 'path'
 import { homedir } from 'os'
 
 import express, { Router } from 'express'
+import { search } from 'ts-earch-search'
 
 import { getTypes, getTypesSync } from './utils'
-import { search } from './search/index'
 
 // TODO: get from config
 const $home = homedir()

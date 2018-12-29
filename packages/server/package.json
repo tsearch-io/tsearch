@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "main": "build/index.js",
   "scripts": {
+    "test": "jest --coverage",
     "test:watch": "jest --watch",
     "watch": "tsc -w -p .",
     "build": "tsc -p .",
@@ -15,6 +16,7 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "morgan": "^1.9.1",
+    "ts-earch-search": "^0.0.1",
     "ts-earch-types": "^0.0.1"
   },
   "devDependencies": {
