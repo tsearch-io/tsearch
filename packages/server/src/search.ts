@@ -1,4 +1,5 @@
 import path from 'path'
+import { homedir } from 'os'
 
 import express, { Router } from 'express'
 
@@ -6,7 +7,8 @@ import { getTypes, getTypesSync } from './utils'
 import { search } from './search/index'
 
 // TODO: get from config
-const p = path.join(__dirname, '../../cli/.ts-earch/functions.json')
+const $home = homedir()
+const p = path.join($home, '.ts-earch/types.json')
 let types = getTypesSync(p)
 
 const app = express()

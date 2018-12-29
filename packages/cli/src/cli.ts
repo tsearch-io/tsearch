@@ -1,6 +1,7 @@
 import { writeFileSync } from 'fs'
 import { promisify } from 'util'
 import path from 'path'
+import { homedir } from 'os'
 
 import _mkdirp from 'mkdirp'
 import { ts } from 'ts-simple-ast'
@@ -18,11 +19,12 @@ const results = extractFunctions(fileNames, {
   },
 })
 
-const dir = path.join(__dirname, '../.ts-earch')
+const $home = homedir()
+const dir = path.join($home, '.ts-earch')
 
 mkdirp(dir)
   .then(() => {
-    const filePath = path.join(__dirname, '../.ts-earch/functions.json')
+    const filePath = path.join(dir, 'types.json')
 
     writeFileSync(filePath, JSON.stringify(results, null, 2), 'utf-8')
 
