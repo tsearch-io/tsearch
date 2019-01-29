@@ -5,24 +5,32 @@ import { Task } from '@ts-task/task'
 
 import { FunctionRecord } from 'ts-earch-types'
 
-import { search, reload, all } from '../services/tSearch'
+import { search, reload } from '../services/tSearch'
 
 import Form from './Form'
 import ListRecords from './ListRecords'
 
-const Container = styled.div`
-  padding: 10px;
-`
+const Container = styled.div({ padding: 10 })
 
 type Data = RemoteData<FunctionRecord[], string>
+
+interface Props {
+  query?: string
+}
 
 interface State {
   data: Data
 }
 
-export default class Search extends React.Component<{}, State> {
+export default class Search extends React.Component<Props, State> {
   state = {
     data: RemoteData.notAsked(),
+  }
+
+  componentDidMount() {
+    if (this.props.query) {
+      this.search(this.props.query)
+    }
   }
 
   fetch = (fn: () => Task<Data, Error>) => {
@@ -41,7 +49,6 @@ export default class Search extends React.Component<{}, State> {
       )
   }
 
-  loadAll = () => this.fetch(all)
   search = (query: string) => this.fetch(() => search(query))
 
   render() {
@@ -50,9 +57,9 @@ export default class Search extends React.Component<{}, State> {
     return (
       <Container>
         <Form
+          initialQuery={this.props.query}
           isLoading={isLoading(data)}
           onSubmit={this.search}
-          onClickAll={this.loadAll}
         />
         <ListRecords records={data} />
       </Container>

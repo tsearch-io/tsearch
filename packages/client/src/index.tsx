@@ -1,29 +1,33 @@
 import * as React from 'react'
 import { render } from 'react-dom'
+import { Route, Router, Switch } from 'react-router-dom'
+import createHistory from 'history/createBrowserHistory'
 import { createGlobalStyle } from 'styled-components'
 
-import Search from './modules/Search'
+import Home from './pages/Home'
+import Search from './pages/Search'
 
-const GlobalStyles = createGlobalStyle`
-  body {
-    margin: 0;
-    padding: 0;
+const history = createHistory()
 
-    font-family: sans-serif;
+const GlobalStyles = createGlobalStyle({
+  body: {
+    margin: 0,
+    padding: 0,
+    fontFamily: 'sans-serif',
+    maxWidth: '100vw',
+  },
+})
 
-    max-width: 100vw;
-  }
-`
+const Root: React.SFC = () => (
+  <>
+    <Router history={history}>
+      <Switch>
+        <Route path="/" exact={true} component={Home} />
+        <Route path="/query" component={Search} />
+      </Switch>
+    </Router>
+    <GlobalStyles />
+  </>
+)
 
-class App extends React.Component {
-  render() {
-    return (
-      <>
-        <Search />
-        <GlobalStyles />
-      </>
-    )
-  }
-}
-
-render(<App />, document.getElementById('root'))
+render(<Root />, document.getElementById('root'))

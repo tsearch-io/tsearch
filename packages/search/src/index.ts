@@ -51,7 +51,7 @@ export const parseQuery = (query: string): Query => {
 
 // should become a range when considering type checking
 // e.g. weighReturnType('string', 'string')            => 2
-//      weighReturnType('string', StringAlias)         => 1.9 ?
+//      weighReturnType('string', StringAlias)         => 1.x ?
 //      weighReturnType('string', 'string' | 'number') => 1
 const weighReturnType = (query: string, returnType: string) =>
   query === returnType ? 2 : 0
@@ -98,14 +98,12 @@ export const weighFunctionRecord = ({
 export const search = (types: FunctionRecord[]) => (query: string) => {
   const q = parseQuery(query)
 
-  if (isName(q)) {
-    return types.filter(matchesNameType(q.value)).slice(0, 100)
-  }
-
-  return types
-    .map(weighFunctionRecord(q))
-    .filter(([, weight]) => weight > 0)
-    .sort(([, a], [, b]) => (a < b ? 1 : -1))
-    .slice(0, 100)
-    .map(([fn]) => fn)
+  return isName(q)
+    ? types.filter(matchesNameType(q.value)).slice(0, 100)
+    : types
+        .map(weighFunctionRecord(q))
+        .filter(([, weight]) => weight > 0)
+        .sort(([, a], [, b]) => (a < b ? 1 : -1))
+        .slice(0, 100)
+        .map(([fn]) => fn)
 }

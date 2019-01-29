@@ -1,20 +1,17 @@
 import styled from 'styled-components'
 
-const Input = styled.input`
-  outline: none;
+const none = { outline: 'none' }
 
-  padding: 5px;
-  border: 1px solid black;
-  margin-bottom: 5px;
-  font-size: 18px;
-
-  width: 400px;
-
-  &:hover,
-  &:active,
-  &:focus {
-    outline: none;
-  }
-`
+const Input = styled.input({
+  outline: 'none',
+  padding: 5,
+  border: '1px solid black',
+  marginBottom: 5,
+  fontSize: 18,
+  width: 400,
+  '&:hover': none,
+  '&:active': none,
+  '&:focus': none,
+})
 
 export default Input

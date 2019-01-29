@@ -20,19 +20,19 @@ const signature = (parameters: Param[], returnType: string, fnName?: string) =>
     .map(({ name, type }) => `${name}: ${type}`)
     .join(', ')}) => ${returnType}`
 
-const Container = styled.div`
-  margin-bottom: 30px;
-`
+const Container = styled.div({
+  marginBottom: 30,
+})
 
-const Location = styled.div`
-  font-size: 16px;
-  display: flex;
-`
+const Location = styled.div({
+  fontSize: 16,
+  display: 'flex',
+})
 
-const Toggle = styled.div`
-  cursor: pointer;
-  margin-left: 20px;
-`
+const Toggle = styled.div({
+  cursor: 'pointer',
+  marginLeft: 20,
+})
 
 const codeStyle = {
   padding: 10,

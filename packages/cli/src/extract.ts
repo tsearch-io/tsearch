@@ -101,7 +101,7 @@ function arrowFunction(
 function parameterDeclaration(param: ParameterDeclaration, index: number) {
   let name
   try {
-    name = param.getName() || `param${index + 1}`
+    name = param.getName() || `t${index + 1}`
   } catch (e) {
     name = `t${index + 1}`
   }

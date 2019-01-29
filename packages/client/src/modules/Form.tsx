@@ -1,21 +1,20 @@
 import * as React from 'react'
 
-import Input from '../components/Input'
-import Button from '../components/Button'
+import { Input, Button } from '../components'
 
 interface State {
   query: string
 }
 
 interface Props {
+  initialQuery?: string
   isLoading: boolean
   onSubmit: (query: string) => void
-  onClickAll: () => void
 }
 
 export default class Search extends React.Component<Props, State> {
   state = {
-    query: '',
+    query: this.props.initialQuery || '',
   }
 
   onChange = (e: { target: HTMLInputElement }) => {
@@ -26,11 +25,6 @@ export default class Search extends React.Component<Props, State> {
     e.preventDefault()
 
     this.props.onSubmit(this.state.query)
-  }
-
-  onSearchAll = () => {
-    this.props.onClickAll()
-    this.setState({ query: '' })
   }
 
   render() {
@@ -44,9 +38,6 @@ export default class Search extends React.Component<Props, State> {
         <Input value={query} onChange={this.onChange} disabled={isLoading} />
         <Button onClick={this.onSubmit} disabled={noSubmit}>
           Search
-        </Button>
-        <Button onClick={this.onSearchAll} disabled={isLoading}>
-          List all
         </Button>
       </form>
     )
