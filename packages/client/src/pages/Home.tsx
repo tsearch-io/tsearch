@@ -25,9 +25,6 @@ const QUERIES = {
   },
 }
 
-// tslint:disable-next-line
-console.log(QUERIES.stringToString)
-
 const Home: React.SFC<RouteComponentProps> = ({ history }) => (
   <Container>
     <Logo />
