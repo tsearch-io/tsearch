@@ -1,5 +1,4 @@
 import * as React from 'react'
-import styled from 'styled-components'
 import { RemoteData, isLoading } from 'remote-data-ts'
 import { Task } from '@ts-task/task'
 
@@ -9,8 +8,6 @@ import { search, reload } from '../services/tSearch'
 
 import Form from './Form'
 import ListRecords from './ListRecords'
-
-const Container = styled.div({ padding: 10 })
 
 type Data = RemoteData<FunctionRecord[], string>
 
@@ -55,14 +52,14 @@ export default class Search extends React.Component<Props, State> {
     const { data } = this.state
 
     return (
-      <Container>
+      <>
         <Form
           initialQuery={this.props.query}
           isLoading={isLoading(data)}
           onSubmit={this.search}
         />
         <ListRecords records={data} />
-      </Container>
+      </>
     )
   }
 }

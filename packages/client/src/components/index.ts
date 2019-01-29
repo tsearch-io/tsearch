@@ -1,4 +1,7 @@
 export { default as Button } from './Button'
-export { default as Input } from './Input'
+export { default as Col } from './Col'
 export { default as Collapse } from './Collapse'
+export { default as Input } from './Input'
+export { default as Link, RouterLink } from './Link'
+export { default as Logo } from './Logo'
 export { default as SearchResult } from './SearchResult'

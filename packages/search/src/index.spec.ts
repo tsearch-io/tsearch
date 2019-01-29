@@ -18,9 +18,7 @@ const partialParam: FunctionRecord = {
 }
 const noParam = {
   name: 'number_to_string',
-  parameters: [
-    { name: 'n', type: 'number' },
-  ],
+  parameters: [{ name: 'n', type: 'number' }],
   returnType: 'string',
   location: {
     path: '',

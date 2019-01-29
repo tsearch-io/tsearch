@@ -75,8 +75,8 @@ string, boolean => string, number => string
 
 <A> A       => <B> B => string
 ```
-**Methods**
 
+**Methods**
 
 ```
 SomeClass    :: ()         => string
