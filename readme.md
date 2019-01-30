@@ -77,3 +77,8 @@ The server runs in [localhost:8080](http://localhost:8080) and the client in
 
 `ts-earch` is inspired on Haskell API search engine
 [Hoogle](https://www.haskell.org/hoogle/).
+
+## LICENSE
+
+[MIT License](https://github.com/gillchristian/ts-earch/blob/master/LICENSE) ©
+[Christian Gill](https://gillchristian.xyz)
