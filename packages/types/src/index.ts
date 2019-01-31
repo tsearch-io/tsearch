@@ -19,3 +19,8 @@ export interface FunctionRecord {
   returnType: string
   location: Location
 }
+
+export interface Module {
+  name: string
+  fns: FunctionRecord[]
+}

@@ -4,7 +4,7 @@
   "scripts": {
     "build": "lerna run --stream build",
     "dev": "lerna run --stream --parallel dev",
-    "extract": "node packages/cli/build/cli",
+    "extract": "./packages/cli/bin/ts-earch",
     "format": "prettier --write '**/*.{ts,tsx,js,jsx,json,md}'",
     "start": "lerna run --stream --parallel start",
     "watch": "lerna run --stream --parallel watch"

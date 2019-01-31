@@ -1,0 +1,14 @@
+{
+  "name": "ts-earch-extract",
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "scripts": {
+    "watch": "tsc -w -p .",
+    "build": "tsc -p ."
+  },
+  "dependencies": {
+    "ts-simple-ast": "^20.0.0",
+    "typescript": "^3.2.2",
+    "ts-earch-types": "^0.0.1"
+  }
+}
