@@ -14,16 +14,16 @@ const Container = styled.div({
   alignItems: 'center',
 })
 
-const QUERIES = {
-  stringToString: {
-    pathname: '/query',
-    search: `?q=${encodeURIComponent('string => string')}`,
-  },
-  replace: {
-    pathname: '/query',
-    search: `?q=${encodeURIComponent('string | RegExp, string => string')}`,
-  },
-}
+const queries = [
+  'string => string',
+  'number => number[]',
+  'string, RegExp, string, string => string',
+]
+
+const qToPath = (q: string) => ({
+  pathname: '/query',
+  search: `?q=${encodeURIComponent(q)}`,
+})
 
 const Home: React.SFC<RouteComponentProps> = ({ history }) => (
   <Container>
@@ -40,14 +40,11 @@ const Home: React.SFC<RouteComponentProps> = ({ history }) => (
         <b>Example queries</b>
       </p>
       <ul>
-        <li>
-          <RouterLink to={QUERIES.stringToString}>string => string</RouterLink>
-        </li>
-        <li>
-          <RouterLink to={QUERIES.replace}>
-            string | RegExp, string => string
-          </RouterLink>
-        </li>
+        {queries.map(q => (
+          <li key={q}>
+            <RouterLink to={qToPath(q)}>{q}</RouterLink>
+          </li>
+        ))}
       </ul>
     </div>
   </Container>
