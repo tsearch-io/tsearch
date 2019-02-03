@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { RemoteData, isLoading } from 'remote-data-ts'
-import { Task } from '@ts-task/task'
 
 import { FunctionRecord } from 'ts-earch-types'
 

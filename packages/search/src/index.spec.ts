@@ -11,15 +11,17 @@ const partialParam: FunctionRecord = {
     { name: 's', type: 'string' },
   ],
   returnType: 'string',
+  module: 'some_module',
   location: {
     path: '',
     lines: { from: 40, to: 40 },
   },
 }
-const noParam = {
+const noParam: FunctionRecord = {
   name: 'number_to_string',
   parameters: [{ name: 'n', type: 'number' }],
   returnType: 'string',
+  module: 'some_module',
   location: {
     path: '',
     lines: { from: 5, to: 31 },
