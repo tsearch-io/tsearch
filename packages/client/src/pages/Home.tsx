@@ -42,7 +42,9 @@ const Home: React.SFC<RouteComponentProps> = ({ history }) => (
       <ul>
         {queries.map(q => (
           <li key={q}>
-            <RouterLink to={qToPath(q)}>{q}</RouterLink>
+            <code>
+              <RouterLink to={qToPath(q)}>{q}</RouterLink>
+            </code>
           </li>
         ))}
       </ul>

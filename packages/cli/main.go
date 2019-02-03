@@ -18,8 +18,8 @@ import (
 
 var (
 	bin = flag.String("bin", "./packages/cli/bin/ts-earch", "ts-earch bin path")
-	out = flag.String("out", "~/.ts-earch/types.json", "out file path")
-	dt  = flag.String("dt", "~/dev/DefinitelyTyped/types", "DefinitelyTyped path")
+	out = flag.String("out", "~/.ts-earch", "out file path")
+	dt  = flag.String("dt", "~/dev/DefinitelyTyped/types", "DefinitelyTyped types/ path")
 	x   = flag.Int("x", 0, "only extract the first X modules (extracts all when 0)")
 )
 
@@ -65,7 +65,7 @@ type Module struct {
 }
 
 func execAndAppend(dir string, acc *Modules, mutex *sync.Mutex) error {
-	ts, err := output(*bin, "--stdout", dir)
+	ts, err := execOut(*bin, "--stdout", dir)
 	if err != nil {
 		return err
 	}
@@ -88,17 +88,13 @@ func execAndAppend(dir string, acc *Modules, mutex *sync.Mutex) error {
 func main() {
 	flag.Parse()
 	expand(bin)
-	expand(out)
+	outPath(out)
 	expand(dt)
 
 	runtime.GOMAXPROCS(runtime.NumCPU())
 	var n sync.WaitGroup
 	var fetchSema = make(chan struct{}, runtime.NumCPU())
 	var mutex = &sync.Mutex{}
-
-	f, err := os.OpenFile(*out, os.O_RDWR|os.O_CREATE, 0755)
-	check(err)
-	defer f.Close()
 
 	dirs, err := ioutil.ReadDir(*dt)
 	check(err)
@@ -146,6 +142,10 @@ func main() {
 	encoded, err := json.Marshal(modules)
 	check(err)
 
+	f, err := os.OpenFile(*out, os.O_RDWR|os.O_CREATE, 0755)
+	check(err)
+	defer f.Close()
+
 	_, err = f.Write(encoded)
 	check(err)
 
@@ -158,7 +158,7 @@ func check(err error) {
 	}
 }
 
-func output(command string, args ...string) ([]byte, error) {
+func execOut(command string, args ...string) ([]byte, error) {
 	out, err := exec.Command(command, args...).Output()
 	if err != nil {
 		return []byte{}, err
@@ -177,4 +177,19 @@ func expand(p *string) {
 	} else if strings.HasPrefix(*p, "~/") {
 		*p = filepath.Join(dir, (*p)[2:])
 	}
+}
+
+func outPath(base *string) {
+	expand(base)
+
+	f, err := os.Stat(*base)
+	if err != nil {
+		panic(err.Error())
+	}
+
+	if !f.IsDir() {
+		panic("--out should be a directory")
+	}
+
+	*base = filepath.Join(*base, time.Now().UTC().Format("2006-01-02-03-04-05.json"))
 }
