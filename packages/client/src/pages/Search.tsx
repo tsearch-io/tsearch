@@ -23,7 +23,7 @@ const Sidebar = styled.div({
 const getQuery = (search: string) =>
   search ? decodeURIComponent(search.replace('?q=', '')) : ''
 
-const SearchPage: React.SFC<RouteComponentProps> = ({ location }) => (
+const SearchPage: React.SFC<RouteComponentProps> = ({ location, history }) => (
   <Container>
     <Col w={10}>
       <Sidebar>
@@ -41,7 +41,12 @@ const SearchPage: React.SFC<RouteComponentProps> = ({ location }) => (
     </Col>
     <Col w={90}>
       <SearchContainer>
-        <Search query={getQuery(location.search)} />
+        <Search
+          query={getQuery(location.search)}
+          onSearch={(q: string) =>
+            history.push({ pathname: '/query', search: `?q=${q}` })
+          }
+        />
       </SearchContainer>
     </Col>
   </Container>

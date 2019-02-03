@@ -58,6 +58,15 @@ const Signature: React.SFC<FunctionRecord> = ({
   </SyntaxHighlighter>
 )
 
+const DTLink: React.SFC<{ module: string }> = ({ module }) => (
+  <div>
+    Package:{' '}
+    <a href={`https://www.npmjs.com/package/@types/${module}`} target="_blank">
+      @types/{module}
+    </a>
+  </div>
+)
+
 const SearchResult: React.SFC<Props> = ({ result }) => (
   <Container>
     <Signature {...result} />
@@ -65,11 +74,7 @@ const SearchResult: React.SFC<Props> = ({ result }) => (
       <Collapse
         trigger={({ toggle, isOpen }) => (
           <Location>
-            {/* TODO: open $EDITOR or file */}
-            <a href="#">
-              {result.location.path} ({result.location.lines.from}-
-              {result.location.lines.to})
-            </a>
+            <DTLink module={result.module} />
             <Toggle onClick={toggle}>{isOpen ? 'Source ⮟' : 'Source ⮞'}</Toggle>
           </Location>
         )}
