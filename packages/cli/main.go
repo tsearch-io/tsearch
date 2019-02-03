@@ -56,6 +56,7 @@ type FunctionRecord struct {
 	Parameters []Param  `json:"parameters"`
 	ReturnType string   `json:"returnType"`
 	Location   Location `json:"location"`
+	Module     string   `json:"module"`
 }
 
 // Module contains all the exported functions of a module.
@@ -65,7 +66,7 @@ type Module struct {
 }
 
 func execAndAppend(dir string, acc *Modules, mutex *sync.Mutex) error {
-	ts, err := execOut(*bin, "--stdout", dir)
+	ts, err := execOut(*bin, dir)
 	if err != nil {
 		return err
 	}

@@ -18,6 +18,7 @@ export interface FunctionRecord {
   parameters: Param[]
   returnType: string
   location: Location
+  module: string
 }
 
 export interface Module {

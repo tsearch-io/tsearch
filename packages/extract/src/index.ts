@@ -25,15 +25,16 @@ export default function findFunctions(
   return project
     .getSourceFiles()
     .map(file => {
-      const path = file.getFilePath()
+      const path = dtPath(file.getFilePath())
+      const module = dtModuleName(path)
 
       return file.getExportedDeclarations().map(exp => {
         if (TypeGuards.isFunctionDeclaration(exp)) {
-          return functionDeclaration(exp, path)
+          return functionDeclaration(exp, path, module)
         }
 
         if (TypeGuards.isVariableDeclaration(exp)) {
-          return arrowFunction(exp, path)
+          return arrowFunction(exp, path, module)
         }
 
         return undefined
@@ -49,6 +50,7 @@ export default function findFunctions(
 function functionDeclaration(
   node: FunctionDeclaration,
   path: string,
+  module: string,
 ): FunctionRecord {
   return {
     name: node.getName(),
@@ -59,6 +61,7 @@ function functionDeclaration(
     //   .join(''),
     parameters: node.getParameters().map(parameterDeclaration),
     returnType: node.getReturnType().getText(),
+    module,
     location: {
       path,
       lines: {
@@ -72,6 +75,7 @@ function functionDeclaration(
 function arrowFunction(
   node: VariableDeclaration,
   path: string,
+  module: string,
 ): FunctionRecord | undefined {
   const [arrow] = node.getChildrenOfKind(ts.SyntaxKind.ArrowFunction)
 
@@ -88,6 +92,7 @@ function arrowFunction(
     //   .join(''),
     parameters: arrow.getParameters().map(parameterDeclaration),
     returnType: arrow.getReturnType().getText(),
+    module,
     location: {
       path,
       lines: {
@@ -110,4 +115,12 @@ function parameterDeclaration(param: ParameterDeclaration, index: number) {
     name,
     type: param.getType().getText(),
   }
+}
+
+function dtModuleName(path: string) {
+  return path.split('/')[0]
+}
+
+function dtPath(path: string) {
+  return path.replace(/^.*DefinitelyTyped\/types\//, '')
 }
