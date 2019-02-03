@@ -29,9 +29,7 @@ const Home: React.SFC<RouteComponentProps> = ({ history }) => (
   <Container>
     <Logo />
     <Form
-      onSubmit={q =>
-        history.push({ pathname: '/query', search: `?q=${q}` })
-      }
+      onSubmit={q => history.push({ pathname: '/query', search: `?q=${q}` })}
       isLoading={false}
     />
     <div>

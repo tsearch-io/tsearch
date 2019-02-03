@@ -4,7 +4,7 @@ import bodyParser from 'body-parser'
 import morgan from 'morgan'
 import cors from 'cors'
 
-import conf from './config';
+import conf from './config'
 import search from './search'
 
 const app = express()

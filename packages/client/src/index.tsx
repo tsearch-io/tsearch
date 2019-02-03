@@ -7,7 +7,9 @@ import { createGlobalStyle } from 'styled-components'
 import Home from './pages/Home'
 import Search from './pages/Search'
 
-const history = createHistory()
+const history = createHistory({
+  basename: process.env.REACT_APP_BASENAME || '',
+})
 
 const GlobalStyles = createGlobalStyle({
   body: {
