@@ -4,9 +4,8 @@ import bodyParser from 'body-parser'
 import morgan from 'morgan'
 import cors from 'cors'
 
+import conf from './config';
 import search from './search'
-
-const port = process.env.PORT || '8080'
 
 const app = express()
 
@@ -21,10 +20,10 @@ app.use('/', (req, res) => {
   res.json({ message: 'Welcome to ts-earch!' })
 })
 
-app.listen(port, (err?: Error) => {
+app.listen(conf.port, (err?: Error) => {
   if (err) {
     console.error(err)
   } else {
-    console.log(`Listening on localhost:${port}`)
+    console.log(`Listening on localhost:${conf.port}`)
   }
 })

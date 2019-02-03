@@ -5,28 +5,22 @@ import { RemoteData, ResolvedData } from 'remote-data-ts'
 
 import { FunctionRecord } from 'ts-earch-types'
 
+interface ServerResponse {
+  data: FunctionRecord[]
+}
+
 type SearchTask = Task<ResolvedData<FunctionRecord[], string>, UnknownError>
 
-const response = (res: TaskFetch.Response) =>
+const response = <Data>(res: TaskFetch.Response) =>
   res.ok
-    ? res.json()
+    ? (res.json() as Task<Data, Error>) // TODO: use io-ts
     : Task.reject(new Error(`${res.status} ${res.statusText}`))
 
+const base = process.env.REACT_APP_BASE_URL || 'http://localhost:8080'
+
 export const search = (query: string): SearchTask =>
-  fetch(`http://localhost:8080/search?${queryString.stringify({ query })}`)
+  fetch(`${base}/search?${queryString.stringify({ query })}`)
     .chain(response)
-    .map(fns => RemoteData.success(fns))
+    .map((fns: ServerResponse) => fns.data)
+    .map(RemoteData.success)
     .catch(err => Task.resolve(RemoteData.failure(err.message)))
-
-export const all = (): SearchTask =>
-  fetch('http://localhost:8080/search/all')
-    .chain(response)
-    .map(fns => RemoteData.success(fns))
-    .catch(err => Task.resolve(RemoteData.failure(err.message)))
-
-export const reload = (): Task<void, TypeError | UnknownError> =>
-  fetch('http://localhost:8080/search/reload').chain(res =>
-    res.ok
-      ? Task.resolve(undefined)
-      : Task.reject(new Error(`${res.status} ${res.statusText}`)),
-  )
