@@ -1,21 +1,20 @@
 import { writeFileSync } from 'fs'
-import { promisify } from 'util'
 import path from 'path'
 import { homedir } from 'os'
 import * as yargs from 'yargs'
 
-import _mkdirp from 'mkdirp'
 import { ts } from 'ts-simple-ast'
 import extractFunctions from 'ts-earch-extract'
 
-const mkdirp = promisify(_mkdirp)
+const cli = yargs.option('out', {
+  // TODO: figure out how to show the description on --help
+  type: 'string',
+  description: 'Out file path. If missing will write to stdout',
+  hidden: false,
+})
 
 function main() {
-  const { _: fileNames, stdout } = yargs.option('stdout', {
-    default: false,
-    type: 'boolean',
-    describe: 'write output to stdout',
-  }).argv
+  const { _: fileNames, out } = cli.argv
 
   if (fileNames.length === 0) {
     console.error('Missing file path/s')
@@ -29,27 +28,16 @@ function main() {
     },
   })
 
-  if (stdout) {
+  if (!out) {
     console.log(JSON.stringify(results))
-    process.exit(0)
+    return
   }
 
-  // TODO: following unix filosofy, stdout should be enough
+  const filePath = path.normalize(out.replace(/^~/, homedir()))
 
-  const $home = homedir()
-  const dir = path.join($home, '.ts-earch')
+  writeFileSync(filePath, JSON.stringify(results, null, 2), 'utf-8')
 
-  mkdirp(dir)
-    .then(() => {
-      const filePath = path.join(dir, 'types.json')
-
-      writeFileSync(filePath, JSON.stringify(results, null, 2), 'utf-8')
-
-      console.log(`Types writen to ${filePath}`)
-    })
-    .catch(err => {
-      console.error(err)
-    })
+  console.log(`Types writen to ${filePath}`)
 }
 
 module.exports = main
