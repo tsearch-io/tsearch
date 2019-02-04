@@ -1,22 +1,18 @@
-<h1 align="center">:mag: ts-earch :mag:</h1>
+<h1 align="center">tsearch</h1>
 
-<p align="center">
-:warning: <strong>WARNING!!! WORK IN PROGRESS</strong> :construction:
-</p>
-
-`ts-earch` is a search engine for TypeScript functions, methods and types.
+`tsearch` is a search engine for TypeScript functions, methods and types.
 
 [Demo](https://www.youtube.com/watch?v=Gf5irOLIFX8)
 
 <a target="_blank" href="https://www.youtube.com/watch?v=Gf5irOLIFX8">
   <img
     src="https://media.giphy.com/media/8c76egNn04cNSilvd8/giphy.gif"
-    alt="ts-earch demo" />
+    alt="tsearch demo" />
 </a>
 
 ## Architecture
 
-`ts-earch` consists of 3 differt applications, found in the `packages/`
+`tsearch` consists of 3 differt applications, found in the `packages/`
 directory:
 
 - The `cli` for extracting function types from TypeScript projects.
@@ -25,7 +21,7 @@ directory:
 
 ## Development
 
-`ts-earch` is still under development, for now to run it you need to clone the
+`tsearch` is still under development, for now to run it you need to clone the
 repo:
 
 ```bash
@@ -49,7 +45,7 @@ $ yarn extract '/absolute/path/to/typescript/project/**/*.{ts,tsx}'
 
 ### Running
 
-To use `ts-earch` we have to build first and the run the app. After that you can
+To use `tsearch` we have to build first and the run the app. After that you can
 open it in [localhost:3000](http://localhost:3000):
 
 ```bash
@@ -75,7 +71,7 @@ The server runs in [localhost:8080](http://localhost:8080) and the client in
 
 ## Inspiration
 
-`ts-earch` is inspired on Haskell API search engine
+`tsearch` is inspired on Haskell API search engine
 [Hoogle](https://www.haskell.org/hoogle/).
 
 ## LICENSE

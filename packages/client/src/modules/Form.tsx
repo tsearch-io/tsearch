@@ -1,6 +1,11 @@
 import * as React from 'react'
+import styled from 'styled-components'
 
 import { Input, Button } from '../components'
+
+const MonoInput = styled(Input)({
+  fontFamily: 'monospace',
+})
 
 interface State {
   query: string
@@ -35,7 +40,11 @@ export default class Search extends React.Component<Props, State> {
 
     return (
       <form>
-        <Input value={query} onChange={this.onChange} disabled={isLoading} />
+        <MonoInput
+          value={query}
+          onChange={this.onChange}
+          disabled={isLoading}
+        />
         <Button onClick={this.onSubmit} disabled={noSubmit}>
           Search
         </Button>

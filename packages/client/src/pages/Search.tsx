@@ -7,6 +7,11 @@ import Search from '../modules/Search'
 
 const Container = styled.div({
   display: 'flex',
+  margin: '0 auto',
+  maxWidth: 1366,
+  '@media screen and (max-width: 1024px)': {
+    flexDirection: 'column',
+  },
 })
 
 const SearchContainer = styled.div({
@@ -25,17 +30,20 @@ const getQuery = (search: string) =>
 
 const SearchPage: React.SFC<RouteComponentProps> = ({ location, history }) => (
   <Container>
-    <Col w={10}>
+    <Col w={15}>
       <Sidebar>
         <Logo />
-        <p>
-          <b>Links</b>
-        </p>
         <Link href="https://github.com/gillchristian/ts-earch" target="_blank">
-          ts-earch on GitHub
+          tsearch on GitHub
         </Link>
         <Link href="https://www.typescriptlang.org/" target="_blank">
           typescriptlang.org
+        </Link>
+        <Link
+          href="https://dev.to/gillchristian/a-crazy-idea-and-a-proof-of-concept-2oj7"
+          target="_blank"
+        >
+          Blog
         </Link>
       </Sidebar>
     </Col>

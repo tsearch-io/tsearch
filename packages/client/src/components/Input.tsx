@@ -9,6 +9,7 @@ const Input = styled.input({
   marginBottom: 5,
   fontSize: 18,
   width: 400,
+  maxWidth: '95vw',
   '&:hover': none,
   '&:active': none,
   '&:focus': none,

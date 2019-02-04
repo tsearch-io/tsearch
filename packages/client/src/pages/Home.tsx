@@ -18,6 +18,7 @@ const queries = [
   'string => string',
   'number => number[]',
   'string, RegExp, string, string => string',
+  'A[] => A',
 ]
 
 const qToPath = (q: string) => ({
