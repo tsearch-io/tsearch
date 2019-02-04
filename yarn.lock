@@ -694,6 +694,13 @@
   dependencies:
     "@types/express" "*"
 
+"@types/dotenv@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@types/dotenv/-/dotenv-6.1.0.tgz#fba2bfd1f28a46eadaa049f3313ebb89bdedfc53"
+  integrity sha512-gmbNb7V1LbJQA4MmH0hVFgqY1cyKsa6RvKC1Xrq0WBnZ0JuuvXKciXx/s8dN0LVXCJd8xO6wIaSFSyUIoGph9g==
+  dependencies:
+    "@types/node" "*"
+
 "@types/events@*":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-1.2.0.tgz#81a6731ce4df43619e5c8c945383b3e62a89ea86"
@@ -3738,6 +3745,11 @@ dotenv@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-4.0.0.tgz#864ef1379aced55ce6f95debecdce179f7a0cd1d"
   integrity sha1-hk7xN5rO1Vzm+V3r7NzhefegzR0=
+
+dotenv@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-6.2.0.tgz#941c0410535d942c8becf28d3f357dbd9d476064"
+  integrity sha512-HygQCKUBSFl8wKQZBSemMywRWcEDNidvNbjGVyZu3nbZ8qq9ubiPoGLMdRDpfSrpkkm9BXYFkpKxxFX38o/76w==
 
 duplexer3@^0.1.4:
   version "0.1.4"

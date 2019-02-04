@@ -7,7 +7,7 @@ import { search } from 'ts-earch-search'
 import { getTypes, getTypesSync } from './utils'
 import conf from './config'
 
-// TODO: get from config
+// TODO: expand
 const $home = homedir()
 const p = path.join($home, conf.typesPath)
 let types = getTypesSync(p)
