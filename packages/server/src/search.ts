@@ -2,10 +2,35 @@ import path from 'path'
 import { homedir } from 'os'
 
 import express, { Router } from 'express'
+
+import { FunctionRecord } from 'ts-earch-types'
 import { search } from 'ts-earch-search'
 
 import { getTypes, getTypesSync } from './utils'
 import conf from './config'
+
+import firebase from './firebase'
+
+// TODO: path
+const admin = firebase(path.resolve('../..', conf.secretsPath))
+
+const collection = admin.firestore().collection('queries')
+
+// TODO: create firebase or analytics module to handle this
+const addQuery = (query: string, results: FunctionRecord[]) =>
+  collection
+    .doc()
+    .set({
+      query,
+      results: results.slice(0, 5).map(({ module, name, location }) => ({
+        module,
+        name,
+        path: location.path,
+      })),
+    })
+    .catch(err => {
+      console.log('Failed to save doc', err)
+    })
 
 // TODO: expand
 const $home = homedir()
@@ -22,6 +47,8 @@ router.get('/', (req, res) => {
     data: result,
     count: result.length,
   })
+
+  addQuery(req.query.query, result)
 })
 
 router.get('/all', (req, res) => res.json(types))

@@ -1,7 +1,9 @@
 import path from 'path'
+import dotenv from 'dotenv'
+
+dotenv.config({ path: path.join(__dirname, '.env') })
 
 import express from 'express'
-import dotenv from 'dotenv'
 
 import bodyParser from 'body-parser'
 import morgan from 'morgan'
@@ -9,8 +11,6 @@ import cors from 'cors'
 
 import conf from './config'
 import search from './search'
-
-dotenv.config({ path: path.join(__dirname, '.env') })
 
 const app = express()
 

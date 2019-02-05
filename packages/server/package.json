@@ -16,6 +16,7 @@
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
+    "firebase-admin": "^7.0.0",
     "morgan": "^1.9.1",
     "ts-earch-search": "^0.0.1",
     "ts-earch-types": "^0.0.1"
