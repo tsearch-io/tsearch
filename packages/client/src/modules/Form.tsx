@@ -1,7 +1,9 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-import { Input, Button } from '../components'
+import { Input, Button, Collapse } from '../components'
+
+import Help from './Help'
 
 const MonoInput = styled(Input)({
   fontFamily: 'monospace',
@@ -39,16 +41,25 @@ export default class Search extends React.Component<Props, State> {
     const noSubmit = isLoading || query === ''
 
     return (
-      <form>
-        <MonoInput
-          value={query}
-          onChange={this.onChange}
-          disabled={isLoading}
-        />
-        <Button onClick={this.onSubmit} disabled={noSubmit}>
-          Search
-        </Button>
-      </form>
+      <Collapse
+        trigger={({ toggle, isOpen }) => (
+          <form>
+            <MonoInput
+              value={query}
+              onChange={this.onChange}
+              disabled={isLoading}
+            />
+            <Button onClick={this.onSubmit} disabled={noSubmit}>
+              Search
+            </Button>
+            <Button onClick={toggle} type="button">
+              Help
+            </Button>
+          </form>
+        )}
+      >
+        <Help />
+      </Collapse>
     )
   }
 }

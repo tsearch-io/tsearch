@@ -15,10 +15,13 @@ const Container = styled.div({
 })
 
 const queries = [
+  'A[] => A',
   'string => string',
   'number => number[]',
   'string, RegExp, string, string => string',
-  'A[] => A',
+  'compose',
+  'render',
+  'createGlobalStyle',
 ]
 
 const qToPath = (q: string) => ({
