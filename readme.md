@@ -1,14 +1,9 @@
 <h1 align="center">tsearch</h1>
+<p align="center">Search engine for TypeScript functions, methods and types.</p>
 
-`tsearch` is a search engine for TypeScript functions, methods and types.
+## devlog
 
-[Demo](https://www.youtube.com/watch?v=Gf5irOLIFX8)
-
-<a target="_blank" href="https://www.youtube.com/watch?v=Gf5irOLIFX8">
-  <img
-    src="https://media.giphy.com/media/8c76egNn04cNSilvd8/giphy.gif"
-    alt="tsearch demo" />
-</a>
+- [A crazy idea and a proof of concept](https://dev.to/gillchristian/a-crazy-idea-and-a-proof-of-concept-2oj7).
 
 ## Architecture
 
