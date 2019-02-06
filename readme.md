@@ -4,6 +4,7 @@
 ## devlog
 
 - [A crazy idea and a proof of concept](https://dev.to/gillchristian/a-crazy-idea-and-a-proof-of-concept-2oj7).
+- [tsearch first public version](https://dev.to/gillchristian/tsearch-first-public-version-50a).
 
 ## Architecture
 
