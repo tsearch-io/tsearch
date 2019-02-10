@@ -28,6 +28,9 @@ const addQuery = (query: string, results: FunctionRecord[]) =>
         path: location.path,
       })),
     })
+    .then(doc => {
+      console.log('Saved doc', doc)
+    })
     .catch(err => {
       console.log('Failed to save doc', err)
     })
@@ -48,7 +51,9 @@ router.get('/', (req, res) => {
     count: result.length,
   })
 
-  addQuery(req.query.query, result)
+  if (conf.isProd) {
+    addQuery(req.query.query, result)
+  }
 })
 
 router.get('/all', (req, res) => res.json(types))

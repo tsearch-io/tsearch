@@ -12,6 +12,8 @@ import cors from 'cors'
 import conf from './config'
 import search from './search'
 
+console.log(JSON.stringify(conf, null, 2))
+
 const app = express()
 
 app.use(cors())

@@ -21,18 +21,8 @@ type Query = NameType | FunctionType
 export const isName = (q: Query): q is NameType => q._type === Type.NAME
 export const isFunc = (q: Query): q is FunctionType => q._type === Type.FUNCTION
 
-const matchParams = (query: string) => (param: Param) =>
-  param.type.includes(query) || (param.name && param.name.includes(query))
-
-const matchesNameType = (query: string) => (fn: FunctionRecord) => {
-  const paramMatcher = matchParams(query)
-
-  const byName = fn.name && fn.name.includes(query)
-  const byReturnType = fn.returnType.includes(query)
-  const byParams = fn.parameters.filter(paramMatcher).length > 0
-
-  return byName || byReturnType || byParams
-}
+const matchesNameType = (query: string) => (fn: FunctionRecord) =>
+  Boolean(fn.name && fn.name.includes(query))
 
 export const parseQuery = (query: string): Query => {
   const [params, returnType] = query.replace(/\s/g, '').split('=>')
