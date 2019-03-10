@@ -1,6 +1,7 @@
 export interface Param {
   name: string
   type: string
+  isGeneric: boolean
 }
 
 export interface Location {

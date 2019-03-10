@@ -32,8 +32,9 @@ func (ts *Modules) append(xs ...Module) {
 
 // Param represents a parameter of a function.
 type Param struct {
-	Name string `json:"name"`
-	Type string `json:"type"`
+	Name      string `json:"name"`
+	Type      string `json:"type"`
+	IsGeneric bool   `json:"isGeneric"`
 }
 
 // Position represents the lines where piece of code is located in a file.

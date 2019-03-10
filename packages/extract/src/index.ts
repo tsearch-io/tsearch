@@ -47,11 +47,33 @@ export default function findFunctions(
     .filter((v): v is FunctionRecord => Boolean(v))
 }
 
+const parameterDeclaration = (generics: string[]) => (
+  param: ParameterDeclaration,
+  index: number,
+) => {
+  let name
+  try {
+    name = param.getName() || `t${index + 1}`
+  } catch (e) {
+    name = `t${index + 1}`
+  }
+
+  const t = param.getType().getText()
+
+  return {
+    name,
+    type: t,
+    isGeneric: generics.includes(t),
+  }
+}
+
 function functionDeclaration(
   node: FunctionDeclaration,
   path: string,
   module: string,
 ): FunctionRecord {
+  const generics = node.getTypeParameters().map(p => p.getName())
+
   return {
     name: node.getName(),
     text: node.getFullText(),
@@ -59,7 +81,7 @@ function functionDeclaration(
     //   .getJsDocs()
     //   .map(doc => doc.getFullText())
     //   .join(''),
-    parameters: node.getParameters().map(parameterDeclaration),
+    parameters: node.getParameters().map(parameterDeclaration(generics)),
     returnType: node.getReturnType().getText(),
     module,
     location: {
@@ -83,6 +105,8 @@ function arrowFunction(
     return undefined
   }
 
+  const generics = arrow.getTypeParameters().map(p => p.getName())
+
   return {
     name: node.getName(),
     text: `const${node.getFullText()}`,
@@ -90,7 +114,7 @@ function arrowFunction(
     //   .getJsDocs()
     //   .map(doc => doc.getFullText())
     //   .join(''),
-    parameters: arrow.getParameters().map(parameterDeclaration),
+    parameters: arrow.getParameters().map(parameterDeclaration(generics)),
     returnType: arrow.getReturnType().getText(),
     module,
     location: {
@@ -100,20 +124,6 @@ function arrowFunction(
         to: node.getEndLineNumber(),
       },
     },
-  }
-}
-
-function parameterDeclaration(param: ParameterDeclaration, index: number) {
-  let name
-  try {
-    name = param.getName() || `t${index + 1}`
-  } catch (e) {
-    name = `t${index + 1}`
-  }
-
-  return {
-    name,
-    type: param.getType().getText(),
   }
 }
 
