@@ -1,20 +1,12 @@
-import {
-  Project,
-  ProjectOptions,
-  ts,
-  TypeGuards,
-  FunctionDeclaration,
-  VariableDeclaration,
-  ParameterDeclaration,
-} from 'ts-simple-ast'
+import * as ts from 'ts-morph'
 
 import { FunctionRecord } from 'ts-earch-types'
 
 export default function findFunctions(
   fileNames: string[],
-  options: ProjectOptions,
+  options: ts.ProjectOptions,
 ): FunctionRecord[] {
-  const project = new Project({
+  const project = new ts.Project({
     ...options,
     addFilesFromTsConfig: false,
     skipFileDependencyResolution: true,
@@ -28,12 +20,12 @@ export default function findFunctions(
       const path = dtPath(file.getFilePath())
       const module = dtModuleName(path)
 
-      return file.getExportedDeclarations().map(exp => {
-        if (TypeGuards.isFunctionDeclaration(exp)) {
+      return file.getExportDeclarations().map(exp => {
+        if (ts.TypeGuards.isFunctionDeclaration(exp)) {
           return functionDeclaration(exp, path, module)
         }
 
-        if (TypeGuards.isVariableDeclaration(exp)) {
+        if (ts.TypeGuards.isVariableDeclaration(exp)) {
           return arrowFunction(exp, path, module)
         }
 
@@ -48,7 +40,7 @@ export default function findFunctions(
 }
 
 const parameterDeclaration = (generics: string[]) => (
-  param: ParameterDeclaration,
+  param: ts.ParameterDeclaration,
   index: number,
 ) => {
   let name
@@ -68,7 +60,7 @@ const parameterDeclaration = (generics: string[]) => (
 }
 
 function functionDeclaration(
-  node: FunctionDeclaration,
+  node: ts.FunctionDeclaration,
   path: string,
   module: string,
 ): FunctionRecord {
@@ -95,7 +87,7 @@ function functionDeclaration(
 }
 
 function arrowFunction(
-  node: VariableDeclaration,
+  node: ts.VariableDeclaration,
   path: string,
   module: string,
 ): FunctionRecord | undefined {

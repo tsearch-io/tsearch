@@ -3,7 +3,7 @@ import path from 'path'
 import { homedir } from 'os'
 import * as yargs from 'yargs'
 
-import { ts } from 'ts-simple-ast'
+import { ts } from 'ts-morph'
 import extractFunctions from 'ts-earch-extract'
 
 const cli = yargs.option('out', {
