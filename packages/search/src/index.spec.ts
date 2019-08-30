@@ -6,9 +6,9 @@ const partialParam: FunctionRecord = {
   name: 'multi_params_to_string',
   text: '',
   parameters: [
-    { name: 'n', type: 'number', isGeneric: false, },
-    { name: 'b', type: 'boolean', isGeneric: false, },
-    { name: 's', type: 'string', isGeneric: false, },
+    { name: 'n', type: 'number', isGeneric: false },
+    { name: 'b', type: 'boolean', isGeneric: false },
+    { name: 's', type: 'string', isGeneric: false },
   ],
   returnType: 'string',
   module: 'some_module',
@@ -19,7 +19,7 @@ const partialParam: FunctionRecord = {
 }
 const noParam: FunctionRecord = {
   name: 'number_to_string',
-  parameters: [{ name: 'n', type: 'number', isGeneric: false, }],
+  parameters: [{ name: 'n', type: 'number', isGeneric: false }],
   returnType: 'string',
   module: 'some_module',
   location: {

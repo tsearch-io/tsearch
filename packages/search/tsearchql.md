@@ -21,7 +21,8 @@ Literal matching
 
 **Parametrized types**
 
-Match type literally and list of types recursively (i.e. could also be parametrized types).
+Match type literally and list of types recursively (i.e. could also be
+parametrized types).
 
 - `Array<T>`
 - `Promise<Data>`
@@ -34,9 +35,10 @@ Special case `T[]` that converts to `Array<T>`.
 **Generics**
 
 - `T[] => T`: single capital leters are considered generics.
-- `<Data> Data[] => Data`: can be specified 
+- `<Data> Data[] => Data`: can be specified
 
-Get renamed to a canonical name and matched by using a type level lambda (System F):
+Get renamed to a canonical name and matched by using a type level lambda (System
+F):
 
 `λt. t[] => t`
 
@@ -50,7 +52,7 @@ Split into a list of types and match all, order doesn't matter.
 
 Appended by a question mark: `number ?`
 
-Sintax sugar for: `number  | undefined` (` ... | null`?).
+Sintax sugar for: `number | undefined` (`... | null`?).
 
 **Functions**
 
