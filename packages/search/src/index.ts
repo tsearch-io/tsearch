@@ -1,4 +1,4 @@
-import { Param, FunctionRecord } from 'ts-earch-types'
+import { FunctionRecord } from 'ts-earch-types'
 
 const enum Type {
   NAME = 'name-type',

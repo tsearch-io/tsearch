@@ -7,8 +7,8 @@
     "build": "tsc -p ."
   },
   "dependencies": {
+    "ts-earch-types": "^0.0.1",
     "ts-simple-ast": "^20.0.0",
-    "typescript": "^3.2.2",
-    "ts-earch-types": "^0.0.1"
+    "typescript": "^3.6.2"
   }
 }

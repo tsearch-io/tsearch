@@ -9,10 +9,12 @@
     "jsx": "react",
     "moduleResolution": "node",
     "rootDir": "src",
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
+    "strict": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true
