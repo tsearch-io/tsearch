@@ -30,40 +30,10 @@ func (ts *Modules) append(xs ...Module) {
 	*ts = append(*ts, xs...)
 }
 
-// Param represents a parameter of a function.
-type Param struct {
-	Name      string `json:"name"`
-	Type      string `json:"type"`
-	IsGeneric bool   `json:"isGeneric"`
-}
-
-// Position represents the lines where piece of code is located in a file.
-type Position struct {
-	From int `json:"number"`
-	To   int `json:"to"`
-}
-
-// Location represents where a piece of code is located.
-type Location struct {
-	Path  string   `json:"path"`
-	Lines Position `json:"lines"`
-}
-
-// FunctionRecord contains all the information about a TS function.
-type FunctionRecord struct {
-	Name       string   `json:"name"`
-	Docs       string   `json:"docs"`
-	Text       string   `json:"text"`
-	Parameters []Param  `json:"parameters"`
-	ReturnType string   `json:"returnType"`
-	Location   Location `json:"location"`
-	Module     string   `json:"module"`
-}
-
 // Module contains all the exported functions of a module.
 type Module struct {
-	Name string           `json:"name"`
-	Fns  []FunctionRecord `json:"fns"`
+	Name string        `json:"name"`
+	Fns  []interface{} `json:"fns"` // empty interface marshalls everything
 }
 
 func execAndAppend(dir string, acc *Modules, mutex *sync.Mutex) error {
