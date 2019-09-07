@@ -155,7 +155,9 @@ const matchType = <R>(m: TypeMatcher<R>) => (t: Type): R => {
 
 export const stringifySignature = (s: SignatureT): string => {
   const typeParams = s.typeParameters.map(stringifyTypeParam).join(', ')
-  const params = s.parameters.map(({ type }) => stringifyType(type)).join(', ')
+  const params = s.parameters
+    .map(({ name, type }, i) => `${name || 't' + i}: ${stringifyType(type)}`)
+    .join(', ')
   const returnType = stringifyType(s.returnType)
 
   return s.typeParameters.length === 0
