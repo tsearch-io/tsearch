@@ -1,3 +1,7 @@
+<p align="center">
+<img alg="tsearch logo" src="./assets/tsearchio.png" width="200" />
+</p>
+
 <h1 align="center">tsearch</h1>
 <p align="center">Search engine for TypeScript functions, methods and types.</p>
 
