@@ -2,7 +2,7 @@
   "name": "ts-earch-client",
   "version": "0.0.1",
   "scripts": {
-    "start": "serve --port 3000 build",
+    "start": "serve -l 9000 build",
     "watch": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
@@ -20,6 +20,7 @@
     "react-scripts-ts": "^3.1.0",
     "react-syntax-highlighter": "^10.1.2",
     "remote-data-ts": "^1.0.1",
+    "serve": "^11.1.0",
     "styled-components": "^4.1.2",
     "ts-earch-types": "^0.0.1"
   },
