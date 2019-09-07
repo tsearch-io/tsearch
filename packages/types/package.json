@@ -1,7 +1,8 @@
 {
   "name": "ts-earch-types",
   "version": "0.0.1",
-  "main": "src/index.ts",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "watch": "tsc -w -p .",
     "build": "tsc -p ."
