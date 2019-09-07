@@ -96,10 +96,7 @@ export const weighFunctionRecord = ({ signature }: FunctionType) => (
 
   const weight =
     weighParams(
-      // TODO: whi is this undefined ???
-      fn.signature.parameters
-        ? fn.signature.parameters.map(({ type }) => type)
-        : [],
+      fn.signature.parameters.map(({ type }) => type),
       parameters.map(({ type }) => type),
     ) +
     // TODO: `weighReturnType`

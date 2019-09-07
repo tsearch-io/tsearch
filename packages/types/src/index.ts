@@ -154,13 +154,11 @@ const matchType = <R>(m: TypeMatcher<R>) => (t: Type): R => {
 }
 
 export const stringifySignature = (s: SignatureT): string => {
-  // TODO: why is this undefined ?
-  const tp = s.typeParameters || []
-  const typeParams = tp.map(stringifyTypeParam).join(', ')
+  const typeParams = s.typeParameters.map(stringifyTypeParam).join(', ')
   const params = s.parameters.map(({ type }) => stringifyType(type)).join(', ')
   const returnType = stringifyType(s.returnType)
 
-  return tp.length === 0
+  return s.typeParameters.length === 0
     ? `(${params}) => ${returnType}`
     : `<${typeParams}>(${params}) => ${returnType}`
 }
