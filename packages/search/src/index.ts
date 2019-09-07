@@ -1,62 +1,30 @@
-import { FunctionRecord } from 'ts-earch-types'
+import { zip } from 'fp-ts/lib/Array'
+import { fold, monoidSum } from 'fp-ts/lib/Monoid'
 
-const enum Type {
-  NAME = 'name-type',
-  FUNCTION = 'function-type',
-}
+import { Type as TypeO, FunctionRecord } from 'ts-earch-types'
 
-interface NameType {
-  _type: Type.NAME
-  value: string
-}
+import { parseQuery, isName, FunctionType } from './parse'
 
-interface FunctionType {
-  _type: Type.FUNCTION
-  parameters: string[]
-  returnType: string
-}
-
-type Query = NameType | FunctionType
-
-export const isName = (q: Query): q is NameType => q._type === Type.NAME
-export const isFunc = (q: Query): q is FunctionType => q._type === Type.FUNCTION
+const sum = fold(monoidSum)
 
 const matchesNameType = (query: string) => (fn: FunctionRecord) =>
   Boolean(fn.name && fn.name.includes(query))
-
-export const parseQuery = (query: string): Query => {
-  const [params, returnType] = query.replace(/\s/g, '').split('=>')
-
-  return Boolean(returnType)
-    ? {
-        _type: Type.FUNCTION,
-        parameters: params.replace(/(\(|\))/g, '').split(','),
-        returnType,
-      }
-    : {
-        _type: Type.NAME,
-        value: query,
-      }
-}
 
 // should become a range when considering type checking
 // e.g. weighReturnType('string', 'string')            => 2
 //      weighReturnType('string', StringAlias)         => 1.x ?
 //      weighReturnType('string', 'string' | 'number') => 1
-const weighReturnType = (query: string, returnType: string) =>
-  query === returnType ? 2 : 0
+// const weighReturnType = (query: string, returnType: string) =>
+//   query === returnType ? 2 : 0
 
-const weighParams = (query: string[], params: string[]) => {
+const weighParams = (query: TypeO[], params: TypeO[]) => {
   let paramsWeight = 0
 
   // m -> matches
   // n -> # of params
   if (query.length === params.length) {
     paramsWeight =
-      query.reduce(
-        (acc, type, key) => (type === params[key] ? acc + 1 : acc),
-        0,
-      ) / query.length
+      sum(zip(query, params).map(([q, p]) => weighParam(q)(p))) / query.length
 
     // + 1 + m/n # only if some params match
     if (paramsWeight > 0) {
@@ -64,6 +32,7 @@ const weighParams = (query: string[], params: string[]) => {
     }
   } else {
     // + m/n
+    // TODO
     paramsWeight +=
       query.reduce((acc, type) => (params.includes(type) ? acc + 1 : acc), 0) /
       query.length
@@ -72,15 +41,69 @@ const weighParams = (query: string[], params: string[]) => {
   return paramsWeight
 }
 
-export const weighFunctionRecord = ({
-  returnType,
-  parameters,
-}: FunctionType) => (fn: FunctionRecord): [FunctionRecord, number] => {
-  const fnParameters = fn.parameters.map(({ type }) => type)
+function weighParam(query: TypeO): (param: TypeO) => number {
+  return TypeO.match({
+    Any: () => 1,
+    Unknown: () => 1,
+    Undefined: () => (TypeO.isUndefined(query) ? 1 : 0),
+    LiteralPrimitive: ({ text }) =>
+      TypeO.isLiteralPrimitive(query) ? (query.text === text ? 1 : 0) : 0,
+    Primitive: ({ typeName }) =>
+      TypeO.isPrimitive(query) ? (query.typeName === typeName ? 1 : 0) : 0,
+    Array: ({ elementsType }) =>
+      TypeO.isArray(query)
+        ? // TODO: `weighType` -> to be used for tuples, unions,
+          // intersections, functions, etc
+          weighParam(query.elementsType)(elementsType) === 1
+          ? 1
+          : // TODO: find proper weight when `elementsType` don't match
+            0.5
+        : 0,
+    Union: () => 1,
+    Intersection: () => 1,
+    Tuple: ({ types }) =>
+      TypeO.isTuple(query)
+        ? query.types.length === types.length
+          ? sum(zip(query.types, types).map(([q, p]) => weighParam(q)(p))) /
+            types.length
+          : 0
+        : 0,
+    Function: () => 0,
+    HigherOrder: p => {
+      if (TypeO.isHigherOrder(query)) {
+        // TODO: type name (`text` has the whole definition)
+        const typeMatch = p.text.split('<')[0] === query.text.split('<')[0]
+
+        const args =
+          sum(
+            zip(query.arguments, p.arguments).map(([q, p]) => weighParam(q)(p)),
+          ) / p.arguments.length
+
+        return typeMatch ? (args === 1 ? 1 : 0.5) : 0
+      }
+
+      return 0
+    },
+    Other: ({ text }) =>
+      TypeO.isOther(query) ? (text === query.text ? 1 : 0) : 0,
+  })
+}
+
+export const weighFunctionRecord = ({ signature }: FunctionType) => (
+  fn: FunctionRecord,
+): [FunctionRecord, number] => {
+  const { returnType, parameters } = signature.signatures[0]
 
   const weight =
-    weighParams(fnParameters, parameters) +
-    weighReturnType(returnType, fn.returnType)
+    weighParams(
+      // TODO: whi is this undefined ???
+      fn.signature.parameters
+        ? fn.signature.parameters.map(({ type }) => type)
+        : [],
+      parameters.map(({ type }) => type),
+    ) +
+    // TODO: `weighReturnType`
+    weighParam(returnType)(fn.signature.returnType)
 
   return [fn, weight]
 }

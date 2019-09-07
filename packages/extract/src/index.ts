@@ -2,6 +2,8 @@ import * as ts from 'ts-morph'
 
 import { FunctionRecord } from 'ts-earch-types'
 
+import { callSignature } from './type'
+
 export default function findFunctions(
   fileNames: string[],
   options: ts.ProjectOptions,
@@ -14,49 +16,36 @@ export default function findFunctions(
 
   project.addExistingSourceFiles(fileNames)
 
-  return project
-    .getSourceFiles()
-    .map(file => {
-      const path = dtPath(file.getFilePath())
-      const module = dtModuleName(path)
+  return project.getSourceFiles().reduce<FunctionRecord[]>((acc, file) => {
+    const path = dtPath(file.getFilePath())
+    const module = dtModuleName(path)
 
-      return file.getExportDeclarations().map(exp => {
-        if (ts.TypeGuards.isFunctionDeclaration(exp)) {
-          return functionDeclaration(exp, path, module)
-        }
+    const entries = Array.from(file.getExportedDeclarations().entries())
 
-        if (ts.TypeGuards.isVariableDeclaration(exp)) {
-          return arrowFunction(exp, path, module)
-        }
+    const fns = entries.reduce<FunctionRecord[]>(
+      (acc, [indentifier, exports]) => {
+        exports.forEach(exp => {
+          if (ts.TypeGuards.isFunctionDeclaration(exp)) {
+            acc.push(functionDeclaration(exp, path, module))
+            return
+          }
 
-        return undefined
-      })
-    })
-    .reduce((acc, cur) => {
-      acc.push(...cur)
-      return acc
-    }, [])
-    .filter((v): v is FunctionRecord => Boolean(v))
-}
+          if (ts.TypeGuards.isVariableDeclaration(exp)) {
+            const fn = arrowFunction(exp, path, module)
+            if (fn) {
+              acc.push(fn)
+            }
+          }
+        })
 
-const parameterDeclaration = (generics: string[]) => (
-  param: ts.ParameterDeclaration,
-  index: number,
-) => {
-  let name
-  try {
-    name = param.getName() || `t${index + 1}`
-  } catch (e) {
-    name = `t${index + 1}`
-  }
+        return acc
+      },
+      [],
+    )
 
-  const t = param.getType().getText()
-
-  return {
-    name,
-    type: t,
-    isGeneric: generics.includes(t),
-  }
+    acc.push(...fns)
+    return acc
+  }, [])
 }
 
 function functionDeclaration(
@@ -64,17 +53,18 @@ function functionDeclaration(
   path: string,
   module: string,
 ): FunctionRecord {
-  const generics = node.getTypeParameters().map(p => p.getName())
-
   return {
     name: node.getName(),
     text: node.getFullText(),
-    // docs: node
-    //   .getJsDocs()
-    //   .map(doc => doc.getFullText())
-    //   .join(''),
-    parameters: node.getParameters().map(parameterDeclaration(generics)),
-    returnType: node.getReturnType().getText(),
+    docs: node
+      .getJsDocs()
+      .map(doc => doc.getFullText())
+      .join(''),
+    signature: callSignature({
+      typeParameters: node.getTypeParameters(),
+      parameters: node.getParameters(),
+      returnType: node.getReturnType(),
+    }),
     module,
     location: {
       path,
@@ -97,17 +87,18 @@ function arrowFunction(
     return undefined
   }
 
-  const generics = arrow.getTypeParameters().map(p => p.getName())
-
   return {
     name: node.getName(),
     text: `const${node.getFullText()}`,
-    // docs: arrow
-    //   .getJsDocs()
-    //   .map(doc => doc.getFullText())
-    //   .join(''),
-    parameters: arrow.getParameters().map(parameterDeclaration(generics)),
-    returnType: arrow.getReturnType().getText(),
+    docs: arrow
+      .getJsDocs()
+      .map(doc => doc.getFullText())
+      .join(''),
+    signature: callSignature({
+      typeParameters: arrow.getTypeParameters(),
+      parameters: arrow.getParameters(),
+      returnType: arrow.getReturnType(),
+    }),
     module,
     location: {
       path,
