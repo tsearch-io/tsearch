@@ -9,6 +9,7 @@
     "build": "tsc -p ."
   },
   "dependencies": {
+    "fp-ts": "^2.0.5",
     "ts-earch-types": "^0.0.1"
   },
   "devDependencies": {
