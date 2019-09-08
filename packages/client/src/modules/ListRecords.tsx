@@ -1,14 +1,13 @@
 import * as React from 'react'
 import { RemoteData, cata } from 'remote-data-ts'
 
-import { FunctionRecord } from 'ts-earch-types'
-
 import SearchResult from '../components/SearchResult'
+import { FormattedFunctionRecord } from '../types'
 
-const key = ({ location }: FunctionRecord) =>
+const key = ({ location }: FormattedFunctionRecord) =>
   `${location.path}-${location.lines.from}-${location.lines.to}`
 
-const renderData = cata<FunctionRecord[], string, React.ReactNode>({
+const renderData = cata<FormattedFunctionRecord[], string, React.ReactNode>({
   notAsked: () => <span>Search for functions by name, types or signature</span>,
   loading: () => <span>loading ...</span>,
   failure: e => <span>{e}</span>,
@@ -21,7 +20,7 @@ const renderData = cata<FunctionRecord[], string, React.ReactNode>({
 })
 
 interface Props {
-  records: RemoteData<FunctionRecord[], string>
+  records: RemoteData<FormattedFunctionRecord[], string>
 }
 
 const Results: React.SFC<Props> = ({ records }) => (

@@ -6,12 +6,11 @@ import {
   gruvboxDark,
 } from 'react-syntax-highlighter/dist/styles/hljs'
 
-import { FunctionRecord, stringifySignature } from 'ts-earch-types'
-
 import Collapse from './Collapse'
+import { FormattedFunctionRecord } from '../types'
 
 interface Props {
-  result: FunctionRecord
+  result: FormattedFunctionRecord
 }
 
 const Container = styled.div({
@@ -38,13 +37,13 @@ const signatureStyle = {
   marginBottom: 10,
 }
 
-const Signature: React.SFC<FunctionRecord> = props => (
+const Signature: React.SFC<FormattedFunctionRecord> = props => (
   <SyntaxHighlighter
     language="typescript"
     style={gruvboxLight}
     customStyle={signatureStyle}
   >
-    {stringifySignature(props.signature)}
+    {props.formattedSignature}
   </SyntaxHighlighter>
 )
 
