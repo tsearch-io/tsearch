@@ -1,0 +1,104 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 441ff625b1ad871622b90cbfed50e94b3e7f466411b39a3a05c6f6bde24815e3
+
+name:           tsearch
+version:        0.1.0.0
+synopsis:       Backend for tsearch.io
+description:    Please see the README on GitHub at <https://github.com/tsearch-io/tsearch#readme>
+category:       Web
+homepage:       https://github.com/tsearch-io/tsearch#readme
+bug-reports:    https://github.com/tsearch-io/tsearch/issues
+author:         Christian Gill
+maintainer:     gillchristiang@gmail.com
+copyright:      2019 Christian Gill
+license:        MIT
+build-type:     Simple
+extra-source-files:
+    readme.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/tsearch-io/tsearch
+
+library
+  exposed-modules:
+      Tsearch.Query
+      Tsearch.Server
+      Tsearch.Types
+  other-modules:
+      Paths_tsearch
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , http-client
+    , http-types
+    , mtl
+    , parsec
+    , parsec-numbers >=0.1.0 && <0.2
+    , servant
+    , servant-server
+    , text
+    , transformers
+    , wai
+    , warp
+  default-language: Haskell2010
+
+executable tsearch-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_tsearch
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , http-client
+    , http-types
+    , mtl
+    , parsec
+    , parsec-numbers >=0.1.0 && <0.2
+    , servant
+    , servant-server
+    , text
+    , transformers
+    , tsearch
+    , wai
+    , warp
+  default-language: Haskell2010
+
+test-suite tsearch-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_tsearch
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , http-client
+    , http-types
+    , mtl
+    , parsec
+    , parsec-numbers >=0.1.0 && <0.2
+    , servant
+    , servant-server
+    , text
+    , transformers
+    , tsearch
+    , wai
+    , warp
+  default-language: Haskell2010
