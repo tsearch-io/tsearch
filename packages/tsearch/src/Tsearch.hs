@@ -1,23 +1,58 @@
+{-# LANGUAGE DataKinds         #-}
 {-# LANGUAGE DeriveAnyClass    #-}
 {-# LANGUAGE DeriveGeneric     #-}
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE TypeOperators     #-}
 
-module Tsearch.Types
-  ( stringOfType
-  , signatureToString
-  , Type(..)
-  , Parameter(..)
-  , PrimitiveType(..)
-  , TypeParameter(..)
-  , Signature(..)
-  , FunctionRecord(..)
+module Tsearch
+  ( serverMain
   ) where
 
-import           Data.Aeson   ((.=))
-import qualified Data.Aeson   as Json
-import qualified Data.List    as List
+import           Data.Aeson                           ((.=))
+import qualified Data.Aeson                           as Json
+import qualified Data.ByteString.Lazy.Char8           as Bs
+import           Data.Functor                         (($>))
+import qualified Data.List                            as List
+import           Data.Text                            (Text)
 import           GHC.Generics
+import qualified Network.Wai.Handler.Warp             as Warp
+import           Servant
+import qualified Text.Parsec.Char                     as C
+import qualified Text.Parsec.Combinator               as Comb
+import           Text.Parsec.Prim                     ((<?>), (<|>))
+import qualified Text.Parsec.Prim                     as Parsec
+import qualified Text.Parsec.Prim                     as P
+import           Text.Parsec.String                   (Parser)
+import qualified Text.ParserCombinators.Parsec.Number as N
 
+-- SERVER ---
+type TsearchAPI = Get '[ PlainText] Text 
+             :<|> "search" :> QueryParam "q" String
+                           :> Get '[ JSON] FunctionRecord
+
+app :: Application
+app = serve tsearchApi server
+
+serverMain :: Int -> IO ()
+serverMain port = Warp.run port app
+
+tsearchApi :: Proxy TsearchAPI
+tsearchApi = Proxy
+
+server :: Server TsearchAPI
+server = hello :<|> query
+
+hello :: Handler Text
+hello = pure "Hello world"
+
+query :: Maybe String -> Handler FunctionRecord
+query (Just q) =
+  case Parsec.parse signatureP "" q of
+    Right r -> pure $ FunctionRecord Nothing Nothing Nothing "module" r
+    Left e  -> throwError $ err400 {errBody = Bs.pack $ show e}
+query Nothing = throwError $ err400 {errBody = "missing query"}
+
+-- Types ---
 data FunctionRecord = FunctionRecord
   { name      :: Maybe String
   , docs      :: Maybe String
@@ -178,13 +213,13 @@ params = List.intercalate ", " . map stringOfParam
 typeParams :: [TypeParameter] -> String
 typeParams = List.intercalate ", " . map stringOfTypeParam
 
-fn :: [Parameter] -> Type -> String
-fn ps rt = "(" ++ params ps ++ ") => " ++ stringOfType rt
+fnToString :: [Parameter] -> Type -> String
+fnToString ps rt = "(" ++ params ps ++ ") => " ++ stringOfType rt
 
 signatureToString :: Signature -> String
-signatureToString (Signature [] ps rt) = fn ps rt
+signatureToString (Signature [] ps rt) = fnToString ps rt
 signatureToString (Signature tps ps rt) =
-  "<" ++ typeParams tps ++ ">" ++ fn ps rt
+  "<" ++ typeParams tps ++ ">" ++ fnToString ps rt
 
 stringOfTypeParam :: TypeParameter -> String
 stringOfTypeParam (Polymorphic s)   = s
@@ -205,8 +240,87 @@ stringOfType (Union _ ts) = List.intercalate " | " $ map stringOfType ts
 stringOfType (Intersection _ ts) = List.intercalate " & " $ map stringOfType ts
 stringOfType (Tuple _ ts) =
   "[" ++ List.intercalate " & " (map stringOfType ts) ++ "]"
-stringOfType (Function _ []) = ""
+stringOfType (Function _ []) = "" -- /shrug
 stringOfType (Function _ (s:_)) = signatureToString s
 stringOfType (HigherOrder t as) =
   t ++ "<" ++ (List.intercalate ", " . map stringOfType $ as) ++ ">"
 stringOfType (Other s) = s
+
+-- QUERY ---
+signatureP :: Parser Signature
+signatureP = do
+  C.spaces
+  params <- Comb.sepBy (C.spaces *> type' <* C.spaces) (C.char ',')
+  C.string "=>"
+  C.spaces
+  -- TODO: parse params ???
+  Signature [] (Parameter "t" <$> params) <$> type'
+
+type' :: Parser Type
+type' =
+  P.try typePrimitive <|>
+  P.try typeAny <|>
+  P.try typeUnkown <|>
+  P.try typeUndefined <|>
+  P.try typeBoolLit <|>
+  P.try typeStringLit <|>
+  typeNumLit
+
+checkEnds :: Parser ()
+checkEnds = Comb.notFollowedBy C.alphaNum
+
+isArray :: Parser () -- TODO: lookAhead ?
+isArray = Comb.notFollowedBy $ C.string "[]"
+
+typeAny :: Parser Type
+typeAny =
+  P.try $ do
+    C.string "any"
+    checkEnds
+    pure Any
+
+typeUnkown :: Parser Type
+typeUnkown =
+  P.try $ do
+    C.string "unkown"
+    checkEnds
+    pure Unkown
+
+typeUndefined :: Parser Type
+typeUndefined =
+  P.try $ do
+    C.string "undefined"
+    checkEnds
+    pure Undefined
+
+typeStringLit :: Parser Type
+typeStringLit =
+  LiteralString <$> (P.try singleQuoteString <|> doubleQuoteString)
+
+singleQuoteString :: Parser String
+singleQuoteString =
+  between (C.char '"') (Comb.many1 $ C.noneOf "\"\n")
+
+doubleQuoteString :: Parser String
+doubleQuoteString =
+  between (C.char '\'') (Comb.many1 $ C.noneOf "'\n")
+
+typeBoolLit :: Parser Type
+typeBoolLit =
+  LiteralBoolean <$>
+  (P.try (C.string "true" $> True) <|> (C.string "false" $> False))
+
+typeNumLit :: Parser Type
+typeNumLit = LiteralNumber <$> N.floating2 False
+
+typePrimitive :: Parser Type
+typePrimitive = Primitive "" <$> primitives
+
+primitives :: Parser PrimitiveType
+primitives =
+  P.try (C.string "string" $> PString) <|>
+  P.try (C.string "number" $> PNumber) <|>
+  (C.string "boolean" $> PBool)
+
+between :: Parser a -> Parser b -> Parser b
+between limit = Comb.between limit limit

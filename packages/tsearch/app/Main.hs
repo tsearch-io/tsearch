@@ -1,6 +1,6 @@
 module Main where
 
-import qualified Tsearch.Server as Tsearch
+import qualified Tsearch
 
 main :: IO ()
 main = do
