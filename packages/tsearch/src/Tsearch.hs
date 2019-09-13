@@ -44,7 +44,7 @@ tsearchAPI = Proxy
 tsearchServer :: Server TsearchAPI
 tsearchServer = helloHandler :<|> queryHandler
 
-type HelloHandler = E.NoThrow :> Get '[ PlainText] Text
+type HelloHandler = E.NoThrow :> Get '[ JSON] Text
 
 helloHandler :: Handler (E.Envelope '[] Text)
 helloHandler = E.pureSuccEnvelope "Hello world"
@@ -64,10 +64,14 @@ queryHandler (Just q) =
     Left e -> E.pureErrEnvelope $ ResponseError $ show e
 queryHandler Nothing = E.pureErrEnvelope $ ResponseError "missing query"
 
+-- TODO: this should not be a record, servant-checked-exceptions already wrapps
+-- in { data: a } and { err: b }
 newtype ResponseError = ResponseError
   { error :: String
   } deriving (Generic, Show, Json.ToJSON, Json.FromJSON)
 
+-- TODO: change ResponseError to union type with all the cases and then each
+-- could have it's own `statusXXX`
 instance ErrStatus ResponseError where
   toErrStatus _ = status400
 
