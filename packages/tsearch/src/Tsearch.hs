@@ -1,56 +1,61 @@
 {-# LANGUAGE DataKinds         #-}
 {-# LANGUAGE DeriveAnyClass    #-}
 {-# LANGUAGE DeriveGeneric     #-}
+{-# LANGUAGE InstanceSigs      #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TypeOperators     #-}
 
 module Tsearch
   ( serverMain
+  , tsearchServer
   ) where
 
-import           Data.Aeson                           ((.=))
-import qualified Data.Aeson                           as Json
-import qualified Data.ByteString.Lazy.Char8           as Bs
-import           Data.Functor                         (($>))
-import qualified Data.List                            as List
-import           Data.Text                            (Text)
+import qualified Data.Aeson                                      as Json
+import qualified Data.ByteString.Lazy.Char8                      as Bs
+import           Data.Functor                                    (($>))
+import qualified Data.List                                       as List
+import           Data.Text                                       (Text)
 import           GHC.Generics
-import qualified Network.Wai.Handler.Warp             as Warp
+import           Network.HTTP.Types                              (status400)
+import qualified Network.Wai.Handler.Warp                        as Warp
 import           Servant
-import qualified Text.Parsec.Char                     as C
-import qualified Text.Parsec.Combinator               as Comb
-import           Text.Parsec.Prim                     ((<?>), (<|>))
-import qualified Text.Parsec.Prim                     as Parsec
-import qualified Text.Parsec.Prim                     as P
-import           Text.Parsec.String                   (Parser)
-import qualified Text.ParserCombinators.Parsec.Number as N
-
--- SERVER ---
-type TsearchAPI = Get '[ PlainText] Text 
-             :<|> "search" :> QueryParam "q" String
-                           :> Get '[ JSON] FunctionRecord
-
-app :: Application
-app = serve tsearchApi server
+import qualified Text.Parsec.Char                                as C
+import qualified Text.Parsec.Combinator                          as Comb
+import           Text.Parsec.Prim                                ((<?>), (<|>))
+import qualified Text.Parsec.Prim                                as Parsec
+import qualified Text.Parsec.Prim                                as P
+import           Text.Parsec.String                              (Parser)
+import qualified Text.ParserCombinators.Parsec.Number            as N
 
 serverMain :: Int -> IO ()
 serverMain port = Warp.run port app
 
-tsearchApi :: Proxy TsearchAPI
-tsearchApi = Proxy
+app :: Application
+app = serve (Proxy :: Proxy TsearchAPI) tsearchServer
 
-server :: Server TsearchAPI
-server = hello :<|> query
+type TsearchAPI = HelloHandler :<|> SearchHandler
 
-hello :: Handler Text
-hello = pure "Hello world"
+tsearchServer :: Server TsearchAPI
+tsearchServer = helloHandler :<|> queryHandler
 
-query :: Maybe String -> Handler FunctionRecord
-query (Just q) =
+type HelloHandler = Get '[ PlainText] Text
+
+helloHandler :: Handler Text
+helloHandler = pure "Hello world"
+
+type SearchHandler = 
+  "search" :>
+  QueryParam "q" String :>
+  Get '[ JSON] [FunctionRecord]
+
+queryHandler ::
+     Maybe String -> Handler [FunctionRecord]
+queryHandler (Just q) =
   case Parsec.parse signatureP "" q of
-    Right r -> pure $ FunctionRecord Nothing Nothing Nothing "module" r
-    Left e  -> throwError $ err400 {errBody = Bs.pack $ show e}
-query Nothing = throwError $ err400 {errBody = "missing query"}
+    Right r ->
+      pure [FunctionRecord Nothing Nothing Nothing "module" r]
+    Left e -> throwError $ err404 { errBody = Bs.pack $ show e }
+queryHandler Nothing = throwError $ err404 { errBody = "missing query" } 
 
 -- Types ---
 data FunctionRecord = FunctionRecord
@@ -298,17 +303,15 @@ typeStringLit =
   LiteralString <$> (P.try singleQuoteString <|> doubleQuoteString)
 
 singleQuoteString :: Parser String
-singleQuoteString =
-  between (C.char '"') (Comb.many1 $ C.noneOf "\"\n")
+singleQuoteString = between (C.char '"') (Comb.many1 $ C.noneOf "\"\n")
 
 doubleQuoteString :: Parser String
-doubleQuoteString =
-  between (C.char '\'') (Comb.many1 $ C.noneOf "'\n")
+doubleQuoteString = between (C.char '\'') (Comb.many1 $ C.noneOf "'\n")
 
 typeBoolLit :: Parser Type
 typeBoolLit =
-  LiteralBoolean <$>
-  (P.try (C.string "true" $> True) <|> (C.string "false" $> False))
+  LiteralBoolean
+    <$> (P.try (C.string "true" $> True) <|> (C.string "false" $> False))
 
 typeNumLit :: Parser Type
 typeNumLit = LiteralNumber <$> N.floating2 False
