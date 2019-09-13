@@ -19,6 +19,8 @@ import           GHC.Generics
 import           Network.HTTP.Types                              (status400)
 import qualified Network.Wai.Handler.Warp                        as Warp
 import           Servant
+import qualified Servant.Checked.Exceptions                      as E
+import           Servant.Checked.Exceptions.Internal.Servant.API (ErrStatus (toErrStatus))
 import qualified Text.Parsec.Char                                as C
 import qualified Text.Parsec.Combinator                          as Comb
 import           Text.Parsec.Prim                                ((<?>), (<|>))
@@ -27,35 +29,47 @@ import qualified Text.Parsec.Prim                                as P
 import           Text.Parsec.String                              (Parser)
 import qualified Text.ParserCombinators.Parsec.Number            as N
 
+-- SERVER ---
 serverMain :: Int -> IO ()
 serverMain port = Warp.run port app
 
 app :: Application
-app = serve (Proxy :: Proxy TsearchAPI) tsearchServer
+app = serve tsearchAPI tsearchServer
 
 type TsearchAPI = HelloHandler :<|> SearchHandler
+
+tsearchAPI :: Proxy TsearchAPI
+tsearchAPI = Proxy
 
 tsearchServer :: Server TsearchAPI
 tsearchServer = helloHandler :<|> queryHandler
 
-type HelloHandler = Get '[ PlainText] Text
+type HelloHandler = E.NoThrow :> Get '[ PlainText] Text
 
-helloHandler :: Handler Text
-helloHandler = pure "Hello world"
+helloHandler :: Handler (E.Envelope '[] Text)
+helloHandler = E.pureSuccEnvelope "Hello world"
 
 type SearchHandler = 
   "search" :>
   QueryParam "q" String :>
+  E.Throws ResponseError :>
   Get '[ JSON] [FunctionRecord]
 
 queryHandler ::
-     Maybe String -> Handler [FunctionRecord]
+     Maybe String -> Handler (E.Envelope '[ ResponseError] [FunctionRecord])
 queryHandler (Just q) =
   case Parsec.parse signatureP "" q of
     Right r ->
-      pure [FunctionRecord Nothing Nothing Nothing "module" r]
-    Left e -> throwError $ err404 { errBody = Bs.pack $ show e }
-queryHandler Nothing = throwError $ err404 { errBody = "missing query" } 
+      E.pureSuccEnvelope [FunctionRecord Nothing Nothing Nothing "module" r]
+    Left e -> E.pureErrEnvelope $ ResponseError $ show e
+queryHandler Nothing = E.pureErrEnvelope $ ResponseError "missing query"
+
+newtype ResponseError = ResponseError
+  { error :: String
+  } deriving (Generic, Show, Json.ToJSON, Json.FromJSON)
+
+instance ErrStatus ResponseError where
+  toErrStatus _ = status400
 
 -- Types ---
 data FunctionRecord = FunctionRecord

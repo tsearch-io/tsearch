@@ -26,6 +26,7 @@ dependencies:
 - http-client
 - servant
 - servant-server
+- servant-checked-exceptions
 - wai
 - warp
 - transformers
