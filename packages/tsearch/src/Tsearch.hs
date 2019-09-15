@@ -5,13 +5,10 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TypeOperators     #-}
 
-module Tsearch
-  ( serverMain
-  , tsearchServer
-  ) where
+module Tsearch where
 
+import Control.Monad (void)
 import qualified Data.Aeson                                      as Json
-import qualified Data.ByteString.Lazy.Char8                      as Bs
 import           Data.Functor                                    (($>))
 import qualified Data.List                                       as List
 import           Data.Text                                       (Text)
@@ -23,7 +20,7 @@ import qualified Servant.Checked.Exceptions                      as E
 import           Servant.Checked.Exceptions.Internal.Servant.API (ErrStatus (toErrStatus))
 import qualified Text.Parsec.Char                                as C
 import qualified Text.Parsec.Combinator                          as Comb
-import           Text.Parsec.Prim                                ((<?>), (<|>))
+import           Text.Parsec.Prim                                ((<|>))
 import qualified Text.Parsec.Prim                                as Parsec
 import qualified Text.Parsec.Prim                                as P
 import           Text.Parsec.String                              (Parser)
@@ -61,14 +58,14 @@ queryHandler (Just q) =
   case Parsec.parse signatureP "" q of
     Right r ->
       E.pureSuccEnvelope [FunctionRecord Nothing Nothing Nothing "module" r]
-    Left e -> E.pureErrEnvelope $ ResponseError $ show e
-queryHandler Nothing = E.pureErrEnvelope $ ResponseError "missing query"
+    Left e -> E.pureErrEnvelope $ InvalidQuery $ show e
+queryHandler Nothing = E.pureErrEnvelope MissingQuery
 
 -- TODO: this should not be a record, servant-checked-exceptions already wrapps
 -- in { data: a } and { err: b }
-newtype ResponseError = ResponseError
-  { error :: String
-  } deriving (Generic, Show, Json.ToJSON, Json.FromJSON)
+data ResponseError = 
+    MissingQuery 
+  | InvalidQuery String deriving (Generic, Show, Json.ToJSON, Json.FromJSON)
 
 -- TODO: change ResponseError to union type with all the cases and then each
 -- could have it's own `statusXXX`
@@ -105,19 +102,19 @@ data TypeParameter
   deriving (Generic, Show, Json.FromJSON)
 
 instance Json.ToJSON TypeParameter where
-  toJSON (Polymorphic name) =
-    Json.object [("__tag", "Polymorphic"), ("name", Json.toJSON name)]
-  toJSON (Constrained name type') =
+  toJSON (Polymorphic n) =
+    Json.object [("__tag", "Polymorphic"), ("name", Json.toJSON n)]
+  toJSON (Constrained n t) =
     Json.object
       [ ("__tag", "Constrained")
-      , ("name", Json.toJSON name)
-      , ("constraint", Json.toJSON type')
+      , ("name", Json.toJSON n)
+      , ("constraint", Json.toJSON t)
       ]
-  toJSON (WithDefault name type') =
+  toJSON (WithDefault n t) =
     Json.object
       [ ("__tag", "WithDefault")
-      , ("name", Json.toJSON name)
-      , ("default", Json.toJSON type')
+      , ("name", Json.toJSON n)
+      , ("default", Json.toJSON t)
       ]
 
 data Parameter =
@@ -126,8 +123,8 @@ data Parameter =
   deriving (Generic, Show, Json.FromJSON)
 
 instance Json.ToJSON Parameter where
-  toJSON (Parameter name type') =
-    Json.object [("name", Json.toJSON name), ("type", Json.toJSON type')]
+  toJSON (Parameter n t) =
+    Json.object [("name", Json.toJSON n), ("type", Json.toJSON t)]
 
 data Signature =
   Signature [TypeParameter]
@@ -177,50 +174,50 @@ instance Json.ToJSON Type where
     Json.object [("__tag", "LiteralPrimitive"), ("text", Json.toJSON num)]
   toJSON (LiteralBoolean bool) =
     Json.object [("__tag", "LiteralPrimitive"), ("text", Json.toJSON bool)]
-  toJSON (Primitive text type') =
+  toJSON (Primitive txt t) =
     Json.object
       [ ("__tag", "Primitive")
-      , ("text", Json.toJSON text)
-      , ("typeName", Json.toJSON type')
+      , ("text", Json.toJSON txt)
+      , ("typeName", Json.toJSON t)
       ]
-  toJSON (ArrayT text type') =
+  toJSON (ArrayT txt t) =
     Json.object
       [ ("__tag", "Array")
-      , ("text", Json.toJSON text)
-      , ("elementsType", Json.toJSON type')
+      , ("text", Json.toJSON txt)
+      , ("elementsType", Json.toJSON t)
       ]
-  toJSON (Union text type') =
+  toJSON (Union txt t) =
     Json.object
       [ ("__tag", "Union")
-      , ("text", Json.toJSON text)
-      , ("types", Json.toJSON type')
+      , ("text", Json.toJSON txt)
+      , ("types", Json.toJSON t)
       ]
-  toJSON (Intersection text type') =
+  toJSON (Intersection txt t) =
     Json.object
       [ ("__tag", "Intersection")
-      , ("text", Json.toJSON text)
-      , ("types", Json.toJSON type')
+      , ("text", Json.toJSON txt)
+      , ("types", Json.toJSON t)
       ]
-  toJSON (Tuple text type') =
+  toJSON (Tuple txt t) =
     Json.object
       [ ("__tag", "Tuple")
-      , ("text", Json.toJSON text)
-      , ("types", Json.toJSON type')
+      , ("text", Json.toJSON txt)
+      , ("types", Json.toJSON t)
       ]
-  toJSON (Function text signatures) =
+  toJSON (Function txt signatures) =
     Json.object
       [ ("__tag", "Function")
-      , ("text", Json.toJSON text)
+      , ("text", Json.toJSON txt)
       , ("signatures", Json.toJSON signatures)
       ]
-  toJSON (HigherOrder text type') =
+  toJSON (HigherOrder txt t) =
     Json.object
       [ ("__tag", "Function")
-      , ("text", Json.toJSON text)
-      , ("arguments", Json.toJSON type')
+      , ("text", Json.toJSON txt)
+      , ("arguments", Json.toJSON t)
       ]
-  toJSON (Other text) =
-    Json.object [("__tag", "Other"), ("text", Json.toJSON text)]
+  toJSON (Other txt) =
+    Json.object [("__tag", "Other"), ("text", Json.toJSON txt)]
 
 primitiveTypeToString :: PrimitiveType -> String
 primitiveTypeToString PString = "string"
@@ -253,7 +250,7 @@ stringOfType :: Type -> String
 stringOfType Any = "any"
 stringOfType Unkown = "unkown"
 stringOfType Undefined = "undefine"
-stringOfType (LiteralString name) = "\"" ++ name ++ "\""
+stringOfType (LiteralString n) = "\"" ++ n ++ "\""
 stringOfType (LiteralNumber num) = show num
 stringOfType (LiteralBoolean True) = "true"
 stringOfType (LiteralBoolean False) = "false"
@@ -273,11 +270,11 @@ stringOfType (Other s) = s
 signatureP :: Parser Signature
 signatureP = do
   C.spaces
-  params <- Comb.sepBy (C.spaces *> type' <* C.spaces) (C.char ',')
-  C.string "=>"
+  ps <- Comb.sepBy (C.spaces *> type' <* C.spaces) (C.char ',')
+  void $ C.string "=>"
   C.spaces
-  -- TODO: parse params ???
-  Signature [] (Parameter "t" <$> params) <$> type'
+  -- TODO: parse params -> single leter capitals should be generics
+  Signature [] (Parameter "t" <$> ps) <$> type'
 
 type' :: Parser Type
 type' =
@@ -296,29 +293,17 @@ isArray :: Parser () -- TODO: lookAhead ?
 isArray = Comb.notFollowedBy $ C.string "[]"
 
 typeAny :: Parser Type
-typeAny =
-  P.try $ do
-    C.string "any"
-    checkEnds
-    pure Any
+typeAny = C.string "any" <* checkEnds $> Any
 
 typeUnkown :: Parser Type
-typeUnkown =
-  P.try $ do
-    C.string "unkown"
-    checkEnds
-    pure Unkown
+typeUnkown = C.string "unkown" <* checkEnds $> Unkown
 
 typeUndefined :: Parser Type
-typeUndefined =
-  P.try $ do
-    C.string "undefined"
-    checkEnds
-    pure Undefined
+typeUndefined = C.string "undefined" <* checkEnds $> Undefined
 
 typeStringLit :: Parser Type
 typeStringLit =
-  LiteralString <$> (P.try singleQuoteString <|> doubleQuoteString)
+  LiteralString <$> (singleQuoteString <|> doubleQuoteString)
 
 singleQuoteString :: Parser String
 singleQuoteString = between (C.char '"') (Comb.many1 $ C.noneOf "\"\n")
@@ -329,7 +314,7 @@ doubleQuoteString = between (C.char '\'') (Comb.many1 $ C.noneOf "'\n")
 typeBoolLit :: Parser Type
 typeBoolLit =
   LiteralBoolean
-    <$> (P.try (C.string "true" $> True) <|> (C.string "false" $> False))
+    <$> ((C.string "true" $> True) <|> (C.string "false" $> False))
 
 typeNumLit :: Parser Type
 typeNumLit = LiteralNumber <$> N.floating2 False
@@ -339,9 +324,15 @@ typePrimitive = Primitive "" <$> primitives
 
 primitives :: Parser PrimitiveType
 primitives =
-  P.try (C.string "string" $> PString) <|>
-  P.try (C.string "number" $> PNumber) <|>
+  (C.string "string" $> PString) <|>
+  (C.string "number" $> PNumber) <|>
   (C.string "boolean" $> PBool)
 
 between :: Parser a -> Parser b -> Parser b
 between limit = Comb.between limit limit
+
+whitespace :: Parser ()
+whitespace = void $ P.many $ C.oneOf " \n\t"
+
+lexeme :: Parser a -> Parser a
+lexeme p = p <* whitespace
