@@ -270,7 +270,7 @@ stringOfType (Other s) = s
 signatureP :: Parser Signature
 signatureP = do
   C.spaces
-  ps <- Comb.sepBy (C.spaces *> type' <* C.spaces) (C.char ',')
+  ps <- Comb.sepBy (lexeme type') (lexeme $ C.char ',')
   void $ C.string "=>"
   C.spaces
   -- TODO: parse params -> single leter capitals should be generics
@@ -287,13 +287,51 @@ simpleType =
   P.try typeNumLit <|>
   other
 
+-- TODO: support union, intersection, array & tuple
 type' :: Parser Type
-type' = simpleType >>= maybeArrSuffix
+type' = tuple
+
+array :: Parser Type
+array = simpleType >>= maybeArray
   where
-    addArrSuffix :: Type -> Parser Type
-    addArrSuffix t0 = C.string "[]" *> maybeArrSuffix (ArrayT "arr" t0)
-    maybeArrSuffix :: Type -> Parser Type
-    maybeArrSuffix t = addArrSuffix t <|> pure t
+    checkArrSuffix :: Type -> Parser Type
+    checkArrSuffix t0 = C.string "[]" *> maybeArray (ArrayT "arr" t0)
+
+    maybeArray :: Type -> Parser Type
+    maybeArray t = checkArrSuffix t <|> pure t
+
+-- union' :: Parser Type
+-- union' = lexeme simpleType >>= maybeUnion
+--   where
+--     checkUnion :: Type -> Parser Type
+--     checkUnion t = do
+--       -- void $ lexeme $ C.char '|'
+--       -- t <- lexeme type'
+--       ts <- Comb.sepBy1 (lexeme type') (lexeme $ C.char '|')
+--       maybeUnion $ Union "arr" (t:ts)
+
+--     maybeUnion :: Type -> Parser Type
+--     maybeUnion t = checkUnion t <|> pure t
+
+union :: Parser Type
+union = intercalated (Union "u") '|'
+
+intersection :: Parser Type
+intersection = intercalated (Intersection "i") '&'
+
+intercalated :: ([Type] -> Type) -> Char -> Parser Type
+intercalated constructor sep = P.try intercalated' <|> simpleType
+  where
+    intercalated' :: Parser Type
+    -- TODO: should support type' instead of simpleType
+    intercalated' = constructor
+                      <$> sepBy2 (lexeme simpleType) (lexeme $ C.char sep)
+
+tuple :: Parser Type
+tuple = P.try tuple' <|> simpleType
+  where
+    ts = Comb.sepBy1 (lexeme simpleType) (lexeme $ C.char ',')
+    tuple' = Tuple "t" <$> Comb.between (C.char '[') (C.char ']') ts
 
 checkEnds :: Parser ()
 checkEnds = Comb.notFollowedBy C.alphaNum
@@ -345,3 +383,10 @@ whitespace = void $ P.many $ C.oneOf " \n\t"
 
 lexeme :: Parser a -> Parser a
 lexeme p = p <* whitespace
+
+sepBy2 :: Parser a -> Parser b -> Parser [a]
+sepBy2 p sep = do
+  a <- p
+  void sep
+  as <- Comb.sepBy1 p sep
+  pure (a:as)
