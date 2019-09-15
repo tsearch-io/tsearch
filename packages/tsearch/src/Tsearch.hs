@@ -276,21 +276,27 @@ signatureP = do
   -- TODO: parse params -> single leter capitals should be generics
   Signature [] (Parameter "t" <$> ps) <$> type'
 
-type' :: Parser Type
-type' =
+simpleType :: Parser Type
+simpleType =
   P.try typePrimitive <|>
   P.try typeAny <|>
   P.try typeUnkown <|>
   P.try typeUndefined <|>
   P.try typeBoolLit <|>
   P.try typeStringLit <|>
-  typeNumLit
+  P.try typeNumLit <|>
+  other
+
+type' :: Parser Type
+type' = simpleType >>= maybeArrSuffix
+  where
+    addArrSuffix :: Type -> Parser Type
+    addArrSuffix t0 = C.string "[]" *> maybeArrSuffix (ArrayT "arr" t0)
+    maybeArrSuffix :: Type -> Parser Type
+    maybeArrSuffix t = addArrSuffix t <|> pure t
 
 checkEnds :: Parser ()
 checkEnds = Comb.notFollowedBy C.alphaNum
-
-isArray :: Parser () -- TODO: lookAhead ?
-isArray = Comb.notFollowedBy $ C.string "[]"
 
 typeAny :: Parser Type
 typeAny = C.string "any" <* checkEnds $> Any
@@ -327,6 +333,9 @@ primitives =
   (C.string "string" $> PString) <|>
   (C.string "number" $> PNumber) <|>
   (C.string "boolean" $> PBool)
+
+other :: Parser Type
+other = Other <$> Comb.many1 C.letter 
 
 between :: Parser a -> Parser b -> Parser b
 between limit = Comb.between limit limit
