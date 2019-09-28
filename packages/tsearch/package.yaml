@@ -1,59 +1,65 @@
-name:                tsearch
-version:             0.1.0.0
-github:              "tsearch-io/tsearch"
-license:             MIT
-author:              "Christian Gill"
-maintainer:          "gillchristiang@gmail.com"
-copyright:           "2019 Christian Gill"
+name: tsearch
+version: 0.1.0.0
+github: 'tsearch-io/tsearch'
+license: MIT
+author: 'Christian Gill'
+maintainer: 'gillchristiang@gmail.com'
+copyright: '2019 Christian Gill'
 
 extra-source-files:
-- readme.md
-- ChangeLog.md
+  - readme.md
+  - ChangeLog.md
 
-synopsis:            Backend for tsearch.io
-category:            Web
+synopsis: Backend for tsearch.io
+category: Web
 
-description:         Please see the README on GitHub at <https://github.com/tsearch-io/tsearch#readme>
+description:
+  Please see the README on GitHub at
+  <https://github.com/tsearch-io/tsearch#readme>
 
 dependencies:
-- base >= 4.7 && < 5
-- aeson
-- parsec
-- parsec-numbers ^>= 0.1.0
-- bytestring
-- text
-- http-types
-- http-client
-- servant
-- servant-server
-- servant-checked-exceptions
-- wai
-- warp
-- transformers
-- mtl
+  - base >= 4.7 && < 5
+  - aeson
+  - data-default-class
+  - parsec
+  - parsec-numbers ^>= 0.1.0
+  - bytestring
+  - text
+  - http-types
+  - http-client
+  - servant
+  - servant-server
+  - servant-checked-exceptions
+  - wai
+  - wai-cors
+  - wai-extra
+  - warp
+  - transformers
+  - mtl
+  - casing
 
 library:
   source-dirs: src
 
 executables:
   tsearch-exe:
-    main:                Main.hs
-    source-dirs:         app
+    main: Main.hs
+    source-dirs: app
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    - -Wall
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      - -Wall
     dependencies:
-    - tsearch
+      - tsearch
 
 tests:
   tsearch-test:
-    main:                Spec.hs
-    source-dirs:         test
+    main: Spec.hs
+    source-dirs: test
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     dependencies:
-    - tsearch
+      - tsearch

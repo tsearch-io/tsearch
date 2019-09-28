@@ -44,8 +44,19 @@ export interface Undefined {
   __tag: 'Undefined'
 }
 
-export interface LiteralPrimitive extends Base {
-  __tag: 'LiteralPrimitive'
+export interface LiteralString {
+  __tag: 'LiteralString'
+  value: string
+}
+
+export interface LiteralNumber {
+  __tag: 'LiteralNumber'
+  value: number
+}
+
+export interface LiteralBoolean {
+  __tag: 'LiteralBoolean'
+  value: boolean
 }
 
 export interface Primitive extends Base {
@@ -97,7 +108,9 @@ export type Type =
   | Any
   | Unknown
   | Undefined
-  | LiteralPrimitive
+  | LiteralString
+  | LiteralNumber
+  | LiteralBoolean
   | Primitive
   | ArrayT
   | Union
@@ -111,7 +124,9 @@ interface TypeMatcher<R> {
   Any: (v: Any) => R
   Unknown: (v: Unknown) => R
   Undefined: (v: Undefined) => R
-  LiteralPrimitive: (v: LiteralPrimitive) => R
+  LiteralString: (v: LiteralString) => R
+  LiteralNumber: (v: LiteralNumber) => R
+  LiteralBoolean: (v: LiteralBoolean) => R
   Primitive: (v: Primitive) => R
   Array: (v: ArrayT) => R
   Union: (v: Union) => R
@@ -130,8 +145,12 @@ const matchType = <R>(m: TypeMatcher<R>) => (t: Type): R => {
       return m.Unknown(t)
     case 'Undefined':
       return m.Undefined(t)
-    case 'LiteralPrimitive':
-      return m.LiteralPrimitive(t)
+    case 'LiteralString':
+      return m.LiteralString(t)
+    case 'LiteralNumber':
+      return m.LiteralNumber(t)
+    case 'LiteralBoolean':
+      return m.LiteralBoolean(t)
     case 'Primitive':
       return m.Primitive(t)
     case 'Array':
@@ -149,7 +168,7 @@ const matchType = <R>(m: TypeMatcher<R>) => (t: Type): R => {
     case 'Other':
       return m.Other(t)
     default:
-      throw new Error('Unrecognized Type')
+      throw new Error(`Unrecognized Type: ${JSON.stringify(t)}`)
   }
 }
 
@@ -170,7 +189,9 @@ function stringifyType(t: Type): string {
     Any: () => 'any',
     Unknown: () => 'unknown',
     Undefined: () => 'undefined',
-    LiteralPrimitive: ({ text }) => text,
+    LiteralString: ({ value }) => value,
+    LiteralNumber: ({ value }) => value.toString(),
+    LiteralBoolean: ({ value }) => value.toString(),
     Primitive: ({ typeName }) => typeName,
     Array: ({ elementsType }) => `${stringifyType(elementsType)}[]`,
     Union: ({ types }) => types.map(stringifyType).join(' | '),
@@ -189,8 +210,10 @@ export const Type = {
   isAny: (t: Type): t is Any => t.__tag === 'Any',
   isUnknown: (t: Type): t is Unknown => t.__tag === 'Unknown',
   isUndefined: (t: Type): t is Undefined => t.__tag === 'Undefined',
-  isLiteralPrimitive: (t: Type): t is LiteralPrimitive =>
-    t.__tag === 'LiteralPrimitive',
+  isLiteralString: (t: Type): t is LiteralString => t.__tag === 'LiteralString',
+  isLiteralNumber: (t: Type): t is LiteralNumber => t.__tag === 'LiteralNumber',
+  isLiteralBoolean: (t: Type): t is LiteralBoolean =>
+    t.__tag === 'LiteralBoolean',
   isPrimitive: (t: Type): t is Primitive => t.__tag === 'Primitive',
   isArray: (t: Type): t is ArrayT => t.__tag === 'Array',
   isUnion: (t: Type): t is Union => t.__tag === 'Union',
@@ -239,7 +262,7 @@ const matchTypeParamer = <R>(m: TypeParameterMatcher<R>) => (
     case 'Polymorphic':
       return m.Polymorphic(tp)
     default:
-      throw new Error('Unrecognized TypeParameter')
+      throw new Error(`Unrecognized Type: ${JSON.stringify(tp)}`)
   }
 }
 

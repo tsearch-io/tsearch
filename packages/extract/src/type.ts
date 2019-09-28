@@ -25,8 +25,16 @@ export function type(t: ts.Type<ts.ts.Type>): Type {
       : { __tag: 'Array', text, elementsType: { __tag: 'Any' } }
   }
 
-  if (t.isBooleanLiteral() || t.isStringLiteral() || t.isNumberLiteral()) {
-    return { __tag: 'LiteralPrimitive', text }
+  if (t.isBooleanLiteral()) {
+    return { __tag: 'LiteralBoolean', value: text === 'true' }
+  }
+
+  if (t.isNumberLiteral()) {
+    return { __tag: 'LiteralNumber', value: parseFloat(text) }
+  }
+
+  if (t.isStringLiteral()) {
+    return { __tag: 'LiteralString', value: text }
   }
 
   if (t.isString()) {
