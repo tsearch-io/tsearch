@@ -66,7 +66,15 @@ type SearchHandler =
 
 -- TODO: dummy implementation
 find :: Signature -> [FunctionRecord] -> [FunctionRecord]
-find _ = take 100
+find signature = take 100 . filter (checkArity qArity)
+  where
+    qArity = length $ sParameters signature
+
+checkArity :: Int -> FunctionRecord -> Bool
+checkArity qArity fr = 
+      (frArity + 1) == qArity || (frArity - 1) == qArity || frArity == qArity
+      where
+        frArity = length . sParameters . frSignature $ fr
 
 type SearchHandler' = Handler (E.Envelope '[ ResponseError] [FunctionRecord])
 
