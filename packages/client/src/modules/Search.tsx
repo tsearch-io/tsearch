@@ -10,8 +10,9 @@ import { search } from '../services/tSearch'
 import Form from './Form'
 import ListRecords from './ListRecords'
 import { FormattedFunctionRecord } from '../types'
+import { SearchError, unknownError } from '../services/SearchError'
 
-type Data = RemoteData<FormattedFunctionRecord[], string>
+type SearchResult = RemoteData<FormattedFunctionRecord[], SearchError>
 
 interface Props {
   query?: string
@@ -19,7 +20,7 @@ interface Props {
 }
 
 interface State {
-  data: Data
+  searchResult: SearchResult
 }
 
 const formatSignature = (code: string) =>
@@ -35,17 +36,20 @@ const formatSignature = (code: string) =>
     })
     .replace(/^type T = /, '')
 
-const formatRecords = map<FunctionRecord[], string, FormattedFunctionRecord[]>(
-  rs =>
-    rs.map(r => ({
-      ...r,
-      formattedSignature: formatSignature(stringifySignature(r.signature)),
-    })),
+const formatRecords = map<
+  FunctionRecord[],
+  SearchError,
+  FormattedFunctionRecord[]
+>(rs =>
+  rs.map(r => ({
+    ...r,
+    formattedSignature: formatSignature(stringifySignature(r.signature)),
+  })),
 )
 
 export default class Search extends React.Component<Props, State> {
-  state = {
-    data: RemoteData.notAsked(),
+  state: State = {
+    searchResult: RemoteData.notAsked(),
   }
 
   componentDidMount() {
@@ -60,7 +64,7 @@ export default class Search extends React.Component<Props, State> {
   }
 
   search = (query: string) => {
-    this.setState({ data: RemoteData.loading() })
+    this.setState({ searchResult: RemoteData.loading() })
 
     search(query)
       .map(formatRecords)
@@ -68,23 +72,24 @@ export default class Search extends React.Component<Props, State> {
         error => {
           // tslint:disable-next-line no-console
           console.error(error)
-          this.setState({ data: RemoteData.failure('Unknown Error') })
+          // All errors should've been handled by now
+          this.setState({ searchResult: RemoteData.failure(unknownError()) })
         },
-        data => this.setState({ data }),
+        data => {
+          this.setState({ searchResult: data })
+        },
       )
   }
 
   render() {
-    const { data } = this.state
-
     return (
       <>
         <Form
           initialQuery={this.props.query}
-          isLoading={isLoading(data)}
+          isLoading={isLoading(this.state.searchResult)}
           onSubmit={this.onSubmit}
         />
-        <ListRecords records={data} />
+        <ListRecords records={this.state.searchResult} />
       </>
     )
   }

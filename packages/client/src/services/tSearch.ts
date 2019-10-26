@@ -4,24 +4,46 @@ import * as queryString from 'query-string'
 import { RemoteData, ResolvedData } from 'remote-data-ts'
 
 import { FunctionRecord } from 'ts-earch-types'
+import { SearchError, fetchError } from './SearchError'
 
-interface ServerResponse {
+interface ServerSuccess {
   data: FunctionRecord[]
 }
 
-type SearchTask = Task<ResolvedData<FunctionRecord[], string>, UnknownError>
+interface ServerError {
+  err: SearchError
+}
 
-// fist function only to apply type arguments
-const response = <Data>() => (res: TaskFetch.Response) =>
-  res.ok
-    ? (res.json() as Task<Data, Error>) // TODO: use io-ts
-    : Task.reject(new Error(`${res.status} ${res.statusText}`))
+type SearchResult = ResolvedData<FunctionRecord[], SearchError>
+
+type SearchTask = Task<SearchResult, Error | UnknownError>
+
+type FailureTask = Task<ServerError, UnknownError>
+
+const response = (
+  res: TaskFetch.Response,
+): Task<SearchResult, Error | UnknownError> => {
+  // All good !!! \o/
+  if (res.ok) {
+    return (res.json() as Task<ServerSuccess, UnknownError>)
+      .map(({ data }) => data)
+      .map(RemoteData.success)
+  }
+
+  // Client error, sent by backend
+  if (res.status === 400) {
+    return (res.json() as FailureTask)
+      .map(({ err }) => err)
+      .map(RemoteData.failure)
+  }
+
+  // Welp, something is really wrong =/
+  return Task.resolve(
+    RemoteData.failure(fetchError(`${res.status} ${res.statusText}`)),
+  )
+}
 
 const base = process.env.REACT_APP_BASE_URL || 'http://localhost:8080'
 
 export const search = (query: string): SearchTask =>
-  fetch(`${base}/search?${queryString.stringify({ query })}`)
-    .chain(response<ServerResponse>())
-    .map(({ data }) => data)
-    .map(RemoteData.success)
-    .catch((err: Error) => Task.resolve(RemoteData.failure(err.message)))
+  fetch(`${base}/search?${queryString.stringify({ query })}`).chain(response)
