@@ -29,7 +29,6 @@ import           Text.Casing                                     (camel)
 import qualified Text.Parsec.Char                                as C
 import qualified Text.Parsec.Combinator                          as Comb
 import           Text.Parsec.Prim                                ((<|>))
-import qualified Text.Parsec.Prim                                as Parsec
 import qualified Text.Parsec.Prim                                as P
 import           Text.Parsec.String                              (Parser)
 import qualified Text.ParserCombinators.Parsec.Number            as N
@@ -64,15 +63,11 @@ type SearchHandler =
   E.Throws ResponseError :>
   Get '[ JSON] [FunctionRecord]
 
--- TODO: dummy implementation
-find :: Signature -> [FunctionRecord] -> [FunctionRecord]
-find _ = take 100
-
 type SearchHandler' = Handler (E.Envelope '[ ResponseError] [FunctionRecord])
 
 searchHandler :: [FunctionRecord] -> Maybe String -> SearchHandler'
 searchHandler fns (Just q) =
-  case Parsec.parse signatureP "" q of
+  case P.parse signatureP "" q of
     Right s -> E.pureSuccEnvelope $ find s fns
     Left e  -> E.pureErrEnvelope $ InvalidQuery $ show e
 searchHandler _ Nothing = E.pureErrEnvelope MissingQuery
@@ -130,7 +125,7 @@ data PrimitiveType
   = PNumber
   | PString
   | PBool
-  deriving (Generic, Show)
+  deriving (Generic, Show, Eq, Ord)
 
 instance Json.ToJSON PrimitiveType where
   toJSON PNumber = "number"
@@ -151,7 +146,7 @@ data TypeParameter
                 Type
   | WithDefault String
                 Type
-  deriving (Generic, Show)
+  deriving (Generic, Show, Eq, Ord)
 
 instance Json.ToJSON TypeParameter where
   toJSON (Polymorphic n) =
@@ -181,7 +176,7 @@ tpTag (WithDefault _ _) = "WithDefault"
 data Parameter = Parameter
   { paramName :: String
   , paramType :: Type
-  } deriving (Generic, Show)
+  } deriving (Generic, Show, Eq, Ord)
 
 instance Json.ToJSON Parameter where
   toJSON = Json.genericToJSON $ dropLabelPrefix 5
@@ -193,7 +188,7 @@ data Signature = Signature
   { sTypeParameters :: [TypeParameter]
   , sParameters     :: [Parameter]
   , sReturnType     :: Type
-  } deriving (Generic, Show)
+  } deriving (Generic, Show, Eq, Ord)
 
 instance Json.ToJSON Signature where
   toJSON = Json.genericToJSON $ dropLabelPrefix 1
@@ -219,11 +214,11 @@ data Type
   | Tuple String
           [Type]
   | Function String
-             [Signature]
+             Signature
   | HigherOrder String
                 [Type]
   | Other String
-  deriving (Generic, Show)
+  deriving (Generic, Show, Eq, Ord)
 
 instance Json.ToJSON Type where
   toJSON Any = Json.object ["__tag" .= typeTag Any]
@@ -250,9 +245,9 @@ instance Json.ToJSON Type where
   toJSON (Tuple txt ts) =
     Json.object
       ["__tag" .= typeTag (Tuple txt ts), "text" .= txt, "types" .= ts]
-  toJSON (Function txt ss) =
+  toJSON (Function txt s) =
     Json.object
-      ["__tag" .= typeTag (Function txt ss), "text" .= txt, "signatures" .= ss]
+      ["__tag" .= typeTag (Function txt s), "text" .= txt, "signature" .= s]
   toJSON (HigherOrder txt ts) =
     Json.object
       [ "__tag" .= typeTag (HigherOrder txt ts)
@@ -278,7 +273,7 @@ instance Json.FromJSON Type where
         "Union"          -> Union <$> b .: "text" <*> b .: "types"
         "Intersection"   -> Intersection <$> b .: "text" <*> b .: "types"
         "Tuple"          -> Tuple <$> b .: "text" <*> b .: "types"
-        "Function"       -> Function <$> b .: "text" <*> b .: "signatures"
+        "Function"       -> Function <$> b .: "text" <*> b .: "signature"
         "HigherOrder"    -> HigherOrder <$> b .: "text" <*> b .: "arguments"
         "Other"          -> Other <$> b .: "text"
         t                -> fail $ "unknown '__tag' (" ++ Text.unpack t ++ ")"
@@ -340,11 +335,27 @@ stringOfType (Union _ ts) = List.intercalate " | " $ map stringOfType ts
 stringOfType (Intersection _ ts) = List.intercalate " & " $ map stringOfType ts
 stringOfType (Tuple _ ts) =
   "[" ++ List.intercalate " & " (map stringOfType ts) ++ "]"
-stringOfType (Function _ []) = "" -- /shrug
-stringOfType (Function _ (s:_)) = stringOfSignature s
+stringOfType (Function _ s) = stringOfSignature s
 stringOfType (HigherOrder t as) =
   t ++ "<" ++ (List.intercalate ", " . map stringOfType $ as) ++ ">"
 stringOfType (Other s) = s
+
+-- Search ---
+
+-- dummy search: the fist 100 cases that arity matches (+/- 1)
+find :: Signature -> [FunctionRecord] -> [FunctionRecord]
+find signature = take 100 . filter (checkArity qArity)
+  where
+    qArity = arity signature
+
+checkArity :: Int -> FunctionRecord -> Bool
+checkArity qArity fr = 
+      (frArity + 1) == qArity || (frArity - 1) == qArity || frArity == qArity
+      where
+        frArity = arity $ frSignature fr
+
+arity :: Signature -> Int
+arity = length . sParameters
 
 -- QUERY ---
 signatureP :: Parser Signature
