@@ -1,12 +1,12 @@
 module Main where
 
-import           Control.Monad                        (when)
-import qualified Data.Aeson                           as Json
-import           Data.Either                          (fromRight)
-import           Data.Maybe                           (fromMaybe)
-import qualified System                               as Sys
-import qualified System.Environment                   as Env
-import qualified System.Exit                          as Exit
+import Control.Monad (when)
+import qualified Data.Aeson as Json
+import Data.Either (fromRight)
+import Data.Maybe (fromMaybe)
+import qualified System as Sys
+import qualified System.Environment as Env
+import qualified System.Exit as Exit
 import qualified Text.ParserCombinators.Parsec.Number as N
 import qualified Toolbelt
 import qualified Tsearch
