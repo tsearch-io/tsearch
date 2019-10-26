@@ -92,7 +92,7 @@ export interface SignatureT {
 
 export interface FunctionT extends Base {
   __tag: 'Function'
-  signatures: SignatureT[]
+  signature: SignatureT
 }
 
 export interface HigherOrder extends Base {
@@ -198,7 +198,7 @@ function stringifyType(t: Type): string {
     Intersection: ({ types }) => types.map(stringifyType).join(' & '),
     Tuple: ({ types }) => `[${types.map(stringifyType).join(', ')}]`,
     // TODO: handle several as well as none (which shouldn't the case)
-    Function: ({ signatures: [s] }) => stringifySignature(s),
+    Function: ({ signature: s }) => stringifySignature(s),
     // TODO HigherOrder should have type name separated from parameters
     HigherOrder: ({ text }) => text,
     Other: ({ text }) => text,

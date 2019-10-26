@@ -1,38 +1,37 @@
-{-# LANGUAGE DataKinds         #-}
-{-# LANGUAGE DeriveAnyClass    #-}
-{-# LANGUAGE DeriveGeneric     #-}
-{-# LANGUAGE InstanceSigs      #-}
-{-# LANGUAGE LambdaCase        #-}
+{-# LANGUAGE DataKinds #-}
+{-# LANGUAGE DeriveAnyClass #-}
+{-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE InstanceSigs #-}
+{-# LANGUAGE LambdaCase #-}
 {-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE TypeOperators     #-}
+{-# LANGUAGE TypeOperators #-}
 
 module Tsearch where
 
-import           Control.Monad                                   (void)
-import           Data.Aeson                                      ((.:), (.=))
-import qualified Data.Aeson                                      as Json
-import           Data.Default.Class                              (Default (def))
-import           Data.Functor                                    (($>))
-import qualified Data.List                                       as List
-import           Data.Text                                       (Text)
-import qualified Data.Text                                       as Text
-import           GHC.Generics
-import           Network.HTTP.Types                              (status400)
-import qualified Network.Wai.Handler.Warp                        as Warp
-import           Network.Wai.Middleware.Cors                     (simpleCors)
-import qualified Network.Wai.Middleware.RequestLogger            as Log
-import           Network.Wai.Middleware.RequestLogger.JSON       (formatAsJSON)
-import           Servant
-import qualified Servant.Checked.Exceptions                      as E
-import           Servant.Checked.Exceptions.Internal.Servant.API (ErrStatus (toErrStatus))
-import           Text.Casing                                     (camel)
-import qualified Text.Parsec.Char                                as C
-import qualified Text.Parsec.Combinator                          as Comb
-import           Text.Parsec.Prim                                ((<|>))
-import qualified Text.Parsec.Prim                                as Parsec
-import qualified Text.Parsec.Prim                                as P
-import           Text.Parsec.String                              (Parser)
-import qualified Text.ParserCombinators.Parsec.Number            as N
+import Control.Monad (void)
+import Data.Aeson ((.:), (.=))
+import qualified Data.Aeson as Json
+import Data.Default.Class (Default (def))
+import Data.Functor (($>))
+import qualified Data.List as List
+import Data.Text (Text)
+import qualified Data.Text as Text
+import GHC.Generics
+import Network.HTTP.Types (status400)
+import qualified Network.Wai.Handler.Warp as Warp
+import Network.Wai.Middleware.Cors (simpleCors)
+import qualified Network.Wai.Middleware.RequestLogger as Log
+import Network.Wai.Middleware.RequestLogger.JSON (formatAsJSON)
+import Servant
+import qualified Servant.Checked.Exceptions as E
+import Servant.Checked.Exceptions.Internal.Servant.API (ErrStatus (toErrStatus))
+import Text.Casing (camel)
+import qualified Text.Parsec.Char as C
+import qualified Text.Parsec.Combinator as Comb
+import Text.Parsec.Prim ((<|>))
+import qualified Text.Parsec.Prim as P
+import Text.Parsec.String (Parser)
+import qualified Text.ParserCombinators.Parsec.Number as N
 
 -- SERVER ---
 serverMain :: [FunctionRecord] -> Int -> IO ()
@@ -53,28 +52,24 @@ tsearchAPI = Proxy
 tsearchServer :: [FunctionRecord] -> Server TsearchAPI
 tsearchServer fns = helloHandler :<|> searchHandler fns
 
-type HelloHandler = E.NoThrow :> Get '[ JSON] Text
+type HelloHandler = E.NoThrow :> Get '[JSON] Text
 
 helloHandler :: Handler (E.Envelope '[] Text)
 helloHandler = E.pureSuccEnvelope "Hello world"
 
-type SearchHandler = 
-  "search" :>
-  QueryParam "query" String :>
-  E.Throws ResponseError :>
-  Get '[ JSON] [FunctionRecord]
+type SearchHandler =
+  "search"
+    :> QueryParam "query" String
+    :> E.Throws ResponseError
+    :> Get '[JSON] [FunctionRecord]
 
--- TODO: dummy implementation
-find :: Signature -> [FunctionRecord] -> [FunctionRecord]
-find _ = take 100
-
-type SearchHandler' = Handler (E.Envelope '[ ResponseError] [FunctionRecord])
+type SearchHandler' = Handler (E.Envelope '[ResponseError] [FunctionRecord])
 
 searchHandler :: [FunctionRecord] -> Maybe String -> SearchHandler'
 searchHandler fns (Just q) =
-  case Parsec.parse signatureP "" q of
+  case P.parse signatureP "" q of
     Right s -> E.pureSuccEnvelope $ find s fns
-    Left e  -> E.pureErrEnvelope $ InvalidQuery $ show e
+    Left e -> E.pureErrEnvelope $ InvalidQuery $ show e
 searchHandler _ Nothing = E.pureErrEnvelope MissingQuery
 
 data ResponseError
@@ -90,24 +85,30 @@ dropLabelPrefix :: Int -> Json.Options
 dropLabelPrefix n =
   Json.defaultOptions {Json.fieldLabelModifier = camel . drop n}
 
-data Lines = Lines
-  { from :: Int
-  , to   :: Int
-  } deriving (Generic, Show, Json.ToJSON, Json.FromJSON)
+data Lines
+  = Lines
+      { from :: Int,
+        to :: Int
+      }
+  deriving (Generic, Show, Json.ToJSON, Json.FromJSON)
 
-data Location = Location
-  { path  :: String
-  , lines :: Lines
-  } deriving (Generic, Show, Json.ToJSON, Json.FromJSON)
+data Location
+  = Location
+      { path :: String,
+        lines :: Lines
+      }
+  deriving (Generic, Show, Json.ToJSON, Json.FromJSON)
 
-data FunctionRecord = FunctionRecord
-  { frName      :: Maybe String
-  , frDocs      :: Maybe String
-  , frText      :: Maybe String
-  , frLocation  :: Location
-  , frModule    :: String
-  , frSignature :: Signature
-  } deriving (Generic, Show)
+data FunctionRecord
+  = FunctionRecord
+      { frName :: Maybe String,
+        frDocs :: Maybe String,
+        frText :: Maybe String,
+        frLocation :: Location,
+        frModule :: String,
+        frSignature :: Signature
+      }
+  deriving (Generic, Show)
 
 instance Json.ToJSON FunctionRecord where
   toJSON = Json.genericToJSON $ dropLabelPrefix 2
@@ -115,10 +116,12 @@ instance Json.ToJSON FunctionRecord where
 instance Json.FromJSON FunctionRecord where
   parseJSON = Json.genericParseJSON $ dropLabelPrefix 2
 
-data Module = Module
-  { mName :: String
-  , mFns  :: [FunctionRecord]
-  } deriving (Generic, Show)
+data Module
+  = Module
+      { mName :: String,
+        mFns :: [FunctionRecord]
+      }
+  deriving (Generic, Show)
 
 instance Json.ToJSON Module where
   toJSON = Json.genericToJSON $ dropLabelPrefix 1
@@ -130,28 +133,26 @@ data PrimitiveType
   = PNumber
   | PString
   | PBool
-  deriving (Generic, Show)
+  deriving (Generic, Show, Eq, Ord)
 
 instance Json.ToJSON PrimitiveType where
   toJSON PNumber = "number"
   toJSON PString = "string"
-  toJSON PBool   = "boolean"
+  toJSON PBool = "boolean"
 
 instance Json.FromJSON PrimitiveType where
   parseJSON =
     Json.withText "PrimitiveType" $ \case
-      "number"  -> pure PNumber
-      "string"  -> pure PString
+      "number" -> pure PNumber
+      "string" -> pure PString
       "boolean" -> pure PBool
-      b         -> fail $ "unexpected '" ++ Text.unpack b ++ "'"
+      b -> fail $ "unexpected '" ++ Text.unpack b ++ "'"
 
 data TypeParameter
   = Polymorphic String
-  | Constrained String
-                Type
-  | WithDefault String
-                Type
-  deriving (Generic, Show)
+  | Constrained String Type
+  | WithDefault String Type
+  deriving (Generic, Show, Eq, Ord)
 
 instance Json.ToJSON TypeParameter where
   toJSON (Polymorphic n) =
@@ -171,17 +172,19 @@ instance Json.FromJSON TypeParameter where
         "Constrained" -> Constrained <$> b .: "text" <*> b .: "constraint"
         "WithDefault" -> WithDefault <$> b .: "text" <*> b .: "default"
         "Polymorphic" -> Polymorphic <$> b .: "text"
-        t             -> fail $ "unknown '__tag' (" ++ Text.unpack t ++ ")"
+        t -> fail $ "unknown '__tag' (" ++ Text.unpack t ++ ")"
 
 tpTag :: TypeParameter -> String
-tpTag (Polymorphic _)   = "Polymorphic"
+tpTag (Polymorphic _) = "Polymorphic"
 tpTag (Constrained _ _) = "Constrained"
 tpTag (WithDefault _ _) = "WithDefault"
 
-data Parameter = Parameter
-  { paramName :: String
-  , paramType :: Type
-  } deriving (Generic, Show)
+data Parameter
+  = Parameter
+      { paramName :: String,
+        paramType :: Type
+      }
+  deriving (Generic, Show, Eq, Ord)
 
 instance Json.ToJSON Parameter where
   toJSON = Json.genericToJSON $ dropLabelPrefix 5
@@ -189,11 +192,13 @@ instance Json.ToJSON Parameter where
 instance Json.FromJSON Parameter where
   parseJSON = Json.genericParseJSON $ dropLabelPrefix 5
 
-data Signature = Signature
-  { sTypeParameters :: [TypeParameter]
-  , sParameters     :: [Parameter]
-  , sReturnType     :: Type
-  } deriving (Generic, Show)
+data Signature
+  = Signature
+      { sTypeParameters :: [TypeParameter],
+        sParameters :: [Parameter],
+        sReturnType :: Type
+      }
+  deriving (Generic, Show, Eq, Ord)
 
 instance Json.ToJSON Signature where
   toJSON = Json.genericToJSON $ dropLabelPrefix 1
@@ -208,22 +213,15 @@ data Type
   | LiteralString String
   | LiteralNumber Float
   | LiteralBoolean Bool
-  | Primitive String
-              PrimitiveType
-  | ArrayT String
-           Type
-  | Union String
-          [Type]
-  | Intersection String
-                 [Type]
-  | Tuple String
-          [Type]
-  | Function String
-             [Signature]
-  | HigherOrder String
-                [Type]
+  | Primitive String PrimitiveType
+  | ArrayT String Type
+  | Union String [Type]
+  | Intersection String [Type]
+  | Tuple String [Type]
+  | Function String Signature
+  | HigherOrder String [Type]
   | Other String
-  deriving (Generic, Show)
+  deriving (Generic, Show, Eq, Ord)
 
 instance Json.ToJSON Type where
   toJSON Any = Json.object ["__tag" .= typeTag Any]
@@ -250,14 +248,14 @@ instance Json.ToJSON Type where
   toJSON (Tuple txt ts) =
     Json.object
       ["__tag" .= typeTag (Tuple txt ts), "text" .= txt, "types" .= ts]
-  toJSON (Function txt ss) =
+  toJSON (Function txt s) =
     Json.object
-      ["__tag" .= typeTag (Function txt ss), "text" .= txt, "signatures" .= ss]
+      ["__tag" .= typeTag (Function txt s), "text" .= txt, "signature" .= s]
   toJSON (HigherOrder txt ts) =
     Json.object
-      [ "__tag" .= typeTag (HigherOrder txt ts)
-      , "text" .= txt
-      , "arguments" .= ts
+      [ "__tag" .= typeTag (HigherOrder txt ts),
+        "text" .= txt,
+        "arguments" .= ts
       ]
   toJSON (Other txt) =
     Json.object ["__tag" .= typeTag (Other txt), "text" .= txt]
@@ -267,41 +265,41 @@ instance Json.FromJSON Type where
     Json.withObject "Type" $ \b -> do
       tag <- b .: "__tag"
       case (tag :: Text) of
-        "Any"            -> pure Any
-        "Unknown"        -> pure Unknown
-        "Undefined"      -> pure Undefined
-        "LiteralString"  -> LiteralString <$> b .: "value"
-        "LiteralNumber"  -> LiteralNumber <$> b .: "value"
+        "Any" -> pure Any
+        "Unknown" -> pure Unknown
+        "Undefined" -> pure Undefined
+        "LiteralString" -> LiteralString <$> b .: "value"
+        "LiteralNumber" -> LiteralNumber <$> b .: "value"
         "LiteralBoolean" -> LiteralBoolean <$> b .: "value"
-        "Primitive"      -> Primitive <$> b .: "text" <*> b .: "typeName"
-        "Array"          -> ArrayT <$> b .: "text" <*> b .: "elementsType"
-        "Union"          -> Union <$> b .: "text" <*> b .: "types"
-        "Intersection"   -> Intersection <$> b .: "text" <*> b .: "types"
-        "Tuple"          -> Tuple <$> b .: "text" <*> b .: "types"
-        "Function"       -> Function <$> b .: "text" <*> b .: "signatures"
-        "HigherOrder"    -> HigherOrder <$> b .: "text" <*> b .: "arguments"
-        "Other"          -> Other <$> b .: "text"
-        t                -> fail $ "unknown '__tag' (" ++ Text.unpack t ++ ")"
+        "Primitive" -> Primitive <$> b .: "text" <*> b .: "typeName"
+        "Array" -> ArrayT <$> b .: "text" <*> b .: "elementsType"
+        "Union" -> Union <$> b .: "text" <*> b .: "types"
+        "Intersection" -> Intersection <$> b .: "text" <*> b .: "types"
+        "Tuple" -> Tuple <$> b .: "text" <*> b .: "types"
+        "Function" -> Function <$> b .: "text" <*> b .: "signature"
+        "HigherOrder" -> HigherOrder <$> b .: "text" <*> b .: "arguments"
+        "Other" -> Other <$> b .: "text"
+        t -> fail $ "unknown '__tag' (" ++ Text.unpack t ++ ")"
 
 typeTag :: Type -> String
-typeTag Any                = "Any"
-typeTag Unknown            = "Unknown"
-typeTag Undefined          = "Undefined"
-typeTag (LiteralString _)  = "LiteralString"
-typeTag (LiteralNumber _)  = "LiteralNumber"
+typeTag Any = "Any"
+typeTag Unknown = "Unknown"
+typeTag Undefined = "Undefined"
+typeTag (LiteralString _) = "LiteralString"
+typeTag (LiteralNumber _) = "LiteralNumber"
 typeTag (LiteralBoolean _) = "LiteralBoolean"
-typeTag (Primitive _ _)    = "Primitive"
-typeTag (ArrayT _ _)       = "Array"
-typeTag (Union _ _)        = "Union"
+typeTag (Primitive _ _) = "Primitive"
+typeTag (ArrayT _ _) = "Array"
+typeTag (Union _ _) = "Union"
 typeTag (Intersection _ _) = "Intersection"
-typeTag (Tuple _ _)        = "Tuple"
-typeTag (Function _ _)     = "Function"
-typeTag (HigherOrder _ _)  = "HigherOrder"
-typeTag (Other _)          = "Other"
+typeTag (Tuple _ _) = "Tuple"
+typeTag (Function _ _) = "Function"
+typeTag (HigherOrder _ _) = "HigherOrder"
+typeTag (Other _) = "Other"
 
 stringOfPrimitive :: PrimitiveType -> String
 stringOfPrimitive PString = "string"
-stringOfPrimitive PBool   = "boolean"
+stringOfPrimitive PBool = "boolean"
 stringOfPrimitive PNumber = "number"
 
 stringOfParam :: Parameter -> String
@@ -322,7 +320,7 @@ stringOfSignature (Signature tps ps rt) =
   "<" ++ stringOfTypeParams tps ++ ">" ++ stringOfFn ps rt
 
 stringOfTypeParam :: TypeParameter -> String
-stringOfTypeParam (Polymorphic s)   = s
+stringOfTypeParam (Polymorphic s) = s
 stringOfTypeParam (Constrained s t) = s ++ " extends " ++ stringOfType t
 stringOfTypeParam (WithDefault s d) = s ++ " = " ++ stringOfType d
 
@@ -340,11 +338,27 @@ stringOfType (Union _ ts) = List.intercalate " | " $ map stringOfType ts
 stringOfType (Intersection _ ts) = List.intercalate " & " $ map stringOfType ts
 stringOfType (Tuple _ ts) =
   "[" ++ List.intercalate " & " (map stringOfType ts) ++ "]"
-stringOfType (Function _ []) = "" -- /shrug
-stringOfType (Function _ (s:_)) = stringOfSignature s
+stringOfType (Function _ s) = stringOfSignature s
 stringOfType (HigherOrder t as) =
   t ++ "<" ++ (List.intercalate ", " . map stringOfType $ as) ++ ">"
 stringOfType (Other s) = s
+
+-- Search ---
+
+-- dummy search: the fist 100 cases that arity matches (+/- 1)
+find :: Signature -> [FunctionRecord] -> [FunctionRecord]
+find signature = take 100 . filter (checkArity qArity)
+  where
+    qArity = arity signature
+
+checkArity :: Int -> FunctionRecord -> Bool
+checkArity qArity fr =
+  (frArity + 1) == qArity || (frArity - 1) == qArity || frArity == qArity
+  where
+    frArity = arity $ frSignature fr
+
+arity :: Signature -> Int
+arity = length . sParameters
 
 -- QUERY ---
 signatureP :: Parser Signature
@@ -358,14 +372,14 @@ signatureP = do
 
 simpleType :: Parser Type
 simpleType =
-  P.try typePrimitive <|>
-  P.try typeAny <|>
-  P.try typeUnknown <|>
-  P.try typeUndefined <|>
-  P.try typeBoolLit <|>
-  P.try typeStringLit <|>
-  P.try typeNumLit <|>
-  other
+  P.try typePrimitive
+    <|> P.try typeAny
+    <|> P.try typeUnknown
+    <|> P.try typeUndefined
+    <|> P.try typeBoolLit
+    <|> P.try typeStringLit
+    <|> P.try typeNumLit
+    <|> other
 
 -- TODO: support union, intersection, array & tuple
 type' :: Parser Type
@@ -376,7 +390,6 @@ array = simpleType >>= maybeArray
   where
     checkArrSuffix :: Type -> Parser Type
     checkArrSuffix t0 = C.string "[]" *> maybeArray (ArrayT "arr" t0)
-
     maybeArray :: Type -> Parser Type
     maybeArray t = checkArrSuffix t <|> pure t
 
@@ -444,9 +457,9 @@ typePrimitive = Primitive "" <$> primitives
 
 primitives :: Parser PrimitiveType
 primitives =
-  (C.string "string" $> PString) <|>
-  (C.string "number" $> PNumber) <|>
-  (C.string "boolean" $> PBool)
+  (C.string "string" $> PString)
+    <|> (C.string "number" $> PNumber)
+    <|> (C.string "boolean" $> PBool)
 
 other :: Parser Type
 other = Other <$> Comb.many1 C.letter

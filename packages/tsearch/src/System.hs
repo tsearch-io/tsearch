@@ -1,13 +1,14 @@
 module System
-  ( nthArg
-  , argOr
-  , putStderr
-  ) where
+  ( nthArg,
+    argOr,
+    putStderr,
+  )
+where
 
-import           Control.Applicative (liftA2)
-import           Data.Maybe          (fromMaybe)
-import qualified System.Environment  as Env
-import qualified System.IO           as Sys
+import Control.Applicative (liftA2)
+import Data.Maybe (fromMaybe)
+import qualified System.Environment as Env
+import qualified System.IO as Sys
 
 nthArg :: Int -> IO (Maybe String)
 nthArg = liftA2 nth Env.getArgs . pure
