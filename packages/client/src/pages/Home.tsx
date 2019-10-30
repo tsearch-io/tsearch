@@ -37,7 +37,7 @@ const Home: React.SFC<RouteComponentProps> = ({ history }) => (
       isLoading={false}
     />
     <div>
-      <h4>Search TypeScript functions and method by type signature or name</h4>
+      <h4>Search TypeScript functions and methods by type signature or name.</h4>
       <p>
         <b>Example queries</b>
       </p>
