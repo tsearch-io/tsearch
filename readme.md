@@ -12,62 +12,23 @@
 
 ## Architecture
 
-`tsearch` consists of 3 differt applications, found in the `packages/`
-directory:
+`tsearch` consists of 3 differt applications, found in the
+[tsearch-io](https://github.com/tsearch-io/tsearch) organization:
 
-- The `cli` for extracting function types from TypeScript projects.
-- The `server` that performs searching on the types extracted by the `cli`.
-- The `client` UI to search for types.
+- [indexer](https://github.com/tsearch-io/tsearch/indexer): for extracting type
+  information from TypeScript to generate an index.
+- [server](https://github.com/tsearch-io/tsearch/server): A server application
+  to search the index.
+- [client](https://github.com/tsearch-io/tsearch/client): The UI to search and
+  view results.
 
 ## Development
 
-`tsearch` is still under development, for now to run it you need to clone the
-repo:
+For more information on how to run and develop Tsearch check the three repos
+mentioned above.
 
-```bash
-git clone https://github.com/gillchristian/ts-earch.git # https
-git clone git@github.com:gillchristian/ts-earch.git     # ssh
-```
-
-Install all dependencies ([lerna](https://lernajs.io/) takes care of installing
-the dependencies of the packages):
-
-```bash
-$ yarn
-```
-
-Extract function types to search with the client. This step is **required**
-otherwise there will be no types to search:
-
-```bash
-$ yarn extract '/absolute/path/to/typescript/project/**/*.{ts,tsx}'
-```
-
-### Running
-
-To use `tsearch` we have to build first and the run the app. After that you can
-open it in [localhost:3000](http://localhost:3000):
-
-```bash
-$ yarn build
-$ yarn start
-```
-
-### Development
-
-For development we run the watcher and the dev server in a different terminal
-process/tab:
-
-```bash
-$ yarn watch
-```
-
-```bash
-$ yarn dev
-```
-
-The server runs in [localhost:8080](http://localhost:8080) and the client in
-[localhost:3000](http://localhost:3000).
+Be aware that Tsearch is under development and the documentation might not be up
+to date.
 
 ## Inspiration
 
@@ -76,5 +37,5 @@ The server runs in [localhost:8080](http://localhost:8080) and the client in
 
 ## LICENSE
 
-[MIT License](https://github.com/gillchristian/ts-earch/blob/master/LICENSE) ©
+[MIT License](https://github.com/tsearch-io/tsearch/blob/master/LICENSE) ©
 [Christian Gill](https://gillchristian.xyz)
