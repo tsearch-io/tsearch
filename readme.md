@@ -13,13 +13,13 @@
 ## Architecture
 
 `tsearch` consists of 3 differt applications, found in the
-[tsearch-io](https://github.com/tsearch-io/tsearch) organization:
+[tsearch-io](https://github.com/tsearch-io) organization:
 
-- [indexer](https://github.com/tsearch-io/tsearch/indexer): for extracting type
+- [indexer](https://github.com/tsearch-io/indexer): for extracting type
   information from TypeScript to generate an index.
-- [server](https://github.com/tsearch-io/tsearch/server): A server application
+- [server](https://github.com/tsearch-io/server): A server application
   to search the index.
-- [client](https://github.com/tsearch-io/tsearch/client): The UI to search and
+- [client](https://github.com/tsearch-io/client): The UI to search and
   view results.
 
 ## Development
