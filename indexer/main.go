@@ -17,8 +17,8 @@ import (
 )
 
 var (
-	bin = flag.String("bin", "./bin/tsearch", "tsearch bin path")
-	out = flag.String("out", "~/.tsearch", "out file path")
+	bin = flag.String("bin", "./bin/tsearch-index", "tsearch-index bin path")
+	out = flag.String("out", "~/.tsearch-index", "out file path")
 	dt  = flag.String("dt", "~/dev/DefinitelyTyped/types", "Modules directory")
 	x   = flag.Int("x", 0, "only extract the first X modules (extracts all when 0)")
 )
@@ -81,7 +81,7 @@ func main() {
 		dirs = dirs[:*x]
 	}
 
-	fmt.Printf("Running tsearch-cli. Worker count: %v\n", runtime.NumCPU())
+	fmt.Printf("Running tsearch-index. Worker count: %v\n", runtime.NumCPU())
 
 	started := time.Now()
 	for _, dir := range dirs {
