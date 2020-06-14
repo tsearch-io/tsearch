@@ -44,10 +44,7 @@ const Layout: React.SFC = ({children}) => (
       <Col w={20}>
         <Sidebar>
           <Logo />
-          <Link
-            href="https://github.com/gillchristian/ts-earch"
-            target="_blank"
-          >
+          <Link href="https://github.com/tsearch-io/tsearch" target="_blank">
             tsearch on GitHub
           </Link>
           <Link href="https://www.typescriptlang.org/" target="_blank">

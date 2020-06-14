@@ -17,10 +17,10 @@ To **run on a single project**:
 
 ```bash
 # output to the terminal
-./bin/ts-earch /path/to/typescript/project
+./bin/tsearch /path/to/typescript/project
 
 # write to a file
-./bin/ts-earch /path/to/typescript/project --out out.json
+./bin/tsearch /path/to/typescript/project --out out.json
 ```
 
 To **run on multiple projects**:
@@ -34,11 +34,11 @@ $ go build -o tsearch-index main.go
 $ ./tsearch-index --help
 Usage of ./tsearch-index:
   -bin string
-        ts-earch bin path (default "./bin/ts-earch")
+        tsearch bin path (default "./bin/tsearch")
   -dt string
         Modules directory (default "~/dev/DefinitelyTyped/types")
   -out string
-        out file path (default "~/.ts-earch")
+        out file path (default "~/.tsearch")
   -x int
         only extract the first X modules (extracts all when 0)
 
