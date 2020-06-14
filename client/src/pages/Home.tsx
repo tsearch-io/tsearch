@@ -59,14 +59,11 @@ const Home: React.SFC<RouteComponentProps> = ({history}) => (
     </p>
     <p>
       Keep and eye on the{' '}
-      <Link
-        href="https://dev.to/gillchristian/a-crazy-idea-and-a-proof-of-concept-2oj7"
-        target="_blank"
-      >
+      <Link href="https://gillchristian.xyz/articles/tsearch" target="_blank">
         blog
       </Link>{' '}
       and the{' '}
-      <Link href="https://github.com/gillchristian/ts-earch" target="_blank">
+      <Link href="https://github.com/tsearch-io/tsearch" target="_blank">
         repo
       </Link>{' '}
       for updates.

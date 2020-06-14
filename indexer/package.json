@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "build/cli.js",
   "bin": {
-    "tsearch-index": "bin/ts-earch"
+    "tsearch-index": "bin/tsearch"
   },
   "scripts": {
     "build": "tsc -p .",
