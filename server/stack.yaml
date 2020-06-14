@@ -1,0 +1,7 @@
+resolver: lts-14.5
+
+packages:
+- .
+
+extra-deps:
+- parsec-numbers-0.1.0@sha256:60fa05b1c16050dffd0e28cecb682a021eeec1be6f34dc9d901a38c90182f289,727

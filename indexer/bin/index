@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Usage:
+#
+# $ ./bin/index ~/path/to/directories/* > index.json`
+# for f in $@; do echo $f; done | parallel ./bin/ts-earch | jq -c '.[]' | jq --slurp '.'
+for f in $@; do echo "/home/bb8/dev/tsearch/DefinitelyTyped/types/$f"; done | parallel ./bin/ts-earch | jq -c '.[]' | jq --slurp '.'

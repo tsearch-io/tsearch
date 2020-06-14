@@ -1,0 +1,67 @@
+{
+  "name": "@tsearch/client",
+  "version": "0.0.1",
+  "dependencies": {
+    "@ts-task/fetch": "^1.0.6",
+    "@ts-task/task": "^1.0.2",
+    "@ts-task/utils": "^1.0.1",
+    "history": "^4.10.1",
+    "prettier": "^1.19.1",
+    "query-string": "^6.10.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "react-syntax-highlighter": "^12.2.1",
+    "remote-data-ts": "^2.1.0",
+    "serve": "^11.3.0",
+    "styled-components": "^5.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/history": "^4.7.4",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^13.5.0",
+    "@types/prettier": "^1.19.0",
+    "@types/query-string": "^6.3.0",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-router-dom": "^5.1.3",
+    "@types/react-syntax-highlighter": "^11.0.4",
+    "@types/styled-components": "^4.4.2",
+    "husky": "^4.2.1",
+    "pretty-quick": "^2.0.1",
+    "react-scripts": "3.3.0",
+    "typescript": "^3.7.5"
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "deploy:prod": "now -e REACT_APP_BASE_URL=@api-host --prod",
+    "eject": "react-scripts eject",
+    "fmt": "prettier --write '**/*.{json,md,ts,tsx,js,html}'",
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "ts:watch": "tsc -w -p ."
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}

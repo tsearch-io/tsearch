@@ -1,0 +1,3935 @@
+[
+  {
+    "name": "a11y-dialog",
+    "fns": []
+  },
+  {
+    "name": "accedo__accedo-one",
+    "fns": []
+  },
+  {
+    "name": "abs",
+    "fns": []
+  },
+  {
+    "name": "abstract-leveldown",
+    "fns": []
+  },
+  {
+    "name": "absolute",
+    "fns": [
+      {
+        "docs": "/**\n * Test if a path is absolute\n */",
+        "location": {
+          "lines": {
+            "from": 9,
+            "to": 9
+          },
+          "path": "index.d.ts"
+        },
+        "module": "absolute",
+        "name": "absolute",
+        "signature": {
+          "parameters": [
+            {
+              "name": "path",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "BoolT"
+          }
+        },
+        "text": "// Type definitions for absolute 0.0.1\n// Project: https://github.com/bahamas10/node-absolute\n// Definitions by: Aya Morisawa <https://github.com/AyaMorisawa>\n// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped\n\n/**\n * Test if a path is absolute\n */\ndeclare function absolute(path: string): boolean;"
+      }
+    ]
+  },
+  {
+    "name": "abbrev",
+    "fns": [
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 12,
+            "to": 12
+          },
+          "path": "index.d.ts"
+        },
+        "module": "abbrev",
+        "name": "monkeyPatch",
+        "signature": {
+          "parameters": [],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\n    function monkeyPatch(): void;"
+      }
+    ]
+  },
+  {
+    "name": "7zip-min",
+    "fns": [
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 7,
+            "to": 7
+          },
+          "path": "index.d.ts"
+        },
+        "module": "7zip-min",
+        "name": "unpack",
+        "signature": {
+          "parameters": [
+            {
+              "name": "pathToArchive",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "whereToUnpack",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "errorCallback",
+              "type": {
+                "__tag": "Other",
+                "values": "(err: any) => void"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "// Type definitions for 7zip-min 1.1\n// Project: https://github.com/onikienko/7zip-min\n// Definitions by: Tanandara <https://github.com/Tanandara>\n// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped\n// TypeScript Version: 3.6\n\nexport function unpack(pathToArchive: string, whereToUnpack: string, errorCallback: (err: any) => void): void;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 8,
+            "to": 8
+          },
+          "path": "index.d.ts"
+        },
+        "module": "7zip-min",
+        "name": "pack",
+        "signature": {
+          "parameters": [
+            {
+              "name": "pathToDirOrFile",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "pathToArchive",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "errorCallback",
+              "type": {
+                "__tag": "Other",
+                "values": "(err: any) => void"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\nexport function pack(pathToDirOrFile: string, pathToArchive: string, errorCallback: (err: any) => void): void;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 9,
+            "to": 9
+          },
+          "path": "index.d.ts"
+        },
+        "module": "7zip-min",
+        "name": "list",
+        "signature": {
+          "parameters": [
+            {
+              "name": "pathToArchive",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "callback",
+              "type": {
+                "__tag": "Other",
+                "values": "(err: any, result: import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/7zip-min/index\").Result[]) => void"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\nexport function list(pathToArchive: string, callback: (err: any, result: Result[]) => void): void;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 10,
+            "to": 10
+          },
+          "path": "index.d.ts"
+        },
+        "module": "7zip-min",
+        "name": "cmd",
+        "signature": {
+          "parameters": [
+            {
+              "name": "command",
+              "type": {
+                "__tag": "Other",
+                "values": "string[]"
+              }
+            },
+            {
+              "name": "errorCallback",
+              "type": {
+                "__tag": "Other",
+                "values": "(err: any) => void"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\nexport function cmd(command: string[], errorCallback: (err: any) => void): void;"
+      }
+    ]
+  },
+  {
+    "name": "acc-wizard",
+    "fns": []
+  },
+  {
+    "name": "accept-language-parser",
+    "fns": [
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 10,
+            "to": 10
+          },
+          "path": "index.d.ts"
+        },
+        "module": "accept-language-parser",
+        "name": "parse",
+        "signature": {
+          "parameters": [
+            {
+              "name": "acceptLanguage",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Other",
+            "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/accept-language-parser/index\").Language[]"
+          }
+        },
+        "text": "// Type definitions for accept-language-parser 1.5\n// Project: https://github.com/opentable/accept-language-parser\n// Definitions by: Niklas Wulf <https://github.com/kampfgnom>\n//                 Wooram Jun <https://github.com/chatoo2412>\n// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped\n// TypeScript Version: 2.1\n\n// https://github.com/opentable/accept-language-parser/blob/v1.5.0/index.js\n\nexport function parse(acceptLanguage: string): Language[];"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 11,
+            "to": 15
+          },
+          "path": "index.d.ts"
+        },
+        "module": "accept-language-parser",
+        "name": "pick",
+        "signature": {
+          "parameters": [
+            {
+              "name": "supportedLanguages",
+              "type": {
+                "__tag": "Other",
+                "values": "T[]"
+              }
+            },
+            {
+              "name": "acceptLanguage",
+              "type": {
+                "__tag": "Other",
+                "values": "string | import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/accept-language-parser/index\").Language[]"
+              }
+            },
+            {
+              "name": "options",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/accept-language-parser/index\").PickOptions"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Other",
+            "values": "T"
+          }
+        },
+        "text": "\nexport function pick<T extends string>(\n    supportedLanguages: T[],\n    acceptLanguage: string | Language[],\n    options?: PickOptions\n): T | null;"
+      }
+    ]
+  },
+  {
+    "name": "accept",
+    "fns": [
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 7,
+            "to": 7
+          },
+          "path": "index.d.ts"
+        },
+        "module": "accept",
+        "name": "charset",
+        "signature": {
+          "parameters": [
+            {
+              "name": "charsetHeader",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "preferences",
+              "type": {
+                "__tag": "Other",
+                "values": "string[]"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "StringT"
+          }
+        },
+        "text": "// Type definitions for accept 3.1\n// Project: https://github.com/hapijs/accept#readme\n// Definitions by: feinoujc <https://github.com/feinoujc>\n// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped\n// TypeScript Version: 2.1\n\nexport function charset(charsetHeader?: string, preferences?: string[]): string;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 8,
+            "to": 8
+          },
+          "path": "index.d.ts"
+        },
+        "module": "accept",
+        "name": "charsets",
+        "signature": {
+          "parameters": [
+            {
+              "name": "charsetHeader",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Other",
+            "values": "string[]"
+          }
+        },
+        "text": "\nexport function charsets(charsetHeader?: string): string[];"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 9,
+            "to": 9
+          },
+          "path": "index.d.ts"
+        },
+        "module": "accept",
+        "name": "encoding",
+        "signature": {
+          "parameters": [
+            {
+              "name": "encodingHeader",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "preferences",
+              "type": {
+                "__tag": "Other",
+                "values": "string[]"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "StringT"
+          }
+        },
+        "text": "\nexport function encoding(encodingHeader?: string, preferences?: string[]): string;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 10,
+            "to": 10
+          },
+          "path": "index.d.ts"
+        },
+        "module": "accept",
+        "name": "encodings",
+        "signature": {
+          "parameters": [
+            {
+              "name": "encodingHeader",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Other",
+            "values": "string[]"
+          }
+        },
+        "text": "\nexport function encodings(encodingHeader?: string): string[];"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 11,
+            "to": 11
+          },
+          "path": "index.d.ts"
+        },
+        "module": "accept",
+        "name": "language",
+        "signature": {
+          "parameters": [
+            {
+              "name": "languageHeader",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "preferences",
+              "type": {
+                "__tag": "Other",
+                "values": "string[]"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "StringT"
+          }
+        },
+        "text": "\nexport function language(languageHeader?: string, preferences?: string[]): string;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 12,
+            "to": 12
+          },
+          "path": "index.d.ts"
+        },
+        "module": "accept",
+        "name": "languages",
+        "signature": {
+          "parameters": [
+            {
+              "name": "languageHeader",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Other",
+            "values": "string[]"
+          }
+        },
+        "text": "\nexport function languages(languageHeader?: string): string[];"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 13,
+            "to": 13
+          },
+          "path": "index.d.ts"
+        },
+        "module": "accept",
+        "name": "mediaType",
+        "signature": {
+          "parameters": [
+            {
+              "name": "mediaTypeHeader",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "preferences",
+              "type": {
+                "__tag": "Other",
+                "values": "string[]"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "StringT"
+          }
+        },
+        "text": "\nexport function mediaType(mediaTypeHeader?: string, preferences?: string[]): string;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 14,
+            "to": 14
+          },
+          "path": "index.d.ts"
+        },
+        "module": "accept",
+        "name": "mediaTypes",
+        "signature": {
+          "parameters": [
+            {
+              "name": "mediaTypeHeader",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Other",
+            "values": "string[]"
+          }
+        },
+        "text": "\nexport function mediaTypes(mediaTypeHeader?: string): string[];"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 15,
+            "to": 22
+          },
+          "path": "index.d.ts"
+        },
+        "module": "accept",
+        "name": "parseAll",
+        "signature": {
+          "parameters": [
+            {
+              "name": "headers",
+              "type": {
+                "__tag": "Other",
+                "values": "Record<string, string | string[]>"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Other",
+            "values": "{ charsets: string[]; encodings: string[]; languages: string[]; mediaTypes: string[]; }"
+          }
+        },
+        "text": "\nexport function parseAll(\n    headers: Record<string, string | string[] | undefined>\n): {\n    charsets: string[];\n    encodings: string[];\n    languages: string[];\n    mediaTypes: string[];\n};"
+      }
+    ]
+  },
+  {
+    "name": "a-big-triangle",
+    "fns": []
+  },
+  {
+    "name": "abs-svg-path",
+    "fns": []
+  },
+  {
+    "name": "accurate-interval",
+    "fns": []
+  },
+  {
+    "name": "accounting",
+    "fns": []
+  },
+  {
+    "name": "actioncable",
+    "fns": []
+  },
+  {
+    "name": "accepts",
+    "fns": []
+  },
+  {
+    "name": "acorn",
+    "fns": [
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 69,
+            "to": 69
+          },
+          "path": "index.d.ts"
+        },
+        "module": "acorn",
+        "name": "getLineInfo",
+        "signature": {
+          "parameters": [
+            {
+              "name": "input",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "offset",
+              "type": {
+                "__tag": "NumberT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\n    function getLineInfo(input: string, offset: number): ESTree.Position;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 198,
+            "to": 198
+          },
+          "path": "index.d.ts"
+        },
+        "module": "acorn",
+        "name": "isIdentifierStart",
+        "signature": {
+          "parameters": [
+            {
+              "name": "code",
+              "type": {
+                "__tag": "NumberT"
+              }
+            },
+            {
+              "name": "astral",
+              "type": {
+                "__tag": "BoolT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "BoolT"
+          }
+        },
+        "text": "\n\n    function isIdentifierStart(code: number, astral?: boolean): boolean;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 200,
+            "to": 200
+          },
+          "path": "index.d.ts"
+        },
+        "module": "acorn",
+        "name": "isIdentifierChar",
+        "signature": {
+          "parameters": [
+            {
+              "name": "code",
+              "type": {
+                "__tag": "NumberT"
+              }
+            },
+            {
+              "name": "astral",
+              "type": {
+                "__tag": "BoolT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "BoolT"
+          }
+        },
+        "text": "\n\n    function isIdentifierChar(code: number, astral?: boolean): boolean;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 223,
+            "to": 223
+          },
+          "path": "index.d.ts"
+        },
+        "module": "acorn",
+        "name": "isNewLine",
+        "signature": {
+          "parameters": [
+            {
+              "name": "code",
+              "type": {
+                "__tag": "NumberT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "BoolT"
+          }
+        },
+        "text": "\n\n    function isNewLine(code: number): boolean;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 236,
+            "to": 236
+          },
+          "path": "index.d.ts"
+        },
+        "module": "acorn",
+        "name": "parseExpressionAt",
+        "signature": {
+          "parameters": [
+            {
+              "name": "input",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "pos",
+              "type": {
+                "__tag": "NumberT"
+              }
+            },
+            {
+              "name": "options",
+              "type": {
+                "__tag": "Other",
+                "values": "acorn.Options"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\n    function parseExpressionAt(input: string, pos?: number, options?: Options): ESTree.Expression;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 243,
+            "to": 243
+          },
+          "path": "index.d.ts"
+        },
+        "module": "acorn",
+        "name": "tokenizer",
+        "signature": {
+          "parameters": [
+            {
+              "name": "input",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "options",
+              "type": {
+                "__tag": "Other",
+                "values": "acorn.Options"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Other",
+            "values": "acorn.ITokenizer"
+          }
+        },
+        "text": "\n\n    function tokenizer(input: string, options: Options): ITokenizer;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 253,
+            "to": 253
+          },
+          "path": "index.d.ts"
+        },
+        "module": "acorn",
+        "name": "addLooseExports",
+        "signature": {
+          "parameters": [
+            {
+              "name": "parse",
+              "type": {
+                "__tag": "Other",
+                "values": "acorn.IParse"
+              }
+            },
+            {
+              "name": "parser",
+              "type": {
+                "__tag": "Other",
+                "values": "acorn.ILooseParserClass"
+              }
+            },
+            {
+              "name": "plugins",
+              "type": {
+                "__tag": "Other",
+                "values": "acorn.PluginsObject"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\n\n    function addLooseExports(parse: IParse, parser: ILooseParserClass, plugins: PluginsObject): void;"
+      }
+    ]
+  },
+  {
+    "name": "activedirectory2",
+    "fns": []
+  },
+  {
+    "name": "ace-diff",
+    "fns": []
+  },
+  {
+    "name": "activestorage",
+    "fns": [
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 9,
+            "to": 9
+          },
+          "path": "index.d.ts"
+        },
+        "module": "activestorage",
+        "name": "start",
+        "signature": {
+          "parameters": [],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\n\nexport function start(): void;"
+      }
+    ]
+  },
+  {
+    "name": "activex-adodb",
+    "fns": []
+  },
+  {
+    "name": "acl",
+    "fns": []
+  },
+  {
+    "name": "activex-access",
+    "fns": []
+  },
+  {
+    "name": "ace",
+    "fns": []
+  },
+  {
+    "name": "activex-dao",
+    "fns": []
+  },
+  {
+    "name": "activex-iwshruntimelibrary",
+    "fns": []
+  },
+  {
+    "name": "activex-adox",
+    "fns": []
+  },
+  {
+    "name": "activex-diskquota",
+    "fns": []
+  },
+  {
+    "name": "activex-interop",
+    "fns": []
+  },
+  {
+    "name": "activex-infopath",
+    "fns": []
+  },
+  {
+    "name": "activex-msforms",
+    "fns": []
+  },
+  {
+    "name": "activex-faxcomexlib",
+    "fns": []
+  },
+  {
+    "name": "activex-excel",
+    "fns": []
+  },
+  {
+    "name": "activex-msxml2",
+    "fns": []
+  },
+  {
+    "name": "activex-mshtml",
+    "fns": []
+  },
+  {
+    "name": "activex-libreoffice",
+    "fns": []
+  },
+  {
+    "name": "activex-office",
+    "fns": []
+  },
+  {
+    "name": "activex-powerpoint",
+    "fns": []
+  },
+  {
+    "name": "activex-scripting",
+    "fns": []
+  },
+  {
+    "name": "activex-shdocvw",
+    "fns": []
+  },
+  {
+    "name": "activex-stdole",
+    "fns": []
+  },
+  {
+    "name": "activex-outlook",
+    "fns": []
+  },
+  {
+    "name": "activex-shell",
+    "fns": []
+  },
+  {
+    "name": "activex-vbide",
+    "fns": []
+  },
+  {
+    "name": "activex-wia",
+    "fns": []
+  },
+  {
+    "name": "activex-word",
+    "fns": []
+  },
+  {
+    "name": "adal-angular",
+    "fns": [
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 191,
+            "to": 191
+          },
+          "path": "index.d.ts"
+        },
+        "module": "adal-angular",
+        "name": "inject",
+        "signature": {
+          "parameters": [
+            {
+              "name": "config",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/adal-angular/index\").Options"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Other",
+            "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/adal-angular/index\")"
+          }
+        },
+        "text": "\n    function inject(config: Options): AuthenticationContext;"
+      }
+    ]
+  },
+  {
+    "name": "add-zero",
+    "fns": []
+  },
+  {
+    "name": "add2home",
+    "fns": []
+  },
+  {
+    "name": "adhan",
+    "fns": []
+  },
+  {
+    "name": "adm-zip",
+    "fns": []
+  },
+  {
+    "name": "adlib",
+    "fns": [
+      {
+        "docs": "/**\n * A JavaScript library for interpolating property values in JSON Objects.\n *\n * @param template A template that possibly containing handlebar-style property values to replace;\n * see https://github.com/Esri/adlib#general-pattern\n * @param settings Hash providing values to insert into template; see https://github.com/Esri/adlib#general-pattern\n * @param transforms Set of transformation functions\n * @return Copy of template with replacements performed\n */",
+        "location": {
+          "lines": {
+            "from": 60,
+            "to": 64
+          },
+          "path": "index.d.ts"
+        },
+        "module": "adlib",
+        "name": "adlib",
+        "signature": {
+          "parameters": [
+            {
+              "name": "template",
+              "type": {
+                "__tag": "Any"
+              }
+            },
+            {
+              "name": "settings",
+              "type": {
+                "__tag": "Any"
+              }
+            },
+            {
+              "name": "transforms",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/adlib/index\").TransformsList"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\n/**\n * A JavaScript library for interpolating property values in JSON Objects.\n *\n * @param template A template that possibly containing handlebar-style property values to replace;\n * see https://github.com/Esri/adlib#general-pattern\n * @param settings Hash providing values to insert into template; see https://github.com/Esri/adlib#general-pattern\n * @param transforms Set of transformation functions\n * @return Copy of template with replacements performed\n */\nexport function adlib(\n    template: any,\n    settings: any,\n    transforms?: TransformsList\n): any;"
+      },
+      {
+        "docs": "/**\n * Reads a template and spits out unique handlebar-style property values.\n *\n * @param template A template that possibly containing handlebar-style property values to replace;\n * see https://github.com/Esri/adlib#general-pattern\n * @return List of unique property values in template\n */",
+        "location": {
+          "lines": {
+            "from": 73,
+            "to": 75
+          },
+          "path": "index.d.ts"
+        },
+        "module": "adlib",
+        "name": "listDependencies",
+        "signature": {
+          "parameters": [
+            {
+              "name": "template",
+              "type": {
+                "__tag": "Any"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Other",
+            "values": "string[]"
+          }
+        },
+        "text": "\n\n/**\n * Reads a template and spits out unique handlebar-style property values.\n *\n * @param template A template that possibly containing handlebar-style property values to replace;\n * see https://github.com/Esri/adlib#general-pattern\n * @return List of unique property values in template\n */\nexport function listDependencies(\n    template: any\n): string [];"
+      }
+    ]
+  },
+  {
+    "name": "adobe__es-modules-middleware",
+    "fns": [
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 30,
+            "to": 30
+          },
+          "path": "index.d.ts"
+        },
+        "module": "adobe__es-modules-middleware",
+        "name": "middleware",
+        "signature": {
+          "parameters": [
+            {
+              "name": "options",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/adobe__es-modules-middleware/index\").MiddlewareOptions"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\nexport function middleware(options?: MiddlewareOptions): NextHandleFunction;"
+      }
+    ]
+  },
+  {
+    "name": "aes-js",
+    "fns": []
+  },
+  {
+    "name": "ag-channel",
+    "fns": []
+  },
+  {
+    "name": "aframe",
+    "fns": []
+  },
+  {
+    "name": "agenda",
+    "fns": []
+  },
+  {
+    "name": "ag-simple-broker",
+    "fns": []
+  },
+  {
+    "name": "agent-base",
+    "fns": []
+  },
+  {
+    "name": "adone",
+    "fns": []
+  },
+  {
+    "name": "agiledigital__mule-preview",
+    "fns": []
+  },
+  {
+    "name": "airtable",
+    "fns": []
+  },
+  {
+    "name": "agilite",
+    "fns": []
+  },
+  {
+    "name": "ajv-bsontype",
+    "fns": []
+  },
+  {
+    "name": "ajv-async",
+    "fns": []
+  },
+  {
+    "name": "agora-rtc-sdk",
+    "fns": [
+      {
+        "docs": "/**\n     * Gets the Sources for Screen-sharing\n     *\n     * To share the screen on Electron, call this method to get the screen sources. See [Share the Screen](../../screensharing_web?platform=Web#electron) for details.\n     *\n     * If this method succeeds, the SDK returns a list of screen sources in an array of {@link DesktopCapturerSource} objects.\n     * @example **Sample code**\n     * ```javascript\n     * AgoraRTC.getScreenSources(function(err, sources) {\n     *   console.log(sources)\n     * }\n     * ```\n     */",
+        "location": {
+          "lines": {
+            "from": 35,
+            "to": 35
+          },
+          "path": "index.d.ts"
+        },
+        "module": "agora-rtc-sdk",
+        "name": "getScreenSources",
+        "signature": {
+          "parameters": [
+            {
+              "name": "callback",
+              "type": {
+                "__tag": "Other",
+                "values": "(sources: AgoraRTC.DesktopCapturerSource[]) => void"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\n    /**\n     * Gets the Sources for Screen-sharing\n     *\n     * To share the screen on Electron, call this method to get the screen sources. See [Share the Screen](../../screensharing_web?platform=Web#electron) for details.\n     *\n     * If this method succeeds, the SDK returns a list of screen sources in an array of {@link DesktopCapturerSource} objects.\n     * @example **Sample code**\n     * ```javascript\n     * AgoraRTC.getScreenSources(function(err, sources) {\n     *   console.log(sources)\n     * }\n     * ```\n     */\n    function getScreenSources(callback: (sources: DesktopCapturerSource[]) => void): void;"
+      },
+      {
+        "docs": "/**\n     * Creates a Client Object\n     *\n     * This method creates and returns a client object. You can only call this method once each call session.\n     * @example `AgoraRTC.createClient(config)`\n     * @param config Defines the property of the client, see {@link ClientConfig} for details.\n     */",
+        "location": {
+          "lines": {
+            "from": 43,
+            "to": 43
+          },
+          "path": "index.d.ts"
+        },
+        "module": "agora-rtc-sdk",
+        "name": "createClient",
+        "signature": {
+          "parameters": [
+            {
+              "name": "config",
+              "type": {
+                "__tag": "Other",
+                "values": "AgoraRTC.ClientConfig"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Other",
+            "values": "AgoraRTC.Client"
+          }
+        },
+        "text": "\n    /**\n     * Creates a Client Object\n     *\n     * This method creates and returns a client object. You can only call this method once each call session.\n     * @example `AgoraRTC.createClient(config)`\n     * @param config Defines the property of the client, see {@link ClientConfig} for details.\n     */\n    function createClient(config: ClientConfig): Client;"
+      },
+      {
+        "docs": "/**\n     * Creates a Stream Object\n     *\n     * This method creates and returns a stream object.\n     * @example `AgoraRTC.createStream(spec)`\n     * @param spec Defines the properties of the stream, see {@link StreamSpec} for details.\n     */",
+        "location": {
+          "lines": {
+            "from": 51,
+            "to": 51
+          },
+          "path": "index.d.ts"
+        },
+        "module": "agora-rtc-sdk",
+        "name": "createStream",
+        "signature": {
+          "parameters": [
+            {
+              "name": "spec",
+              "type": {
+                "__tag": "Other",
+                "values": "AgoraRTC.StreamSpec"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Other",
+            "values": "AgoraRTC.Stream"
+          }
+        },
+        "text": "\n    /**\n     * Creates a Stream Object\n     *\n     * This method creates and returns a stream object.\n     * @example `AgoraRTC.createStream(spec)`\n     * @param spec Defines the properties of the stream, see {@link StreamSpec} for details.\n     */\n    function createStream(spec: StreamSpec): Stream;"
+      },
+      {
+        "docs": "/**\n     * Checks the Web Browser Compatibility\n     *\n     * This method checks the compatibility between the Web SDK and the current web browser.\n     *\n     * Use this method before calling {@link createClient} to check the compatibility between the system and the web browser.\n     *\n     * **Note**\n     *\n     * Agora has yet to conduct comprehensive tests on Chromium kernel browsers, such as QQ and 360.\n     * Agora will gradually achieve compatibility on most mainstream browsers in subsequent versions of the Web SDK.\n     * @returns - true: The Web SDK is compatible with the current web browser.\n     * - false: The Web SDK is not compatible with the current web browser.\n     */",
+        "location": {
+          "lines": {
+            "from": 66,
+            "to": 66
+          },
+          "path": "index.d.ts"
+        },
+        "module": "agora-rtc-sdk",
+        "name": "checkSystemRequirements",
+        "signature": {
+          "parameters": [],
+          "returnType": {
+            "__tag": "BoolT"
+          }
+        },
+        "text": "\n    /**\n     * Checks the Web Browser Compatibility\n     *\n     * This method checks the compatibility between the Web SDK and the current web browser.\n     *\n     * Use this method before calling {@link createClient} to check the compatibility between the system and the web browser.\n     *\n     * **Note**\n     *\n     * Agora has yet to conduct comprehensive tests on Chromium kernel browsers, such as QQ and 360.\n     * Agora will gradually achieve compatibility on most mainstream browsers in subsequent versions of the Web SDK.\n     * @returns - true: The Web SDK is compatible with the current web browser.\n     * - false: The Web SDK is not compatible with the current web browser.\n     */\n    function checkSystemRequirements(): boolean;"
+      },
+      {
+        "docs": "/**\n     * Gets the supported codec of the web browser\n     *\n     * This method returns the codecs supported by both the Agora Web SDK and the web browser. The Agora Web SDK supports VP8 and H.264 for video, and OPUS for audio.\n     *\n     * **Note**\n     *\n     * - This method supports all web browsers. For web browsers that do not support WebRTC or are not recognized, the returned codec list is empty.\n     * - The returned codec list is based on the [SDP](https://tools.ietf.org/html/rfc4566) used by the web browser and for reference only.\n     * - Some Android phones might claim to support H.264 but have problems in communicating with other platforms using H.264. In this case, we recommend using the VP8 codec.\n     *\n     * @returns  Returns a `Promise` object. In the `.then(function(result){})` callback, `result` has the following properties:\n     * - `video`: array, the supported video codecs. The array might include `\"H264\"` and `\"VP8\"`, or be empty.\n     * - `audio`: array, the supported audio codecs. The array might include `\"OPUS\"`, or be empty.\n     *\n     * @example\n     * **Sample code**\n     *\n     * ``` javascript\n     * // Gets the supported decoding formats as the receiver\n     * AgoraRTC.getSupportedCodec()\n     *   .then(function(result){\n     *     console.log(`Supported video codec: ${result.video.join(\",\")}`);\n     *     console.log(`Supported audio codec: ${result.audio.join(\",\")}`);\n     *   });\n     *\n     * // Gets the supported encoding formats as the sender\n     * navigator.mediaDevices.getUserMedia({video: true, audio: true})\n     *  .then(function(mediaStream){\n     *     return AgoraRTC.getSupportedCodec({stream: mediaStream});\n     *  })\n     *  .then(function(result){\n     *     console.log(`Supported video codec: ${result.video.join(\",\")}`);\n     *     console.log(`Supported audio codec: ${result.audio.join(\",\")}`);\n     *  });\n     * ```\n     */",
+        "location": {
+          "lines": {
+            "from": 104,
+            "to": 112
+          },
+          "path": "index.d.ts"
+        },
+        "module": "agora-rtc-sdk",
+        "name": "getSupportedCodec",
+        "signature": {
+          "parameters": [
+            {
+              "name": "supportedCodecOptions",
+              "type": {
+                "__tag": "Other",
+                "values": "{ stream: AgoraRTC.MediaStream; }"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Other",
+            "values": "Promise<{ video: (\"VP8\" | \"H264\")[]; audio: \"OPUS\"[]; }>"
+          }
+        },
+        "text": "\n    /**\n     * Gets the supported codec of the web browser\n     *\n     * This method returns the codecs supported by both the Agora Web SDK and the web browser. The Agora Web SDK supports VP8 and H.264 for video, and OPUS for audio.\n     *\n     * **Note**\n     *\n     * - This method supports all web browsers. For web browsers that do not support WebRTC or are not recognized, the returned codec list is empty.\n     * - The returned codec list is based on the [SDP](https://tools.ietf.org/html/rfc4566) used by the web browser and for reference only.\n     * - Some Android phones might claim to support H.264 but have problems in communicating with other platforms using H.264. In this case, we recommend using the VP8 codec.\n     *\n     * @returns  Returns a `Promise` object. In the `.then(function(result){})` callback, `result` has the following properties:\n     * - `video`: array, the supported video codecs. The array might include `\"H264\"` and `\"VP8\"`, or be empty.\n     * - `audio`: array, the supported audio codecs. The array might include `\"OPUS\"`, or be empty.\n     *\n     * @example\n     * **Sample code**\n     *\n     * ``` javascript\n     * // Gets the supported decoding formats as the receiver\n     * AgoraRTC.getSupportedCodec()\n     *   .then(function(result){\n     *     console.log(`Supported video codec: ${result.video.join(\",\")}`);\n     *     console.log(`Supported audio codec: ${result.audio.join(\",\")}`);\n     *   });\n     *\n     * // Gets the supported encoding formats as the sender\n     * navigator.mediaDevices.getUserMedia({video: true, audio: true})\n     *  .then(function(mediaStream){\n     *     return AgoraRTC.getSupportedCodec({stream: mediaStream});\n     *  })\n     *  .then(function(result){\n     *     console.log(`Supported video codec: ${result.video.join(\",\")}`);\n     *     console.log(`Supported audio codec: ${result.audio.join(\",\")}`);\n     *  });\n     * ```\n     */\n    function getSupportedCodec(supportedCodecOptions?: {\n        /**\n         * (Optional) Specifies a [[MediaStream]] object.\n         *\n         * If this parameter is empty, this method gets the supported decoding formats of the web browser as the receiver.\n         * Otherwise the method gets the supported encoding formats as the sender. In most cases, the supported decoding and encoding formats are the same.\n         */\n        stream: MediaStream\n    }): Promise<{ video: Array<\"VP8\" | \"H264\">, audio: Array<\"OPUS\"> }>;"
+      },
+      {
+        "docs": "/**\n     * Enumerates the media devices\n     *\n     * This method enumerates the available media input and output devices, such as microphones, cameras, headsets, and so on.\n     *\n     * If this method succeeds, the SDK returns a list of media devices in an array of {@link MediaDeviceInfo} objects.\n     *\n     * **Note**\n     *\n     * On Safari 12.1 or later, call this method after calling {@link createStream} successfully.\n     * @example\n     * **Sample code**\n     *\n     * ``` javascript\n     * AgoraRTC.getDevices (function(devices) {\n     * var devCount = devices.length;\n     *\n     * var id = devices[0].deviceId;\n     * });\n     * ```\n     */",
+        "location": {
+          "lines": {
+            "from": 134,
+            "to": 134
+          },
+          "path": "index.d.ts"
+        },
+        "module": "agora-rtc-sdk",
+        "name": "getDevices",
+        "signature": {
+          "parameters": [
+            {
+              "name": "callback",
+              "type": {
+                "__tag": "Other",
+                "values": "(devices: AgoraRTC.MediaDeviceInfo[]) => void"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\n    /**\n     * Enumerates the media devices\n     *\n     * This method enumerates the available media input and output devices, such as microphones, cameras, headsets, and so on.\n     *\n     * If this method succeeds, the SDK returns a list of media devices in an array of {@link MediaDeviceInfo} objects.\n     *\n     * **Note**\n     *\n     * On Safari 12.1 or later, call this method after calling {@link createStream} successfully.\n     * @example\n     * **Sample code**\n     *\n     * ``` javascript\n     * AgoraRTC.getDevices (function(devices) {\n     * var devCount = devices.length;\n     *\n     * var id = devices[0].deviceId;\n     * });\n     * ```\n     */\n    function getDevices(callback: (devices: MediaDeviceInfo[]) => void): void;"
+      }
+    ]
+  },
+  {
+    "name": "ajv-errors",
+    "fns": []
+  },
+  {
+    "name": "airbnb-prop-types",
+    "fns": [
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 39,
+            "to": 42
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "and",
+        "signature": {
+          "parameters": [
+            {
+              "name": "propTypes",
+              "type": {
+                "__tag": "Other",
+                "values": "[any]"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function and<A>(\n    propTypes: [PropTypes.Validator<A>],\n    name?: string,\n): PropTypes.Requireable<A>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 44,
+            "to": 47
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "and",
+        "signature": {
+          "parameters": [
+            {
+              "name": "propTypes",
+              "type": {
+                "__tag": "Other",
+                "values": "[any, any]"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function and<A, B>(\n    propTypes: [PropTypes.Validator<A>, PropTypes.Validator<B>],\n    name?: string,\n): PropTypes.Requireable<A & B>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 49,
+            "to": 52
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "and",
+        "signature": {
+          "parameters": [
+            {
+              "name": "propTypes",
+              "type": {
+                "__tag": "Other",
+                "values": "[any, any, any]"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function and<A, B, C>(\n    propTypes: [PropTypes.Validator<A>, PropTypes.Validator<B>, PropTypes.Validator<C>],\n    name?: string,\n): PropTypes.Requireable<A & B & C>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 54,
+            "to": 57
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "and",
+        "signature": {
+          "parameters": [
+            {
+              "name": "propTypes",
+              "type": {
+                "__tag": "Other",
+                "values": "any[]"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function and<T>(\n    propTypes: Array<PropTypes.Validator<any>>,\n    name?: string,\n): PropTypes.Requireable<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 59,
+            "to": 64
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "between",
+        "signature": {
+          "parameters": [
+            {
+              "name": "options",
+              "type": {
+                "__tag": "Other",
+                "values": "{ lt?: number; lte?: number; gt?: number; gte?: number; }"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function between(options: {\n    lt?: number;\n    lte?: number;\n    gt?: number;\n    gte?: number;\n}): PropTypes.Requireable<number>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 66,
+            "to": 66
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "booleanSome",
+        "signature": {
+          "parameters": [
+            {
+              "name": "props",
+              "type": {
+                "__tag": "Other",
+                "values": "string[]"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function booleanSome(...props: string[]): PropTypes.Requireable<boolean>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 68,
+            "to": 70
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "childrenHavePropXorChildren",
+        "signature": {
+          "parameters": [
+            {
+              "name": "prop",
+              "type": {
+                "__tag": "Other",
+                "values": "string | symbol"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function childrenHavePropXorChildren<T = PropTypes.ReactNodeLike>(\n    prop: string | symbol,\n): PropTypes.Requireable<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 72,
+            "to": 74
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "childrenOf",
+        "signature": {
+          "parameters": [
+            {
+              "name": "propType",
+              "type": {
+                "__tag": "Any"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function childrenOf<T = PropTypes.ReactNodeLike, P = any>(\n    propType: PropTypes.Validator<P>,\n): PropTypes.Requireable<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 76,
+            "to": 78
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "childrenOfType",
+        "signature": {
+          "parameters": [
+            {
+              "name": "types",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/airbnb-prop-types/index\").ReactTypeLike[]"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function childrenOfType<T = PropTypes.ReactNodeLike>(\n    ...types: ReactTypeLike[]\n): PropTypes.Requireable<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 80,
+            "to": 82
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "childrenSequenceOf",
+        "signature": {
+          "parameters": [
+            {
+              "name": "specifiers",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/airbnb-prop-types/index\").Specifier<any>[]"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function childrenSequenceOf<T = PropTypes.ReactNodeLike>(\n    ...specifiers: Specifier[]\n): PropTypes.Requireable<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 84,
+            "to": 87
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "componentWithName",
+        "signature": {
+          "parameters": [
+            {
+              "name": "name",
+              "type": {
+                "__tag": "Other",
+                "values": "string | RegExp"
+              }
+            },
+            {
+              "name": "options",
+              "type": {
+                "__tag": "Other",
+                "values": "{ stripHOCs: readonly string[]; }"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function componentWithName<T = PropTypes.ReactNodeLike>(\n    name: string | RegExp,\n    options?: { stripHOCs: ReadonlyArray<string> },\n): PropTypes.Requireable<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 89,
+            "to": 93
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "disallowedIf",
+        "signature": {
+          "parameters": [
+            {
+              "name": "propType",
+              "type": {
+                "__tag": "Any"
+              }
+            },
+            {
+              "name": "otherPropName",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "otherPropType",
+              "type": {
+                "__tag": "Any"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function disallowedIf<T>(\n    propType: PropTypes.Requireable<T>,\n    otherPropName: string,\n    otherPropType: PropTypes.Validator<any>,\n): PropTypes.Requireable<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 95,
+            "to": 97
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "elementType",
+        "signature": {
+          "parameters": [
+            {
+              "name": "type",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/airbnb-prop-types/index\").ReactTypeLike"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function elementType<T = PropTypes.ReactElementLike>(\n    type: ReactTypeLike,\n): PropTypes.Requireable<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 99,
+            "to": 99
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "explicitNull",
+        "signature": {
+          "parameters": [],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function explicitNull(): PropTypes.Requireable<null | undefined>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 101,
+            "to": 103
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "forbidExtraProps",
+        "signature": {
+          "parameters": [
+            {
+              "name": "propTypes",
+              "type": {
+                "__tag": "Any"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function forbidExtraProps<T extends object>(\n    propTypes: PropTypes.ValidationMap<T>,\n): PropTypes.ValidationMap<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 105,
+            "to": 105
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "integer",
+        "signature": {
+          "parameters": [],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function integer(): PropTypes.Requireable<number>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 107,
+            "to": 110
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "keysOf",
+        "signature": {
+          "parameters": [
+            {
+              "name": "propType",
+              "type": {
+                "__tag": "Any"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function keysOf<T, P>(\n    propType: PropTypes.Validator<P>,\n    name?: string,\n): PropTypes.Requireable<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 112,
+            "to": 115
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "mutuallyExclusiveProps",
+        "signature": {
+          "parameters": [
+            {
+              "name": "propType",
+              "type": {
+                "__tag": "Any"
+              }
+            },
+            {
+              "name": "propNames",
+              "type": {
+                "__tag": "Other",
+                "values": "string[]"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function mutuallyExclusiveProps<T>(\n    propType: PropTypes.Requireable<T>,\n    ...propNames: string[]\n): PropTypes.Requireable<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 117,
+            "to": 121
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "mutuallyExclusiveProps",
+        "signature": {
+          "parameters": [
+            {
+              "name": "propType",
+              "type": {
+                "__tag": "Any"
+              }
+            },
+            {
+              "name": "propNames",
+              "type": {
+                "__tag": "Other",
+                "values": "string[]"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function mutuallyExclusiveProps<T>(\n    // tslint:disable-next-line:unified-signatures\n    propType: PropTypes.Validator<T>,\n    ...propNames: string[]\n): PropTypes.Requireable<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 123,
+            "to": 123
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "mutuallyExclusiveTrueProps",
+        "signature": {
+          "parameters": [
+            {
+              "name": "propNames",
+              "type": {
+                "__tag": "Other",
+                "values": "string[]"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function mutuallyExclusiveTrueProps(...propNames: string[]): PropTypes.Requireable<boolean>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 125,
+            "to": 128
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "nChildren",
+        "signature": {
+          "parameters": [
+            {
+              "name": "n",
+              "type": {
+                "__tag": "NumberT"
+              }
+            },
+            {
+              "name": "propType",
+              "type": {
+                "__tag": "Any"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function nChildren<T = PropTypes.ReactNodeLike, P = any>(\n    n: number,\n    propType?: PropTypes.Validator<P>,\n): PropTypes.Requireable<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 132,
+            "to": 132
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "nonNegativeNumber",
+        "signature": {
+          "parameters": [],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function nonNegativeNumber(): PropTypes.Requireable<number>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 134,
+            "to": 134
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "numericString",
+        "signature": {
+          "parameters": [],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function numericString(): PropTypes.Requireable<string>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 136,
+            "to": 136
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "object",
+        "signature": {
+          "parameters": [],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function object<T extends object>(): PropTypes.Requireable<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 138,
+            "to": 138
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "or",
+        "signature": {
+          "parameters": [
+            {
+              "name": "propTypes",
+              "type": {
+                "__tag": "Other",
+                "values": "[any]"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function or<A>(propTypes: [PropTypes.Validator<A>], name?: string): PropTypes.Requireable<A>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 140,
+            "to": 143
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "or",
+        "signature": {
+          "parameters": [
+            {
+              "name": "propTypes",
+              "type": {
+                "__tag": "Other",
+                "values": "[any, any]"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function or<A, B>(\n    propTypes: [PropTypes.Validator<A>, PropTypes.Validator<B>],\n    name?: string,\n): PropTypes.Requireable<A | B>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 145,
+            "to": 148
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "or",
+        "signature": {
+          "parameters": [
+            {
+              "name": "propTypes",
+              "type": {
+                "__tag": "Other",
+                "values": "[any, any, any]"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function or<A, B, C>(\n    propTypes: [PropTypes.Validator<A>, PropTypes.Validator<B>, PropTypes.Validator<C>],\n    name?: string,\n): PropTypes.Requireable<A | B | C>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 150,
+            "to": 153
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "or",
+        "signature": {
+          "parameters": [
+            {
+              "name": "propTypes",
+              "type": {
+                "__tag": "Other",
+                "values": "any[]"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function or<T>(\n    propTypes: Array<PropTypes.Validator<T>>,\n    name?: string,\n): PropTypes.Requireable<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 155,
+            "to": 159
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "or",
+        "signature": {
+          "parameters": [
+            {
+              "name": "propTypes",
+              "type": {
+                "__tag": "Other",
+                "values": "any[]"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function or<T = any>(\n    // tslint:disable-next-line:unified-signatures\n    propTypes: Array<PropTypes.Validator<any>>,\n    name?: string,\n): PropTypes.Requireable<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 161,
+            "to": 161
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "range",
+        "signature": {
+          "parameters": [
+            {
+              "name": "min",
+              "type": {
+                "__tag": "NumberT"
+              }
+            },
+            {
+              "name": "max",
+              "type": {
+                "__tag": "NumberT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function range<T extends number>(min?: number, max?: number): PropTypes.Requireable<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 163,
+            "to": 163
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "range",
+        "signature": {
+          "parameters": [
+            {
+              "name": "min",
+              "type": {
+                "__tag": "NumberT"
+              }
+            },
+            {
+              "name": "max",
+              "type": {
+                "__tag": "NumberT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function range(min?: number, max?: number): PropTypes.Requireable<number>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 165,
+            "to": 165
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "ref",
+        "signature": {
+          "parameters": [],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function ref<T = HTMLElement>(): PropTypes.Requireable<ReactLegacyRefLike<T>>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 167,
+            "to": 171
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "requiredBy",
+        "signature": {
+          "parameters": [
+            {
+              "name": "requiredByPropName",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "propType",
+              "type": {
+                "__tag": "Any"
+              }
+            },
+            {
+              "name": "defaultValue",
+              "type": {
+                "__tag": "Any"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function requiredBy<P>(\n    requiredByPropName: string,\n    propType: PropTypes.Validator<P>,\n    defaultValue?: any,\n): PropTypes.Requireable<P>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 173,
+            "to": 181
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "restrictedProp",
+        "signature": {
+          "parameters": [
+            {
+              "name": "messageFunction",
+              "type": {
+                "__tag": "Other",
+                "values": "(props: object, propName: string, componentName: string, location: string, propFullName: string) => string | Error"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function restrictedProp<T>(\n    messageFunction?: (\n        props: object,\n        propName: string,\n        componentName: string,\n        location: string,\n        propFullName: string,\n    ) => string | Error | undefined,\n): PropTypes.Requireable<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 183,
+            "to": 183
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "sequenceOf",
+        "signature": {
+          "parameters": [
+            {
+              "name": "specifiers",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/airbnb-prop-types/index\").Specifier<any>[]"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function sequenceOf<T>(...specifiers: Specifier[]): PropTypes.Requireable<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 185,
+            "to": 187
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "shape",
+        "signature": {
+          "parameters": [
+            {
+              "name": "propTypes",
+              "type": {
+                "__tag": "Any"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function shape<T extends object>(\n    propTypes: PropTypes.ValidationMap<T>,\n): PropTypes.Requireable<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 189,
+            "to": 189
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "stringStartsWith",
+        "signature": {
+          "parameters": [
+            {
+              "name": "string",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function stringStartsWith(string: string): PropTypes.Requireable<string>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 191,
+            "to": 191
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "uniqueArray",
+        "signature": {
+          "parameters": [],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function uniqueArray<T = any>(): PropTypes.Requireable<T[]>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 193,
+            "to": 197
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "uniqueArrayOf",
+        "signature": {
+          "parameters": [
+            {
+              "name": "propType",
+              "type": {
+                "__tag": "Any"
+              }
+            },
+            {
+              "name": "mapperOrName",
+              "type": {
+                "__tag": "Other",
+                "values": "string | ((value: any) => any)"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function uniqueArrayOf<T, P>(\n    propType: PropTypes.Validator<P>,\n    mapperOrName: ((value: any) => any) | string,\n    name?: string,\n): PropTypes.Requireable<T[]>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 199,
+            "to": 201
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "valuesOf",
+        "signature": {
+          "parameters": [
+            {
+              "name": "propType",
+              "type": {
+                "__tag": "Any"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function valuesOf<T>(\n    propType: PropTypes.Validator<T>,\n): PropTypes.Requireable<{ [key: string]: T }>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 203,
+            "to": 206
+          },
+          "path": "index.d.ts"
+        },
+        "module": "airbnb-prop-types",
+        "name": "withShape",
+        "signature": {
+          "parameters": [
+            {
+              "name": "propType",
+              "type": {
+                "__tag": "Any"
+              }
+            },
+            {
+              "name": "propTypes",
+              "type": {
+                "__tag": "Any"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\nexport function withShape<T extends object, P, S>(\n    propType: PropTypes.Validator<P>,\n    propTypes: PropTypes.ValidationMap<S>,\n): PropTypes.Requireable<T>;"
+      }
+    ]
+  },
+  {
+    "name": "ajv-merge-patch",
+    "fns": []
+  },
+  {
+    "name": "ajv-keywords",
+    "fns": []
+  },
+  {
+    "name": "ajv-pack",
+    "fns": [
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 40,
+            "to": 40
+          },
+          "path": "index.d.ts"
+        },
+        "module": "ajv-pack",
+        "name": "instance",
+        "signature": {
+          "parameters": [
+            {
+              "name": "ajv",
+              "type": {
+                "__tag": "Any"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Other",
+            "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/ajv-pack/index\").AjvPack"
+          }
+        },
+        "text": "\n\n    function instance(ajv: Ajv): AjvPack;"
+      }
+    ]
+  },
+  {
+    "name": "akumina-core",
+    "fns": []
+  },
+  {
+    "name": "akamai-edgeworkers",
+    "fns": [
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 1,
+            "to": 21
+          },
+          "path": "test/akamai-edgeworkers-global.test.ts"
+        },
+        "module": "akamai-edgeworkers",
+        "name": "onClientRequest",
+        "signature": {
+          "parameters": [
+            {
+              "name": "request",
+              "type": {
+                "__tag": "Other",
+                "values": "EW.IngressClientRequest"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "export function onClientRequest(request: EW.IngressClientRequest) {\n    // Exercise EW.ClientRequest.setHeader()\n    request.setHeader(\"from-set-header-1\", [\"value-1\", \"trailer-1\"]);\n\n    // Exercise EW.ClientRequest.addHeader()\n    request.addHeader(\"from-add-header-3\", [\"value-3\", \"trailer-2\"]);\n\n    // Exercise EW.ClientRequest.removeHeader()\n    request.removeHeader(\"to-remove-1\");\n\n    // Exercise EW.ClientRequest.getVariable()\n    request.respondWith(505, [], \"Missing get-variable-present\");\n\n    request.respondWith(505, { no: 'bad' }, 'Expected var to be missing');\n\n    // Exercise respondWith\n    const target = request.getHeader(\"target\");\n    if (target != null && target[0] === 'onClientRequest-respondWith') {\n        request.respondWith(418, { 'from-respond-with': \"frw value\" }, \"frw body\");\n    }\n}"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 23,
+            "to": 44
+          },
+          "path": "test/akamai-edgeworkers-global.test.ts"
+        },
+        "module": "akamai-edgeworkers",
+        "name": "onOriginRequest",
+        "signature": {
+          "parameters": [
+            {
+              "name": "request",
+              "type": {
+                "__tag": "Other",
+                "values": "EW.IngressOriginRequest"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\n\nexport function onOriginRequest(request: EW.IngressOriginRequest) {\n    // getHeader\n    const h = request.getHeader(\"onOriginRequest-getHeader\");\n    if (h == null) {\n        return;\n    }\n\n    // setHeader\n    request.setHeader(\"onOriginRequest-getHeader-set\", h[0]);\n\n    // addHeader\n    request.addHeader(\"onOriginRequest-addHeader-single\", \"single\");\n    request.addHeader(\"onOriginRequest-addHeader-multi\", [\"multi-1\", \"multi-2\"]);\n\n    // removeHeader\n    request.getHeader(\"onOriginRequest-removeHeader-bye\");\n    request.removeHeader(\"onOriginRequest-removeHeader-bye\");\n\n    // getVariable\n    const v = request.getVariable(\"var\") || [];\n    request.setHeader(\"variable\", v);\n}"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 46,
+            "to": 83
+          },
+          "path": "test/akamai-edgeworkers-global.test.ts"
+        },
+        "module": "akamai-edgeworkers",
+        "name": "onOriginResponse",
+        "signature": {
+          "parameters": [
+            {
+              "name": "request",
+              "type": {
+                "__tag": "Other",
+                "values": "EW.EgressOriginRequest"
+              }
+            },
+            {
+              "name": "response",
+              "type": {
+                "__tag": "Other",
+                "values": "EW.EgressOriginResponse"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\n\nexport function onOriginResponse(request: EW.EgressOriginRequest, response: EW.EgressOriginResponse) {\n    if (response.getHeader(\"should-respondWith\")) {\n        request.respondWith(444, {}, \"wanted a respond with\");\n        return;\n    }\n\n    if (response.getHeader(\"should-status\")) {\n        response.status = 456;\n        return;\n    }\n\n    // Req - getHeader\n    let h = request.getHeader(\"onOriginResponse-req-getHeader\") || [];\n    response.setHeader(\"header-from-req\", h);\n\n    // getVariable\n    const v = request.getVariable(\"req-var\") || [];\n    response.setHeader(\"variable\", v);\n\n    // Resp - getHeader\n    h = response.getHeader(\"onOriginResponse-resp-getHeader\") || [];\n\n    // Resp- setHeader\n    response.setHeader(\"onOriginResponse-getHeader-resp-set\", h);\n\n    // Resp- addHeader\n    response.addHeader(\"onOriginResponse-addHeader-resp-single\", \"single\");\n    response.addHeader(\"onOriginResponse-addHeader-resp-multi\", [\"multi-1\", \"multi-2\"]);\n\n    // Resp- removeHeader\n    if (!response.getHeader(\"onOriginResponse-removeHeader-resp-bye\")) {\n        return;\n    }\n    response.removeHeader(\"onOriginResponse-removeHeader-resp-bye\");\n\n    // Verify we set status\n    response.status = 189;\n}"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 85,
+            "to": 117
+          },
+          "path": "test/akamai-edgeworkers-global.test.ts"
+        },
+        "module": "akamai-edgeworkers",
+        "name": "onClientResponse",
+        "signature": {
+          "parameters": [
+            {
+              "name": "request",
+              "type": {
+                "__tag": "Other",
+                "values": "EW.EgressClientRequest"
+              }
+            },
+            {
+              "name": "response",
+              "type": {
+                "__tag": "Other",
+                "values": "EW.EgressClientResponse"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\n\nexport function onClientResponse(request: EW.EgressClientRequest, response: EW.EgressClientResponse) {\n    if (request.getHeader(\"should-status\")) {\n        response.status = 234;\n        return;\n    }\n\n    // Req - getHeader\n    let h = request.getHeader(\"onClientResponse-req-getHeader\") || [];\n    response.setHeader(\"header-from-req\", h);\n\n    // getVariable\n    const v = request.getVariable(\"req-var\") || \"\";\n    response.setHeader(\"variable\", v);\n\n    // Resp - getHeader\n    h = response.getHeader(\"onClientResponse-resp-getHeader\") || [];\n\n    // Resp- setHeader\n    response.setHeader(\"onClientResponse-getHeader-resp-set\", h);\n\n    // Resp- addHeader\n    response.addHeader(\"onClientResponse-addHeader-resp-single\", \"single\");\n    response.addHeader(\"onClientResponse-addHeader-resp-multi\", [\"multi-1\", \"multi-2\"]);\n\n    // Resp- removeHeader\n    if (!response.getHeader(\"onClientResponse-removeHeader-resp-bye\")) {\n        return;\n    }\n    response.removeHeader(\"onClientResponse-removeHeader-resp-bye\");\n\n    // Verify we set status\n    response.status = 123;\n}"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 1,
+            "to": 3
+          },
+          "path": "test/set_variable.ts"
+        },
+        "module": "akamai-edgeworkers",
+        "name": "onClientRequest",
+        "signature": {
+          "parameters": [
+            {
+              "name": "request",
+              "type": {
+                "__tag": "Other",
+                "values": "EW.IngressClientRequest"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "export function onClientRequest(request: EW.IngressClientRequest) {\n    request.setVariable('PMUSER_client_request', 'foobar');\n}"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 5,
+            "to": 7
+          },
+          "path": "test/set_variable.ts"
+        },
+        "module": "akamai-edgeworkers",
+        "name": "onOriginRequest",
+        "signature": {
+          "parameters": [
+            {
+              "name": "request",
+              "type": {
+                "__tag": "Other",
+                "values": "EW.IngressOriginRequest"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\n\nexport function onOriginRequest(request: EW.IngressOriginRequest) {\n    request.setVariable('PMUSER_origin_request', 'foobar');\n}"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 9,
+            "to": 11
+          },
+          "path": "test/set_variable.ts"
+        },
+        "module": "akamai-edgeworkers",
+        "name": "onOriginResponse",
+        "signature": {
+          "parameters": [
+            {
+              "name": "request",
+              "type": {
+                "__tag": "Other",
+                "values": "EW.EgressOriginRequest"
+              }
+            },
+            {
+              "name": "response",
+              "type": {
+                "__tag": "Other",
+                "values": "EW.EgressOriginResponse"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\n\nexport function onOriginResponse(request: EW.EgressOriginRequest, response: EW.EgressOriginResponse) {\n    request.setVariable('PMUSER_origin_response', 'foobar');\n}"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 13,
+            "to": 15
+          },
+          "path": "test/set_variable.ts"
+        },
+        "module": "akamai-edgeworkers",
+        "name": "onClientResponse",
+        "signature": {
+          "parameters": [
+            {
+              "name": "request",
+              "type": {
+                "__tag": "Other",
+                "values": "EW.EgressClientRequest"
+              }
+            },
+            {
+              "name": "response",
+              "type": {
+                "__tag": "Other",
+                "values": "EW.EgressClientResponse"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\n\nexport function onClientResponse(request: EW.EgressClientRequest, response: EW.EgressClientResponse) {\n    request.setVariable('PMUSER_client_response', 'foobar');\n}"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 3,
+            "to": 63
+          },
+          "path": "test/url-search-params-tests.ts"
+        },
+        "module": "akamai-edgeworkers",
+        "name": "onClientRequest",
+        "signature": {
+          "parameters": [
+            {
+              "name": "request",
+              "type": {
+                "__tag": "Other",
+                "values": "EW.IngressClientRequest"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\n\nexport function onClientRequest(request: EW.IngressClientRequest) {\n    const params = new URLSearchParams(request.query);\n\n    params.append(\"from-script\", \"from-value\");\n    params.delete(\"to-delete\");\n\n    let gotten = params.get('m i s s i n g');\n    if (gotten != null) {\n        request.respondWith(404, {}, 'busted in get() null check');\n        return;\n    }\n\n    gotten = params.get('from-script');\n    if (gotten !== 'from-value') {\n        request.respondWith(404, {}, 'didn\\'t get() value');\n        return;\n    }\n\n    if (params.has('nope')) {\n        request.respondWith(404, {}, 'has() found a non-existent value');\n        return;\n    }\n\n    if (!params.has('from-script')) {\n        request.respondWith(404, {}, 'has() didn\\'t find an expected value');\n        return;\n    }\n\n    if (params.getAll('nope').length === 0) {\n        // excelsior\n    } else {\n        request.respondWith(404, {}, 'getAll() test failed');\n        return;\n    }\n\n    let entriesCount = 0;\n    for (const [k, v] of params.entries()) {\n        entriesCount++;\n    }\n\n    let keysCount = 0;\n    for (const [k, v] of params.keys()) {\n        keysCount++;\n    }\n\n    let valuesCount = 0;\n    for (const [k, v] of params.values()) {\n        valuesCount++;\n    }\n\n    if (entriesCount !== keysCount || keysCount !== valuesCount) {\n        request.respondWith(404, {}, 'iteration counts didn\\'t add up');\n        return;\n    }\n\n    params.set(\"setted\", \"value-setted\");\n\n    request.setHeader(\"foo\", params.toString());\n\n    request.respondWith(282, {}, 'succeeded');\n}"
+      }
+    ]
+  },
+  {
+    "name": "ale-url-parser",
+    "fns": [
+      {
+        "docs": "/**\n * Parse url string into url object.\n * @return UrlObject\n */",
+        "location": {
+          "lines": {
+            "from": 23,
+            "to": 23
+          },
+          "path": "index.d.ts"
+        },
+        "module": "ale-url-parser",
+        "name": "parse",
+        "signature": {
+          "parameters": [
+            {
+              "name": "url",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Other",
+            "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/ale-url-parser/index\").UrlObject"
+          }
+        },
+        "text": "\n\n/**\n * Parse url string into url object.\n * @return UrlObject\n */\nexport function parse(url: string): UrlObject;"
+      },
+      {
+        "docs": "/**\n * Stringify url object into url string.\n * @return string\n */",
+        "location": {
+          "lines": {
+            "from": 29,
+            "to": 29
+          },
+          "path": "index.d.ts"
+        },
+        "module": "ale-url-parser",
+        "name": "stringify",
+        "signature": {
+          "parameters": [
+            {
+              "name": "urlObject",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/ale-url-parser/index\").UrlObject"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "StringT"
+          }
+        },
+        "text": "\n\n/**\n * Stringify url object into url string.\n * @return string\n */\nexport function stringify(urlObject: UrlObject): string;"
+      }
+    ]
+  },
+  {
+    "name": "alertify",
+    "fns": []
+  },
+  {
+    "name": "alexa-voice-service",
+    "fns": []
+  },
+  {
+    "name": "alex",
+    "fns": [
+      {
+        "docs": "/** Check Markdown (ignoring syntax). */",
+        "location": {
+          "lines": {
+            "from": 39,
+            "to": 39
+          },
+          "path": "index.d.ts"
+        },
+        "module": "alex",
+        "name": "markdown",
+        "signature": {
+          "parameters": [
+            {
+              "name": "value",
+              "type": {
+                "__tag": "Any"
+              }
+            },
+            {
+              "name": "config",
+              "type": {
+                "__tag": "Other",
+                "values": "alex.Config"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\n    /** Check Markdown (ignoring syntax). */\n    function markdown(value: vfile.VFile | string, config?: Config): vfile.VFile;"
+      },
+      {
+        "docs": "/** Check HTML (ignoring syntax). */",
+        "location": {
+          "lines": {
+            "from": 42,
+            "to": 42
+          },
+          "path": "index.d.ts"
+        },
+        "module": "alex",
+        "name": "html",
+        "signature": {
+          "parameters": [
+            {
+              "name": "value",
+              "type": {
+                "__tag": "Any"
+              }
+            },
+            {
+              "name": "config",
+              "type": {
+                "__tag": "Other",
+                "values": "alex.Config"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\n    /** Check HTML (ignoring syntax). */\n    function html(value: vfile.VFile | string, config?: Config): vfile.VFile;"
+      },
+      {
+        "docs": "/** Check plain text (as in, syntax is checked). */",
+        "location": {
+          "lines": {
+            "from": 45,
+            "to": 45
+          },
+          "path": "index.d.ts"
+        },
+        "module": "alex",
+        "name": "text",
+        "signature": {
+          "parameters": [
+            {
+              "name": "value",
+              "type": {
+                "__tag": "Any"
+              }
+            },
+            {
+              "name": "config",
+              "type": {
+                "__tag": "Other",
+                "values": "alex.Config"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\n\n    /** Check plain text (as in, syntax is checked). */\n    function text(value: vfile.VFile | string, config?: Config): vfile.VFile;"
+      }
+    ]
+  },
+  {
+    "name": "alexa-sdk",
+    "fns": [
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 12,
+            "to": 12
+          },
+          "path": "index.d.ts"
+        },
+        "module": "alexa-sdk",
+        "name": "handler",
+        "signature": {
+          "parameters": [
+            {
+              "name": "event",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alexa-sdk/index\").RequestBody<T>"
+              }
+            },
+            {
+              "name": "context",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alexa-sdk/index\").Context"
+              }
+            },
+            {
+              "name": "callback",
+              "type": {
+                "__tag": "Other",
+                "values": "(err: any, response: any) => void"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Other",
+            "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alexa-sdk/index\").AlexaObject<T>"
+          }
+        },
+        "text": "// Type definitions for Alexa SDK for Node.js 1.1\n// Project: https://github.com/alexa/alexa-skill-sdk-for-nodejs\n// Definitions by:  Pete Beegle <https://github.com/petebeegle>\n//                  Huw <https://github.com/hoo29>\n//                  pascalwhoop <https://github.com/pascalwhoop>\n//                  Ben <https://github.com/blforce>\n//                  rk-7 <https://github.com/rk-7>\n//                  Alex Malcoci <https://github.com/alexmalcoci>\n// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped\n// TypeScript Version: 2.2\n\nexport function handler<T extends Request>(event: RequestBody<T>, context: Context, callback?: (err: any, response: any) => void): AlexaObject<T>;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 13,
+            "to": 13
+          },
+          "path": "index.d.ts"
+        },
+        "module": "alexa-sdk",
+        "name": "CreateStateHandler",
+        "signature": {
+          "parameters": [
+            {
+              "name": "state",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "obj",
+              "type": {
+                "__tag": "Any"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Any"
+          }
+        },
+        "text": "\nexport function CreateStateHandler(state: string, obj: any): any;"
+      }
+    ]
+  },
+  {
+    "name": "algoliasearch",
+    "fns": []
+  },
+  {
+    "name": "algebra.js",
+    "fns": [
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 22,
+            "to": 22
+          },
+          "path": "index.d.ts"
+        },
+        "module": "algebra.js",
+        "name": "parse",
+        "signature": {
+          "parameters": [
+            {
+              "name": "input",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Other",
+            "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/algebra.js/index\").Equation | import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/algebra.js/index\").Expression"
+          }
+        },
+        "text": "\n  function parse(input: string): Equation | Expression;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 23,
+            "to": 23
+          },
+          "path": "index.d.ts"
+        },
+        "module": "algebra.js",
+        "name": "toTex",
+        "signature": {
+          "parameters": [
+            {
+              "name": "input",
+              "type": {
+                "__tag": "Other",
+                "values": "object | import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/algebra.js/index\").Equation | import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/algebra.js/index\").Expression | import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/algebra.js/index\").Fraction | (object | import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/algebra.js/index\").Fraction)[]"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "StringT"
+          }
+        },
+        "text": "\n  function toTex(input: Fraction | Expression | Equation | object | Array<Fraction | object>): string;"
+      }
+    ]
+  },
+  {
+    "name": "algoliasearch-helper",
+    "fns": []
+  },
+  {
+    "name": "ali-app",
+    "fns": []
+  },
+  {
+    "name": "ali-oss",
+    "fns": []
+  },
+  {
+    "name": "align-text",
+    "fns": []
+  },
+  {
+    "name": "alks-node",
+    "fns": [
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 46,
+            "to": 51
+          },
+          "path": "index.d.ts"
+        },
+        "module": "alks-node",
+        "name": "getDurations",
+        "signature": {
+          "parameters": [
+            {
+              "name": "account",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").Account"
+              }
+            },
+            {
+              "name": "auth",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").Auth"
+              }
+            },
+            {
+              "name": "opts",
+              "type": {
+                "__tag": "Other",
+                "values": "object"
+              }
+            },
+            {
+              "name": "callback",
+              "type": {
+                "__tag": "Other",
+                "values": "(err: Error, duration: number[]) => void"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\nexport function getDurations(\n    account: Account,\n    auth: Auth,\n    opts: object,\n    callback: (err: Error, duration: number[]) => void\n): void;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 52,
+            "to": 58
+          },
+          "path": "index.d.ts"
+        },
+        "module": "alks-node",
+        "name": "createKey",
+        "signature": {
+          "parameters": [
+            {
+              "name": "account",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").Account"
+              }
+            },
+            {
+              "name": "auth",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").Auth"
+              }
+            },
+            {
+              "name": "duration",
+              "type": {
+                "__tag": "NumberT"
+              }
+            },
+            {
+              "name": "opts",
+              "type": {
+                "__tag": "Other",
+                "values": "object"
+              }
+            },
+            {
+              "name": "callback",
+              "type": {
+                "__tag": "Other",
+                "values": "(err: Error, key: import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").KeyData) => void"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\nexport function createKey(\n    account: Account,\n    auth: Auth,\n    duration: number,\n    opts: object,\n    callback: (err: Error, key: KeyData) => void\n): void;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 59,
+            "to": 65
+          },
+          "path": "index.d.ts"
+        },
+        "module": "alks-node",
+        "name": "createIamKey",
+        "signature": {
+          "parameters": [
+            {
+              "name": "account",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").Account"
+              }
+            },
+            {
+              "name": "auth",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").Auth"
+              }
+            },
+            {
+              "name": "duration",
+              "type": {
+                "__tag": "NumberT"
+              }
+            },
+            {
+              "name": "opts",
+              "type": {
+                "__tag": "Other",
+                "values": "object"
+              }
+            },
+            {
+              "name": "callback",
+              "type": {
+                "__tag": "Other",
+                "values": "(err: Error, key: import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").KeyData) => void"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\nexport function createIamKey(\n    account: Account,\n    auth: Auth,\n    duration: number,\n    opts: object,\n    callback: (err: Error, key: KeyData) => void\n): void;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 66,
+            "to": 72
+          },
+          "path": "index.d.ts"
+        },
+        "module": "alks-node",
+        "name": "createLongTermKey",
+        "signature": {
+          "parameters": [
+            {
+              "name": "account",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").Account"
+              }
+            },
+            {
+              "name": "auth",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").Auth"
+              }
+            },
+            {
+              "name": "iamUserName",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "opts",
+              "type": {
+                "__tag": "Other",
+                "values": "object"
+              }
+            },
+            {
+              "name": "callback",
+              "type": {
+                "__tag": "Other",
+                "values": "(err: Error, data: import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").LongTermKeyData) => void"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\nexport function createLongTermKey(\n    account: Account,\n    auth: Auth,\n    iamUserName: string,\n    opts: object,\n    callback: (err: Error, data: LongTermKeyData) => void\n): void;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 73,
+            "to": 81
+          },
+          "path": "index.d.ts"
+        },
+        "module": "alks-node",
+        "name": "createIamRole",
+        "signature": {
+          "parameters": [
+            {
+              "name": "account",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").Account"
+              }
+            },
+            {
+              "name": "auth",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").Auth"
+              }
+            },
+            {
+              "name": "roleName",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "roleType",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "includeDefaultPolicies",
+              "type": {
+                "__tag": "BoolT"
+              }
+            },
+            {
+              "name": "opts",
+              "type": {
+                "__tag": "Other",
+                "values": "object"
+              }
+            },
+            {
+              "name": "callback",
+              "type": {
+                "__tag": "Other",
+                "values": "(err: Error, body: any) => void"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\nexport function createIamRole(\n    account: Account,\n    auth: Auth,\n    roleName: string,\n    roleType: string,\n    includeDefaultPolicies: boolean,\n    opts: object,\n    callback: (err: Error, body: any) => void\n): void;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 82,
+            "to": 90
+          },
+          "path": "index.d.ts"
+        },
+        "module": "alks-node",
+        "name": "createIamTrustRole",
+        "signature": {
+          "parameters": [
+            {
+              "name": "account",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").Account"
+              }
+            },
+            {
+              "name": "auth",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").Auth"
+              }
+            },
+            {
+              "name": "roleName",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "roleType",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "trustArn",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "opts",
+              "type": {
+                "__tag": "Other",
+                "values": "object"
+              }
+            },
+            {
+              "name": "callback",
+              "type": {
+                "__tag": "Other",
+                "values": "(err: Error, body: any) => void"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\nexport function createIamTrustRole(\n    account: Account,\n    auth: Auth,\n    roleName: string,\n    roleType: string,\n    trustArn: string,\n    opts: object,\n    callback: (err: Error, body: any) => void\n): void;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 91,
+            "to": 97
+          },
+          "path": "index.d.ts"
+        },
+        "module": "alks-node",
+        "name": "getAccounts",
+        "signature": {
+          "parameters": [
+            {
+              "name": "server",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "userid",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "auth",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").Auth"
+              }
+            },
+            {
+              "name": "opts",
+              "type": {
+                "__tag": "Other",
+                "values": "object"
+              }
+            },
+            {
+              "name": "callback",
+              "type": {
+                "__tag": "Other",
+                "values": "(err: Error, accounts: import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").AlksAccount[]) => void"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\nexport function getAccounts(\n    server: string,\n    userid: string,\n    auth: Auth,\n    opts: object,\n    callback: (err: Error, accounts: AlksAccount[]) => void\n): void;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 98,
+            "to": 104
+          },
+          "path": "index.d.ts"
+        },
+        "module": "alks-node",
+        "name": "getIamRoleTypes",
+        "signature": {
+          "parameters": [
+            {
+              "name": "server",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "userid",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "auth",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").Auth"
+              }
+            },
+            {
+              "name": "opts",
+              "type": {
+                "__tag": "Other",
+                "values": "object"
+              }
+            },
+            {
+              "name": "callback",
+              "type": {
+                "__tag": "Other",
+                "values": "(err: Error, body: any) => void"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\nexport function getIamRoleTypes(\n    server: string,\n    userid: string,\n    auth: Auth,\n    opts: object,\n    callback: (err: Error, body: any) => void\n): void;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 105,
+            "to": 105
+          },
+          "path": "index.d.ts"
+        },
+        "module": "alks-node",
+        "name": "generateConsoleUrl",
+        "signature": {
+          "parameters": [
+            {
+              "name": "key",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").AwsKey"
+              }
+            },
+            {
+              "name": "opts",
+              "type": {
+                "__tag": "Other",
+                "values": "object"
+              }
+            },
+            {
+              "name": "callback",
+              "type": {
+                "__tag": "Other",
+                "values": "(err: Error, url: string) => void"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\nexport function generateConsoleUrl(key: AwsKey, opts: object, callback: (err: Error, url: string) => void): void;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 106,
+            "to": 112
+          },
+          "path": "index.d.ts"
+        },
+        "module": "alks-node",
+        "name": "deleteIamRole",
+        "signature": {
+          "parameters": [
+            {
+              "name": "account",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").Account"
+              }
+            },
+            {
+              "name": "auth",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").Auth"
+              }
+            },
+            {
+              "name": "roleName",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "opts",
+              "type": {
+                "__tag": "Other",
+                "values": "object"
+              }
+            },
+            {
+              "name": "callback",
+              "type": {
+                "__tag": "Other",
+                "values": "(err: Error, body: any) => void"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\nexport function deleteIamRole(\n    account: Account,\n    auth: Auth,\n    roleName: string,\n    opts: object,\n    callback: (err: Error, body: any) => void\n): void;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 113,
+            "to": 119
+          },
+          "path": "index.d.ts"
+        },
+        "module": "alks-node",
+        "name": "deleteLongTermKey",
+        "signature": {
+          "parameters": [
+            {
+              "name": "account",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").Account"
+              }
+            },
+            {
+              "name": "auth",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").Auth"
+              }
+            },
+            {
+              "name": "iamUserName",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "opts",
+              "type": {
+                "__tag": "Other",
+                "values": "object"
+              }
+            },
+            {
+              "name": "callback",
+              "type": {
+                "__tag": "Other",
+                "values": "(err: Error, body: any) => void"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\nexport function deleteLongTermKey(\n    account: Account,\n    auth: Auth,\n    iamUserName: string,\n    opts: object,\n    callback: (err: Error, body: any) => void\n): void;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 120,
+            "to": 125
+          },
+          "path": "index.d.ts"
+        },
+        "module": "alks-node",
+        "name": "refreshTokenToAccessToken",
+        "signature": {
+          "parameters": [
+            {
+              "name": "account",
+              "type": {
+                "__tag": "Other",
+                "values": "import(\"/home/bb8/dev/tsearch/DefinitelyTyped/types/alks-node/index\").Account"
+              }
+            },
+            {
+              "name": "token",
+              "type": {
+                "__tag": "StringT"
+              }
+            },
+            {
+              "name": "opts",
+              "type": {
+                "__tag": "Other",
+                "values": "object"
+              }
+            },
+            {
+              "name": "callback",
+              "type": {
+                "__tag": "Other",
+                "values": "(err: Error, body: any) => void"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "Void"
+          }
+        },
+        "text": "\nexport function refreshTokenToAccessToken(\n    account: Account,\n    token: string,\n    opts: object,\n    callback: (err: Error, body: any) => void\n): void;"
+      }
+    ]
+  },
+  {
+    "name": "all-the-package-names",
+    "fns": []
+  },
+  {
+    "name": "almost-equal",
+    "fns": []
+  },
+  {
+    "name": "alpha-bravo",
+    "fns": [
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 6,
+            "to": 6
+          },
+          "path": "index.d.ts"
+        },
+        "module": "alpha-bravo",
+        "name": "returnAsString",
+        "signature": {
+          "parameters": [
+            {
+              "name": "input",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "StringT"
+          }
+        },
+        "text": "// Type definitions for alpha-bravo 2.0\n// Project: https://www.npmjs.com/package/alpha-bravo\n// Definitions by: Gary King <https://github.com/garyking>\n// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped\n\nexport function returnAsString(input: string): string;"
+      },
+      {
+        "docs": "",
+        "location": {
+          "lines": {
+            "from": 8,
+            "to": 8
+          },
+          "path": "index.d.ts"
+        },
+        "module": "alpha-bravo",
+        "name": "returnAsHTML",
+        "signature": {
+          "parameters": [
+            {
+              "name": "input",
+              "type": {
+                "__tag": "StringT"
+              }
+            }
+          ],
+          "returnType": {
+            "__tag": "StringT"
+          }
+        },
+        "text": "\n\nexport function returnAsHTML(input: string): string;"
+      }
+    ]
+  },
+  {
+    "name": "alloy",
+    "fns": []
+  },
+  {
+    "name": "allure-js-commons",
+    "fns": []
+  },
+  {
+    "name": "amap-js-api",
+    "fns": []
+  },
+  {
+    "name": "alt",
+    "fns": []
+  },
+  {
+    "name": "amap-js-api-arrival-range",
+    "fns": []
+  },
+  {
+    "name": "amap-js-api-autocomplete",
+    "fns": []
+  },
+  {
+    "name": "amap-js-api-city-search",
+    "fns": []
+  },
+  {
+    "name": "amap-js-api-control-bar",
+    "fns": []
+  },
+  {
+    "name": "amap-js-api-district-search",
+    "fns": []
+  },
+  {
+    "name": "amap-js-api-driving",
+    "fns": []
+  },
+  {
+    "name": "amap-js-api-geolocation",
+    "fns": []
+  },
+  {
+    "name": "amap-js-api-geocoder",
+    "fns": []
+  }
+]

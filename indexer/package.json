@@ -1,0 +1,30 @@
+{
+  "name": "@tsearch/indexer",
+  "version": "0.0.1",
+  "main": "build/cli.js",
+  "bin": {
+    "tsearch-index": "bin/ts-earch"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "fmt": "prettier --write '**/*.{json,md,ts,tsx,js,html}'",
+    "watch": "tsc -w -p ."
+  },
+  "dependencies": {
+    "ts-morph": "^6.0.2",
+    "typescript": "^3.7.5",
+    "yargs": "^15.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.5.0",
+    "@types/yargs": "^15.0.1",
+    "husky": "^4.2.1",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}

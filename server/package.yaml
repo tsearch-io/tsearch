@@ -1,0 +1,66 @@
+name: tsearch
+version: 0.0.1.0
+github: 'tsearch-io/server'
+license: MIT
+author: 'Christian Gill'
+maintainer: 'gillchristiang@gmail.com'
+copyright: '2019 Christian Gill'
+
+extra-source-files:
+  - readme.md
+
+synopsis: Backend for tsearch.io
+category: Web
+
+description:
+  Please see the README on GitHub at
+  <https://github.com/tsearch-io/server#readme>
+
+dependencies:
+  - aeson
+  - base >= 4.7 && < 5
+  - bytestring
+  - casing
+  - data-default-class
+  - http-client
+  - http-types
+  - lens
+  - mtl
+  - parsec
+  - parsec-numbers ^>= 0.1.0
+  - servant
+  - servant-checked-exceptions
+  - servant-server
+  - text
+  - transformers
+  - wai
+  - wai-cors
+  - wai-extra
+  - warp
+  - wreq
+
+library:
+  source-dirs: src
+
+executables:
+  tsearch-exe:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      - -Wall
+    dependencies:
+      - tsearch
+
+tests:
+  tsearch-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - tsearch
