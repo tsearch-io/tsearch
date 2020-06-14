@@ -43,9 +43,26 @@ library:
   source-dirs: src
 
 executables:
+  tsearch:
+    main: Main.hs
+    source-dirs: apps/cli
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      - -Wall
+    dependencies:
+      - optparse-applicative
+      - tsearch
+      - filepath
+    default-extensions:
+      - NamedFieldPuns
+      - LambdaCase
+      - TypeApplications
+
   tsearch-exe:
     main: Main.hs
-    source-dirs: app
+    source-dirs: apps/server
     ghc-options:
       - -threaded
       - -rtsopts
