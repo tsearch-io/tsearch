@@ -2,11 +2,10 @@ import {writeFileSync} from 'fs'
 import path from 'path'
 import {homedir} from 'os'
 import * as yargs from 'yargs'
-import * as Types from './types'
 
-import {ts} from 'ts-morph'
+import * as TsMorph from 'ts-morph'
 
-import extractFunctions from './index'
+import * as Tsearch from './index'
 
 // .option('directory', {type: 'positional'})
 
@@ -19,20 +18,23 @@ const cli = yargs.option('out', {
 
 const normalize = (p: string) => path.normalize(p.replace(/^~/, homedir()))
 
-function main() {
+const main = () => {
   const {_: directories, out} = cli.argv
 
-  const results: Types.FunctionRecord[] = directories.flatMap(directory =>
-    extractFunctions(normalize(directory), {
+  const results: {
+    name: string
+    type: TsMorph.Structure
+  }[] = directories.flatMap(directory =>
+    Tsearch.findFunctions(normalize(directory), {
       compilerOptions: {
-        target: ts.ScriptTarget.ES5,
-        module: ts.ModuleKind.CommonJS,
+        target: TsMorph.ts.ScriptTarget.ES5,
+        module: TsMorph.ts.ModuleKind.CommonJS,
       },
     }),
   )
 
   if (!out) {
-    console.log(JSON.stringify(results))
+    process.stdout.write(JSON.stringify(results) + '\n')
     return
   }
 
