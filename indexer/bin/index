@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-# Usage:
-#
-# $ ./bin/index ~/path/to/directories/* > index.json`
-for f in $@; do echo $f; done | parallel ./bin/tsearch | jq -c '.[]' | jq --slurp '.'
