@@ -1,0 +1,66 @@
+name: 'Server: Test & Build'
+
+on: 
+  pull_request:
+    branches:
+      - '*'
+    tags-ignore:
+      - '*'
+    paths:
+      - 'server/**'
+      - '.github/workflows/server-*'
+  push:
+    branches:
+      - '*'
+    tags-ignore:
+      - '*'
+    paths:
+      - 'server/**'
+      - '.github/workflows/server-*'
+
+jobs:
+  release:
+    strategy:
+      matrix:
+        os: [ubuntu-18.04]
+        plan:
+          - { stack-lts: "14.27", resolver: "--resolver lts-14.27" }
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - name: Install OS Packages
+      uses: mstksg/get-package@v1
+      with:
+        apt-get: happy libblas-dev liblapack-dev libgmp-dev
+
+    - uses: actions/checkout@v1
+
+    - name: Setup stack
+      uses: mstksg/setup-stack@v1
+
+    - uses: actions/cache@v1
+      name: Cache ~/.stack
+      id: cache
+      with:
+        path: ~/.stack
+        key: ${{ matrix.os }}-stack-lts-${{ matrix.plan.stack-lts }}-${{ hashFiles('server/package.yaml') }}-${{ hashFiles('server/stack.yaml') }}-${{ hashFiles('server/stack.yaml.lock') }}
+
+    - name: Install dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: |
+        set -ex
+        stack --no-terminal --install-ghc $ARGS test --bench --only-dependencies
+        set +ex
+      env:
+        ARGS: ${{ matrix.plan.resolver }}
+      working-directory: server
+
+    - name: Test & Build
+      run: |
+        set -ex
+        stack --no-terminal $ARGS test --bench --no-run-benchmarks --haddock --no-haddock-deps
+        set +ex
+      env:
+        ARGS: ${{ matrix.plan.resolver }}
+      working-directory: server
