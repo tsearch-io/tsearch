@@ -1,10 +1,10 @@
 name: tsearch
 version: 0.0.1.0
-github: 'tsearch-io/server'
+github: "tsearch-io/server"
 license: MIT
-author: 'Christian Gill'
-maintainer: 'gillchristiang@gmail.com'
-copyright: '2019 Christian Gill'
+author: "Christian Gill"
+maintainer: "gillchristiang@gmail.com"
+copyright: "2019 Christian Gill"
 
 extra-source-files:
   - readme.md
@@ -12,8 +12,7 @@ extra-source-files:
 synopsis: Backend for tsearch.io
 category: Web
 
-description:
-  Please see the README on GitHub at
+description: Please see the README on GitHub at
   <https://github.com/tsearch-io/server#readme>
 
 dependencies:
@@ -60,7 +59,7 @@ executables:
       - LambdaCase
       - TypeApplications
 
-  tsearch-exe:
+  tsearch-server:
     main: Main.hs
     source-dirs: apps/server
     ghc-options:
