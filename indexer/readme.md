@@ -17,38 +17,23 @@ To **run on a single project**:
 
 ```bash
 # output to the terminal
-./bin/tsearch /path/to/typescript/project
+./bin/tsearch-index /path/to/typescript/project
 
 # write to a file
-./bin/tsearch /path/to/typescript/project --out out.json
+./bin/tsearch-index /path/to/typescript/project --out index.json
 ```
 
 To **run on multiple projects**:
 
-The Go program (`main.go`) runs the indexer on all the projects in a directory.
+It is possible to run the indexer in parallel on all the projects of a
+directory.
 
 ```bash
-# build first, no dependencies required
-$ go build -o tsearch-index main.go
-
-$ ./tsearch-index --help
-Usage of ./tsearch-index:
-  -bin string
-        tsearch bin path (default "./bin/tsearch")
-  -dt string
-        Modules directory (default "~/dev/DefinitelyTyped/types")
-  -out string
-        out file path (default "~/.tsearch")
-  -x int
-        only extract the first X modules (extracts all when 0)
-
-# run on all the projects inside a path, output to current directory
-$ ./tsearch-index -out ./ -dt ~/path/to/projects/directory
+./bin/tsearch-index-parallel /path/to/typescript/directory/* > index.json
 ```
 
-The output file will have name as date when written (eg.
-`2020-01-30-06-17-05.json`), it can be used as the `modules.json` on
-[tsearch-io/server](https://github.com/tsearch-io/server).
+The script requires [GNU parallel](https://www.gnu.org/software/parallel/) and
+[jq](https://stedolan.github.io/jq/).
 
 ## LICENSE
 
