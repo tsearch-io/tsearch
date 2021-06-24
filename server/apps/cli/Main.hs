@@ -56,5 +56,5 @@ main = do
         Right v -> traverse_ go queries
           where
           go q = case Parsec.parse Tsearch.query "" q of
-            Left e -> System.IO.hPutStrLn System.IO.stderr (show e) >> System.Exit.exitFailure
+            Left e -> System.IO.hPrint System.IO.stderr e >> System.Exit.exitFailure
             Right res -> ByteString.putStrLn $ Data.Aeson.encode $ Tsearch.search res v
