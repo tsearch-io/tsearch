@@ -13,11 +13,11 @@ const Help: React.SFC = () => (
       <li>
         <p>
           By type signature: a comma separated list of types of parameters and
-          the returned type after a fat arrow (<code>=></code>).
+          the returned type after a fat arrow (<code>{'=>'}</code>).
         </p>
-        <pre>string => RegExp</pre>
-        <pre>string, number => string[]</pre>
-        <pre>A[] => A</pre>
+        <pre>string {'=>'} RegExp</pre>
+        <pre>string, number {'=>'} string[]</pre>
+        <pre>A[] {'=>'} A</pre>
       </li>
     </List>
   </div>

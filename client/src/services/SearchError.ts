@@ -27,15 +27,17 @@ interface Handler<R> {
   UnknownError: () => R
 }
 
-export const fold = <R>(handler: Handler<R>) => (fa: SearchError): R => {
-  if (fa.tag === 'InvalidQuery') {
-    return handler.InvalidQuery(fa.contents)
+export const fold =
+  <R>(handler: Handler<R>) =>
+  (fa: SearchError): R => {
+    if (fa.tag === 'InvalidQuery') {
+      return handler.InvalidQuery(fa.contents)
+    }
+    if (fa.tag === 'MissingQuery') {
+      return handler.MissingQuery()
+    }
+    if (fa.tag === 'FetchError') {
+      return handler.FetchError(fa.message)
+    }
+    return handler.UnknownError()
   }
-  if (fa.tag === 'MissingQuery') {
-    return handler.MissingQuery()
-  }
-  if (fa.tag === 'FetchError') {
-    return handler.FetchError(fa.message)
-  }
-  return handler.UnknownError()
-}

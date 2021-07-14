@@ -1,7 +1,5 @@
 import React, {useState, useEffect, FC} from 'react'
 import {RemoteData, is, map} from 'remote-data-ts'
-import * as prettier from 'prettier/standalone'
-import * as tsParser from 'prettier/parser-typescript'
 
 import {FunctionRecord, stringifySignature} from '../types'
 
@@ -19,18 +17,6 @@ interface Props {
   onSearch: (q: string) => void
 }
 
-const formatSignature = (code: string, name?: string) =>
-  prettier.format(`type ${name || 't'} = ${code}`, {
-    printWidth: 100,
-    parser: 'typescript',
-    semi: false,
-    singleQuote: true,
-    trailingComma: 'all',
-    bracketSpacing: true,
-    arrowParens: 'always',
-    plugins: [tsParser],
-  })
-
 const formatRecords = map<
   FunctionRecord[],
   SearchError,
@@ -38,10 +24,9 @@ const formatRecords = map<
 >(rs =>
   rs.map(r => ({
     ...r,
-    formattedSignature: formatSignature(
-      stringifySignature(r.signature),
-      r.name,
-    ),
+    formattedSignature: `type ${r.name || 't'} = ${stringifySignature(
+      r.signature,
+    )}`,
   })),
 )
 

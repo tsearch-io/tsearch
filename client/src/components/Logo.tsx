@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import {RouterLink} from './Link'
 
+// @ts-expect-error
 const Link = styled(RouterLink)({
   display: 'flex',
   alignItems: 'flex-end',

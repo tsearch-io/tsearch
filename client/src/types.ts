@@ -120,38 +120,40 @@ interface TypeMatcher<R> {
   Other: (v: Other) => R
 }
 
-const matchType = <R>(m: TypeMatcher<R>) => (t: Type): R => {
-  switch (t.__tag) {
-    case 'Any':
-      return m.Any(t)
-    case 'Unknown':
-      return m.Unknown(t)
-    case 'Void':
-      return m.Void(t)
-    case 'Never':
-      return m.Never(t)
-    case 'Undefined':
-      return m.Undefined(t)
-    case 'Null':
-      return m.Null(t)
-    case 'LiteralString':
-      return m.LiteralString(t)
-    case 'LiteralNumber':
-      return m.LiteralNumber(t)
-    case 'LiteralBool':
-      return m.LiteralBool(t)
-    case 'BoolT':
-      return m.Bool(t)
-    case 'StringT':
-      return m.StringT(t)
-    case 'NumberT':
-      return m.NumberT(t)
-    case 'Other':
-      return m.Other(t)
-    default:
-      throw new Error(`Unrecognized Type: ${JSON.stringify(t)}`)
+const matchType =
+  <R>(m: TypeMatcher<R>) =>
+  (t: Type): R => {
+    switch (t.__tag) {
+      case 'Any':
+        return m.Any(t)
+      case 'Unknown':
+        return m.Unknown(t)
+      case 'Void':
+        return m.Void(t)
+      case 'Never':
+        return m.Never(t)
+      case 'Undefined':
+        return m.Undefined(t)
+      case 'Null':
+        return m.Null(t)
+      case 'LiteralString':
+        return m.LiteralString(t)
+      case 'LiteralNumber':
+        return m.LiteralNumber(t)
+      case 'LiteralBool':
+        return m.LiteralBool(t)
+      case 'BoolT':
+        return m.Bool(t)
+      case 'StringT':
+        return m.StringT(t)
+      case 'NumberT':
+        return m.NumberT(t)
+      case 'Other':
+        return m.Other(t)
+      default:
+        throw new Error(`Unrecognized Type: ${JSON.stringify(t)}`)
+    }
   }
-}
 
 export const stringifySignature = (s: SignatureT): string => {
   const params = s.parameters

@@ -6,7 +6,6 @@
     "@ts-task/task": "^1.0.2",
     "@ts-task/utils": "^1.0.1",
     "history": "^4.10.1",
-    "prettier": "^1.19.1",
     "query-string": "^6.10.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -31,9 +30,10 @@
     "@types/react-syntax-highlighter": "^11.0.4",
     "@types/styled-components": "^4.4.2",
     "husky": "^4.2.1",
+    "prettier": "^2.3.2",
     "pretty-quick": "^2.0.1",
     "react-scripts": "3.3.0",
-    "typescript": "^3.7.5"
+    "typescript": "^4.3.5"
   },
   "scripts": {
     "build": "react-scripts build",

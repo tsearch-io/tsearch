@@ -33,8 +33,10 @@ const Results: React.SFC<Props> = ({records, query}) => (
               <p>Invalid Query: </p>
               <Pre>
                 "{query}"{'\n\n'}Error on{' '}
-                {/* First line of the error is: // '(line 1, column 5)' */
-                reason.replace(/line \d, /, '').replace(/\n/g, ' ')}
+                {
+                  /* First line of the error is: // '(line 1, column 5)' */
+                  reason.replace(/line \d, /, '').replace(/\n/g, ' ')
+                }
               </Pre>
             </>
           ),
