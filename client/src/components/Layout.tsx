@@ -38,6 +38,8 @@ const Footer = styled.footer({
   justifyContent: 'center',
 })
 
+const year = new Date().getFullYear()
+
 const Layout: React.SFC = ({children}) => (
   <Site>
     <SiteContent>
@@ -71,7 +73,7 @@ const Layout: React.SFC = ({children}) => (
         >
           Christian Gill
         </Link>{' '}
-        &copy; 2019-2020
+        &copy; {year}
       </p>
     </Footer>
   </Site>
