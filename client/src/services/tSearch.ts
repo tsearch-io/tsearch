@@ -43,7 +43,7 @@ const response = (
   )
 }
 
-const base = process.env.REACT_APP_BASE_URL || 'http://localhost:9000'
+const base = process.env.REACT_APP_API_URL || 'http://localhost:8000'
 
 export const search = (query: string): SearchTask =>
   fetch(`${base}/search?${queryString.stringify({query})}`).chain(response)

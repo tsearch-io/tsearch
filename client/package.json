@@ -37,8 +37,6 @@
   },
   "scripts": {
     "build": "react-scripts build",
-    "deploy:prod": "now -e REACT_APP_BASE_URL=@api-host --prod",
-    "eject": "react-scripts eject",
     "fmt": "prettier --write '**/*.{json,md,ts,tsx,js,html}'",
     "start": "react-scripts start",
     "test": "react-scripts test",
