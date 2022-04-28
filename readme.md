@@ -22,6 +22,8 @@
 - [client](https://github.com/tsearch-io/client): The UI to search and
   view results.
 
+![tsearch architecture drawing](/assets/architecture.png)
+
 ## Development
 
 For more information on how to run and develop Tsearch check the three repos
