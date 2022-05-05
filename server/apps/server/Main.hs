@@ -1,31 +1,31 @@
+{-# OPTIONS_GHC -Wall -Werror #-}
 module Main where
 
-import Control.Monad (when)
-import qualified Data.Aeson as Json
-import Data.Either (fromRight)
-import Data.Maybe (fromMaybe)
-import qualified System as Sys
-import qualified System.Environment as Env
-import qualified System.Exit as Exit
-import qualified Text.ParserCombinators.Parsec.Number as N
-import qualified Toolbelt
-import qualified Tsearch
-import qualified Tsearch.Query as Tsearch
+import Tsearch.API.Api (Api(Api))
+import qualified Tsearch.API.Api as Api
+import qualified Network.Wai.Handler.Warp as Warp
+import qualified Network.Wai as Wai
+import Tsearch.API.Response.Search (SearchResponse(..))
+import Data.Text (Text)
+import qualified Network.HTTP.Types.Status as Wai
 
-dieOnLeft :: Either String a -> IO a
-dieOnLeft = either Exit.die pure
+searchHandler :: Text -> IO SearchResponse
+searchHandler _ = pure $ SearchResponse200 []
 
-flattenModules :: [Tsearch.Module] -> [Tsearch.FunctionRecord]
-flattenModules ms = Tsearch.mFns =<< ms
+api :: Api IO
+api = Api { Api.search = searchHandler }
 
-parsePort :: Maybe String -> Int
-parsePort = fromRight 8080 . Toolbelt.regularParse N.int . fromMaybe "8080"
+run :: Wai.Request -> IO a -> IO a
+run _ ma = ma
+
+notFound :: Wai.Application
+notFound _req respond = respond $ Wai.responseLBS Wai.status404 [] mempty
+
+server :: Wai.Application
+server = Api.application run api notFound
 
 main :: IO ()
 main = do
-  modulesPath <- Sys.argOr 0 "./modules.json"
-  fns <- dieOnLeft =<< Json.eitherDecodeFileStrict' modulesPath
-  when (null fns) $ Exit.die "Modules are empty"
-  port <- parsePort <$> Env.lookupEnv "PORT"
-  putStrLn $ "{ \"init\": \"Server starting in port " ++ show port ++ "\" }" -- JSON \o/
-  Tsearch.serverMain fns port
+  let port = 8080
+  putStrLn $ "Running on port " <> show port
+  Warp.run port server

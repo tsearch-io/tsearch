@@ -1,0 +1,150 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 42926f14abdfddb5051f707c825e259a14a96b534d2ade8ea030057d8adadfdf
+
+name:           tsearch
+version:        0.0.1.1
+synopsis:       Backend for tsearch.io
+description:    Please see the README on GitHub at <https://github.com/tsearch-io/tsearch#readme>
+category:       Web
+homepage:       https://github.com/tsearch-io/tsearch#readme
+bug-reports:    https://github.com/tsearch-io/tsearch/issues
+author:         Christian Gill
+maintainer:     gillchristiang@gmail.com
+copyright:      2019 Christian Gill
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    readme.md
+
+source-repository head
+  type: git
+  location: https://github.com/tsearch-io/tsearch
+
+library
+  exposed-modules:
+      Tsearch
+  other-modules:
+      Paths_tsearch
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , casing
+    , data-default-class
+    , http-client
+    , http-types
+    , lens
+    , mtl
+    , parsec
+    , parsec-numbers >=0.1.0 && <0.2
+    , text
+    , transformers
+    , wai
+    , wai-cors
+    , wai-extra
+    , warp
+    , wreq
+  default-language: Haskell2010
+
+executable tsearch
+  main-is: Main.hs
+  other-modules:
+      Paths_tsearch
+  hs-source-dirs:
+      apps/cli
+  default-extensions:
+      NamedFieldPuns
+      LambdaCase
+      TypeApplications
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wall
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , casing
+    , data-default-class
+    , filepath
+    , http-client
+    , http-types
+    , lens
+    , mtl
+    , optparse-applicative
+    , parsec
+    , parsec-numbers >=0.1.0 && <0.2
+    , text
+    , transformers
+    , tsearch
+    , wai
+    , wai-cors
+    , wai-extra
+    , warp
+    , wreq
+  default-language: Haskell2010
+
+executable tsearch-server
+  main-is: Main.hs
+  other-modules:
+      Paths_tsearch
+  hs-source-dirs:
+      apps/server
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wall
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , casing
+    , data-default-class
+    , http-client
+    , http-types
+    , lens
+    , mtl
+    , parsec
+    , parsec-numbers >=0.1.0 && <0.2
+    , text
+    , transformers
+    , tsearch
+    , tsearch-api-lib
+    , wai
+    , wai-cors
+    , wai-extra
+    , warp
+    , wreq
+  default-language: Haskell2010
+
+test-suite tsearch-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_tsearch
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , casing
+    , data-default-class
+    , http-client
+    , http-types
+    , lens
+    , mtl
+    , parsec
+    , parsec-numbers >=0.1.0 && <0.2
+    , text
+    , transformers
+    , tsearch
+    , wai
+    , wai-cors
+    , wai-extra
+    , warp
+    , wreq
+  default-language: Haskell2010

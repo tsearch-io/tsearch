@@ -1,0 +1,26 @@
+cabal-version: 3.0
+name: tsearch-api-lib
+version: 0.1.0.0
+library
+  build-depends:
+    , aeson
+    , attoparsec
+    , base
+    , bytestring
+    , exceptions
+    , ghc-prim
+    , http-api-data
+    , http-types
+    , text
+    , time
+    , wai
+  exposed-modules:
+    Tsearch.API.Api
+    Tsearch.API.Request
+    Tsearch.API.Response
+    Tsearch.API.Response.Search
+    Tsearch.API.Schemas.Function
+    Tsearch.API.Schemas.FunctionOrType
+    Tsearch.API.Schemas.SearchError
+    Tsearch.API.Schemas.SearchResult
+    Tsearch.API.Schemas.Type
