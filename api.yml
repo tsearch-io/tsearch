@@ -1,0 +1,90 @@
+openapi: "3.0.0"
+info:
+  version: 2.0.0
+  title: Tsearch API
+  license:
+    name: MIT
+servers:
+  - url: https://api.tsearch.io
+paths:
+  /v1/search:
+    get:
+      operationId: search
+      summary: Search for TypeScript functions and types
+      parameters:
+        - "$ref": "#/components/parameters/search"
+      responses:
+        "200":
+          description: List of search results
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/SearchResult"
+
+        "404":
+          description: No results found
+
+        "422":
+          description: Request is not valid
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/SearchError"
+
+components:
+  parameters:
+    search:
+      name: q
+      in: query
+      required: true
+      schema:
+        type: string
+        example: "A => A[]"
+  schemas:
+    FunctionOrType:
+      type: string
+      enum:
+        - func
+        - type
+
+    Function:
+      type: object
+      required:
+        - type
+        - name
+      properties:
+        type:
+          "$ref": "#/components/schemas/FunctionOrType"
+        name:
+          type: string
+          example: toLowerCase
+
+    Type:
+      type: object
+      required:
+        - type
+        - name
+      properties:
+        type:
+          "$ref": "#/components/schemas/FunctionOrType"
+        name:
+          type: string
+          example: Option
+
+    SearchResult:
+      discriminator:
+        propertyName: type
+        mapping:
+          func: "#/components/schemas/Function"
+          type: "#/components/schemas/Type"
+      oneOf:
+        - "$ref": "#/components/schemas/Function"
+        - "$ref": "#/components/schemas/Type"
+
+    SearchError:
+      type: string
+      enum:
+        - inavlid-query
+        - missing-query
