@@ -17,10 +17,11 @@
         inherit system;
         config.allowBroken = true;
       };
-      server = import ./server/. pkgs;
+      ghc = import ./nix/override-ghc.nix pkgs.haskell.packages.ghc922;
+      server = ghc.callCabal2nix "server" ./server/. {};
     in {
       devShell = import ./shell.nix {
-        inherit pkgs;
+        inherit pkgs server;
       };
       defaultPackage = server;
       packages = flake-utils.lib.flattenTree {
