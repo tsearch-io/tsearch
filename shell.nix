@@ -1,10 +1,11 @@
 {
   pkgs,
+  server,
   ...
 }:
 pkgs.mkShell {
   inputsFrom = [
-    (import ./server/. pkgs).env
+    server.env
   ];
   buildInputs = with pkgs; [
     haskell-language-server
