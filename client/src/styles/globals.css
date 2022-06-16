@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --tw-color-primary-50: 255 241 242;
+  --tw-color-primary-100: 255 228 230;
+  --tw-color-primary-200: 254 205 211;
+  --tw-color-primary-300: 253 164 175;
+  --tw-color-primary-400: 251 113 133;
+  --tw-color-primary-500: 244 63 94;
+  --tw-color-primary-600: 225 29 72;
+  --tw-color-primary-700: 190 18 60;
+  --tw-color-primary-800: 159 18 57;
+  --tw-color-primary-900: 136 19 55;
+  --color-primary-50: rgb(var(--tw-color-primary-50)); /* #fff1f2 */
+  --color-primary-100: rgb(var(--tw-color-primary-100)); /* #ffe4e6 */
+  --color-primary-200: rgb(var(--tw-color-primary-200)); /* #fecdd3 */
+  --color-primary-300: rgb(var(--tw-color-primary-300)); /* #fda4af */
+  --color-primary-400: rgb(var(--tw-color-primary-400)); /* #fb7185 */
+  --color-primary-500: rgb(var(--tw-color-primary-500)); /* #f43f5e */
+  --color-primary-600: rgb(var(--tw-color-primary-600)); /* #e11d48 */
+  --color-primary-700: rgb(var(--tw-color-primary-700)); /* #be123c */
+  --color-primary-800: rgb(var(--tw-color-primary-800)); /* #9f1239 */
+  --color-primary-900: rgb(var(--tw-color-primary-900)); /* #881337 */
+}
+
+@layer base {
+  /* inter var - latin */
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: optional;
+    src: url('/fonts/inter-var-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+
+  .cursor-newtab {
+    cursor: url('/images/new-tab.png') 10 10, pointer;
+  }
+
+  .h0 {
+    @apply font-primary text-3xl font-bold md:text-5xl;
+  }
+
+  h1,
+  .h1 {
+    @apply font-primary text-2xl font-bold md:text-4xl;
+  }
+
+  h2,
+  .h2 {
+    @apply font-primary text-xl font-bold md:text-3xl;
+  }
+
+  h3,
+  .h3 {
+    @apply font-primary text-lg font-bold md:text-2xl;
+  }
+
+  h4,
+  .h4 {
+    @apply font-primary text-base font-bold md:text-lg;
+  }
+
+  body,
+  .p {
+    @apply font-primary text-sm md:text-base;
+  }
+
+  .layout {
+    /* 1100px */
+    max-width: 68.75rem;
+    @apply mx-auto w-11/12;
+  }
+
+  .bg-dark a.custom-link {
+    @apply border-gray-200 hover:border-gray-200/0;
+  }
+
+  /* Class to adjust with sticky footer */
+  .min-h-main {
+    @apply min-h-[calc(100vh-56px)];
+  }
+}
+
+@layer utilities {
+  .animated-underline {
+    background-image: linear-gradient(#33333300, #33333300),
+      linear-gradient(
+        to right,
+        var(--color-primary-400),
+        var(--color-primary-500)
+      );
+    background-size: 100% 2px, 0 2px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .animated-underline {
+      transition: 0.3s ease;
+      transition-property: background-size, color, background-color,
+        border-color;
+    }
+  }
+  .animated-underline:hover,
+  .animated-underline:focus-visible {
+    background-size: 0 2px, 100% 2px;
+  }
+}

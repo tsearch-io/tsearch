@@ -1,0 +1,75 @@
+{
+  "name": "ts-nextjs-tailwind-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "eslint src --fix && yarn format",
+    "lint:strict": "eslint --max-warnings=0 src",
+    "typecheck": "tsc --noEmit --incremental false",
+    "test:watch": "jest --watch",
+    "test": "jest",
+    "format": "prettier -w .",
+    "format:check": "prettier -c .",
+    "release": "standard-version",
+    "push-release": "git push --follow-tags origin main",
+    "postbuild": "next-sitemap"
+  },
+  "dependencies": {
+    "clsx": "^1.1.1",
+    "fp-ts": "^2.12.1",
+    "fp-ts-react-stable-hooks": "^1.5.0",
+    "io": "^1.0.4",
+    "io-ts-reporters": "^2.0.1",
+    "io-ts-types": "^0.5.16",
+    "jotai": "^1.6.5",
+    "monocle-ts": "^2.3.13",
+    "newtype-ts": "^0.3.5",
+    "next": "^12.1.5",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-icons": "^4.3.1",
+    "remote-data-ts": "^3.0.1",
+    "tailwind-merge": "^1.2.1",
+    "ts-pattern": "^4.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-conventional": "^16.2.4",
+    "@svgr/webpack": "^6.2.1",
+    "@tailwindcss/forms": "^0.5.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.1.1",
+    "@types/react": "^18.0.8",
+    "@types/tailwindcss": "^3.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
+    "autoprefixer": "^10.4.5",
+    "eslint": "^8.14.0",
+    "eslint-config-next": "^12.1.5",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "jest": "^27.5.1",
+    "lint-staged": "^12.4.1",
+    "next-sitemap": "^2.5.20",
+    "postcss": "^8.4.13",
+    "prettier": "^2.6.2",
+    "prettier-plugin-tailwindcss": "^0.1.10",
+    "standard-version": "^9.3.2",
+    "tailwindcss": "^3.0.24",
+    "typescript": "^4.6.4"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --max-warnings=0",
+      "prettier -w"
+    ],
+    "src/**/*.{json,css,scss,md}": [
+      "prettier -w"
+    ]
+  }
+}
