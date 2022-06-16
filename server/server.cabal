@@ -34,10 +34,11 @@ library
   hs-source-dirs:
       src
   build-depends:
-      aeson
-    , base >=4.7 && <5
+      base >=4.7 && <5
+    , aeson
     , bytestring
     , casing
+    , containers
     , data-default-class
     , http-client
     , http-types
@@ -66,10 +67,11 @@ executable tsearch
       TypeApplications
   ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wall
   build-depends:
-      aeson
-    , base >=4.7 && <5
+      base >=4.7 && <5
+    , aeson
     , bytestring
     , casing
+    , containers
     , data-default-class
     , filepath
     , http-client
@@ -97,10 +99,11 @@ executable tsearch-server
       apps/server
   ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wall
   build-depends:
-      aeson
-    , base >=4.7 && <5
+      base >=4.7 && <5
+    , aeson
     , bytestring
     , casing
+    , containers
     , data-default-class
     , http-client
     , http-types
