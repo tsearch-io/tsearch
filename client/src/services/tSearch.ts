@@ -6,10 +6,6 @@ import {RemoteData, ResolvedData} from 'remote-data-ts'
 import {FunctionRecord} from '../types'
 import {SearchError, fetchError} from './SearchError'
 
-interface ServerSuccess {
-  data: FunctionRecord[]
-}
-
 interface ServerError {
   err: SearchError
 }
@@ -25,9 +21,9 @@ const response = (
 ): Task<SearchResult, Error | UnknownError> => {
   // All good !!! \o/
   if (res.ok) {
-    return (res.json() as Task<ServerSuccess, UnknownError>)
-      .map(({data}) => data)
-      .map(RemoteData.success)
+    return (res.json() as Task<FunctionRecord[], UnknownError>).map(
+      RemoteData.success,
+    )
   }
 
   // Client error, sent by backend
@@ -46,4 +42,6 @@ const response = (
 const base = process.env.REACT_APP_API_URL || 'http://localhost:8000'
 
 export const search = (query: string): SearchTask =>
-  fetch(`${base}/search?${queryString.stringify({query})}`).chain(response)
+  fetch(`${base}/v1/search?${queryString.stringify({q: query})}`).chain(
+    response,
+  )

@@ -1,4 +1,5 @@
 {-# OPTIONS_GHC -Wall -Werror #-}
+
 module Main where
 
 import qualified Tsearch
